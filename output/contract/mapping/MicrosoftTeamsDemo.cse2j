@@ -1,0 +1,536 @@
+{
+  "name": "MicrosoftTeamsDemo",
+  "timestamp": "2025-02-09T21:25:21.756631+00:00",
+  "version": "1.0.0.0",
+  "schema_version": 1,
+  "extra_value": "",
+  "signals": {
+    "states": {
+      "boolean": {
+        "6": {
+          "1": "Main_Page.sourceCamera.Visibility_fb"
+        },
+        "7": {
+          "1": "Main_Page.systemPowerPage.Visibility_fb",
+          "3": "Main_Page.systemPowerPage.shutdownCancel.Selected",
+          "4": "Main_Page.systemPowerPage.shutdownConfirm.Selected",
+          "5": "Main_Page.systemPowerPage.shutdownDismiss.Selected"
+        },
+        "8": {
+          "1": "Main_Page.sourceSelect.Visibility_fb"
+        },
+        "9": {
+          "1": "Main_Page.popupMicList.Visibility_fb",
+          "3": "Main_Page.popupMicList.popUpCloseBtn.Selected"
+        },
+        "10": {
+          "1": "Main_Page.popupMicList.popUpMicsList.List_Item1_Visible",
+          "2": "Main_Page.popupMicList.popUpMicsList.List_Item2_Visible",
+          "3": "Main_Page.popupMicList.popUpMicsList.List_Item3_Visible",
+          "4": "Main_Page.popupMicList.popUpMicsList.List_Item4_Visible",
+          "5": "Main_Page.popupMicList.popUpMicsList.List_Item5_Visible",
+          "6": "Main_Page.popupMicList.popUpMicsList.List_Item6_Visible",
+          "7": "Main_Page.popupMicList.popUpMicsList.List_Item7_Visible",
+          "8": "Main_Page.popupMicList.popUpMicsList.List_Item8_Visible",
+          "9": "Main_Page.popupMicList.popUpMicsList.List_Item9_Visible",
+          "10": "Main_Page.popupMicList.popUpMicsList.List_Item10_Visible",
+          "611": "Main_Page.popupMicList.popUpMicsList.Items[0].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "612": "Main_Page.popupMicList.popUpMicsList.Items[0].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "613": "Main_Page.popupMicList.popUpMicsList.Items[0].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "614": "Main_Page.popupMicList.popUpMicsList.Items[1].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "615": "Main_Page.popupMicList.popUpMicsList.Items[1].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "616": "Main_Page.popupMicList.popUpMicsList.Items[1].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "617": "Main_Page.popupMicList.popUpMicsList.Items[2].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "618": "Main_Page.popupMicList.popUpMicsList.Items[2].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "619": "Main_Page.popupMicList.popUpMicsList.Items[2].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "620": "Main_Page.popupMicList.popUpMicsList.Items[3].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "621": "Main_Page.popupMicList.popUpMicsList.Items[3].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "622": "Main_Page.popupMicList.popUpMicsList.Items[3].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "623": "Main_Page.popupMicList.popUpMicsList.Items[4].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "624": "Main_Page.popupMicList.popUpMicsList.Items[4].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "625": "Main_Page.popupMicList.popUpMicsList.Items[4].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "626": "Main_Page.popupMicList.popUpMicsList.Items[5].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "627": "Main_Page.popupMicList.popUpMicsList.Items[5].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "628": "Main_Page.popupMicList.popUpMicsList.Items[5].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "629": "Main_Page.popupMicList.popUpMicsList.Items[6].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "630": "Main_Page.popupMicList.popUpMicsList.Items[6].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "631": "Main_Page.popupMicList.popUpMicsList.Items[6].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "632": "Main_Page.popupMicList.popUpMicsList.Items[7].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "633": "Main_Page.popupMicList.popUpMicsList.Items[7].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "634": "Main_Page.popupMicList.popUpMicsList.Items[7].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "635": "Main_Page.popupMicList.popUpMicsList.Items[8].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "636": "Main_Page.popupMicList.popUpMicsList.Items[8].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "637": "Main_Page.popupMicList.popUpMicsList.Items[8].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "638": "Main_Page.popupMicList.popUpMicsList.Items[9].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "639": "Main_Page.popupMicList.popUpMicsList.Items[9].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "640": "Main_Page.popupMicList.popUpMicsList.Items[9].listItem_micLevelCONTRACT.micItemVol3Mute.Selected"
+        },
+        "16": {
+          "1": "sourceCameras.cameraDpad.HideCenterButton"
+        },
+        "17": {
+          "3": "systemFooter.sysHomeBtn.Selected",
+          "4": "systemFooter.sysPowerBtn.Selected"
+        },
+        "19": {
+          "1": "widgetSourceSelectList.presentSelectList.List_Visible",
+          "2": "widgetSourceSelectList.presentSelectList.List_Item1_Visible",
+          "3": "widgetSourceSelectList.presentSelectList.List_Item2_Visible",
+          "4": "widgetSourceSelectList.presentSelectList.List_Item3_Visible",
+          "5": "widgetSourceSelectList.presentSelectList.List_Item4_Visible",
+          "6": "widgetSourceSelectList.presentSelectList.List_Item5_Visible",
+          "7": "widgetSourceSelectList.presentSelectList.List_Item6_Visible",
+          "8": "widgetSourceSelectList.presentSelectList.List_Item7_Visible",
+          "9": "widgetSourceSelectList.presentSelectList.List_Item8_Visible",
+          "10": "widgetSourceSelectList.presentSelectList.List_Item9_Visible",
+          "611": "widgetSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "612": "widgetSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "613": "widgetSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "614": "widgetSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "615": "widgetSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "616": "widgetSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "617": "widgetSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "618": "widgetSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "619": "widgetSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "620": "widgetSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "621": "widgetSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "622": "widgetSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "623": "widgetSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "624": "widgetSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "625": "widgetSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "626": "widgetSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "627": "widgetSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "628": "widgetSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Selected"
+        },
+        "22": {
+          "1": "widgetActivitiesMenu.actItemList.List_Visible",
+          "2": "widgetActivitiesMenu.actItemList.List_Item1_Visible",
+          "3": "widgetActivitiesMenu.actItemList.List_Item2_Visible",
+          "4": "widgetActivitiesMenu.actItemList.List_Item3_Visible",
+          "5": "widgetActivitiesMenu.actItemList.List_Item4_Visible",
+          "6": "widgetActivitiesMenu.actItemList.List_Item5_Visible",
+          "7": "widgetActivitiesMenu.actItemList.List_Item6_Visible",
+          "8": "widgetActivitiesMenu.actItemList.List_Enable",
+          "9": "widgetActivitiesMenu.actItemList.List_Item1_Enable",
+          "10": "widgetActivitiesMenu.actItemList.List_Item2_Enable",
+          "11": "widgetActivitiesMenu.actItemList.List_Item3_Enable",
+          "12": "widgetActivitiesMenu.actItemList.List_Item4_Enable",
+          "13": "widgetActivitiesMenu.actItemList.List_Item5_Enable",
+          "14": "widgetActivitiesMenu.actItemList.List_Item6_Enable",
+          "15": "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemBtn.Selected",
+          "16": "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemBtn.Selected",
+          "17": "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemBtn.Selected",
+          "18": "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemBtn.Selected",
+          "19": "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemBtn.Selected",
+          "20": "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemBtn.Selected"
+        }
+      },
+      "numeric": {
+        "7": {
+          "4": "Main_Page.systemPowerPage.shutdownTimeGauge.LowerTouchfb"
+        },
+        "10": {
+          "1801": "Main_Page.popupMicList.popUpMicsList.Items[0].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1802": "Main_Page.popupMicList.popUpMicsList.Items[1].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1803": "Main_Page.popupMicList.popUpMicsList.Items[2].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1804": "Main_Page.popupMicList.popUpMicsList.Items[3].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1805": "Main_Page.popupMicList.popUpMicsList.Items[4].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1806": "Main_Page.popupMicList.popUpMicsList.Items[5].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1807": "Main_Page.popupMicList.popUpMicsList.Items[6].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1808": "Main_Page.popupMicList.popUpMicsList.Items[7].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1809": "Main_Page.popupMicList.popUpMicsList.Items[8].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1810": "Main_Page.popupMicList.popUpMicsList.Items[9].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb"
+        },
+        "15": {
+          "2": "sourceCameras.cameraPresetList.ListNumberOfItems"
+        }
+      },
+      "string": {
+        "10": {
+          "1": "Main_Page.popupMicList.popUpMicsList.Items[0].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "2": "Main_Page.popupMicList.popUpMicsList.Items[1].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "3": "Main_Page.popupMicList.popUpMicsList.Items[2].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "4": "Main_Page.popupMicList.popUpMicsList.Items[3].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "5": "Main_Page.popupMicList.popUpMicsList.Items[4].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "6": "Main_Page.popupMicList.popUpMicsList.Items[5].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "7": "Main_Page.popupMicList.popUpMicsList.Items[6].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "8": "Main_Page.popupMicList.popUpMicsList.Items[7].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "9": "Main_Page.popupMicList.popUpMicsList.Items[8].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "10": "Main_Page.popupMicList.popUpMicsList.Items[9].listItem_micLevelCONTRACT.micItemLabel.Indirect"
+        },
+        "15": {
+          "1": "sourceCameras.cameraPresetList.Button1Text",
+          "2": "sourceCameras.cameraPresetList.Button2Text",
+          "3": "sourceCameras.cameraPresetList.Button3Text",
+          "4": "sourceCameras.cameraPresetList.Button4Text"
+        },
+        "19": {
+          "1": "widgetSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListLabel.Indirect",
+          "2": "widgetSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListLabel.Indirect",
+          "3": "widgetSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListLabel.Indirect",
+          "4": "widgetSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListLabel.Indirect",
+          "5": "widgetSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListLabel.Indirect",
+          "6": "widgetSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListLabel.Indirect",
+          "7": "widgetSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListLabel.Indirect",
+          "8": "widgetSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListLabel.Indirect",
+          "9": "widgetSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListLabel.Indirect",
+          "2410": "widgetSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2411": "widgetSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2412": "widgetSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2413": "widgetSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2414": "widgetSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2415": "widgetSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2416": "widgetSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2417": "widgetSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2418": "widgetSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListBtn.IconURL"
+        },
+        "20": {
+          "1": "systemHeader.sysDate.Indirect",
+          "2": "systemHeader.sysRoomName.Indirect",
+          "3": "systemHeader.sysTime.Indirect"
+        },
+        "22": {
+          "1": "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemLabel.Indirect",
+          "2": "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemLabel.Indirect",
+          "3": "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemLabel.Indirect",
+          "4": "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemLabel.Indirect",
+          "5": "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemLabel.Indirect",
+          "6": "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemLabel.Indirect",
+          "2407": "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemBtn.IconURL",
+          "2408": "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemBtn.IconURL",
+          "2409": "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemBtn.IconURL",
+          "2410": "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemBtn.IconURL",
+          "2411": "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemBtn.IconURL",
+          "2412": "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemBtn.IconURL"
+        }
+      }
+    },
+    "events": {
+      "boolean": {
+        "Main_Page.systemPowerPage.shutdownCancel.Press": {
+          "joinId": 2,
+          "smartObjectId": 7
+        },
+        "Main_Page.systemPowerPage.shutdownConfirm.Press": {
+          "joinId": 3,
+          "smartObjectId": 7
+        },
+        "Main_Page.systemPowerPage.shutdownDismiss.Press": {
+          "joinId": 4,
+          "smartObjectId": 7
+        },
+        "Main_Page.popupMicList.popUpCloseBtn.Press": {
+          "joinId": 2,
+          "smartObjectId": 9
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[0].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1201,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[0].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1202,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[0].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1203,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[1].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1204,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[1].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1205,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[1].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1206,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[2].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1207,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[2].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1208,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[2].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1209,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[3].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1210,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[3].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1211,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[3].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1212,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[4].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1213,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[4].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1214,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[4].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1215,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[5].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1216,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[5].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1217,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[5].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1218,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[6].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1219,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[6].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1220,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[6].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1221,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[7].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1222,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[7].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1223,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[7].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1224,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[8].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1225,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[8].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1226,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[8].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1227,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[9].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1228,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[9].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1229,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[9].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1230,
+          "smartObjectId": 10
+        },
+        "sourceCameras.cameraPresetList.Button1ItemPress": {
+          "joinId": 1001,
+          "smartObjectId": 15
+        },
+        "sourceCameras.cameraPresetList.Button2ItemPress": {
+          "joinId": 1002,
+          "smartObjectId": 15
+        },
+        "sourceCameras.cameraPresetList.Button3ItemPress": {
+          "joinId": 1003,
+          "smartObjectId": 15
+        },
+        "sourceCameras.cameraPresetList.Button4ItemPress": {
+          "joinId": 1004,
+          "smartObjectId": 15
+        },
+        "sourceCameras.cameraDpad.Up": {
+          "joinId": 3,
+          "smartObjectId": 16
+        },
+        "sourceCameras.cameraDpad.Down": {
+          "joinId": 4,
+          "smartObjectId": 16
+        },
+        "sourceCameras.cameraDpad.Left": {
+          "joinId": 5,
+          "smartObjectId": 16
+        },
+        "sourceCameras.cameraDpad.Right": {
+          "joinId": 6,
+          "smartObjectId": 16
+        },
+        "sourceCameras.cameraDpad.Center": {
+          "joinId": 7,
+          "smartObjectId": 16
+        },
+        "systemFooter.sysHomeBtn.Press": {
+          "joinId": 3,
+          "smartObjectId": 17
+        },
+        "systemFooter.sysPowerBtn.Press": {
+          "joinId": 4,
+          "smartObjectId": 17
+        },
+        "widgetSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 601,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 602,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 603,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 604,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 605,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 606,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 607,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 608,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 609,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 610,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 611,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 612,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 613,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 614,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 615,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 616,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 617,
+          "smartObjectId": 19
+        },
+        "widgetSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 618,
+          "smartObjectId": 19
+        },
+        "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemBtn.Press": {
+          "joinId": 1,
+          "smartObjectId": 22
+        },
+        "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemBtn.Press": {
+          "joinId": 2,
+          "smartObjectId": 22
+        },
+        "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemBtn.Press": {
+          "joinId": 3,
+          "smartObjectId": 22
+        },
+        "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemBtn.Press": {
+          "joinId": 4,
+          "smartObjectId": 22
+        },
+        "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemBtn.Press": {
+          "joinId": 5,
+          "smartObjectId": 22
+        },
+        "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemBtn.Press": {
+          "joinId": 6,
+          "smartObjectId": 22
+        }
+      },
+      "numeric": {
+        "Main_Page.systemPowerPage.shutdownTimeGauge.LowerTouch": {
+          "joinId": 4,
+          "smartObjectId": 7
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[0].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1801,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[1].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1802,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[2].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1803,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[3].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1804,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[4].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1805,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[5].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1806,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[6].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1807,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[7].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1808,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[8].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1809,
+          "smartObjectId": 10
+        },
+        "Main_Page.popupMicList.popUpMicsList.Items[9].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1810,
+          "smartObjectId": 10
+        }
+      },
+      "string": {}
+    }
+  }
+}
