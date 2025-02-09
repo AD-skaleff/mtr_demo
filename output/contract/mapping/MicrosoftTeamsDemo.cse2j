@@ -1,6 +1,6 @@
 {
   "name": "MicrosoftTeamsDemo",
-  "timestamp": "2025-02-09T21:55:11.513997+00:00",
+  "timestamp": "2025-02-09T21:58:47.97266+00:00",
   "version": "1.0.0.0",
   "schema_version": 1,
   "extra_value": "",
@@ -214,16 +214,20 @@
     },
     "events": {
       "boolean": {
-        "Main_Page.volumeBtns.sysVol1UpBtn.Press": {
-          "joinId": 2,
+        "Main_Page.volumeBtns.sysVol3MuteBtn.Visibility": {
+          "joinId": 1,
           "smartObjectId": 7
         },
-        "Main_Page.volumeBtns.sysVol2DownBtn.Press": {
+        "Main_Page.volumeBtns.sysVol1UpBtn.Press": {
           "joinId": 3,
           "smartObjectId": 7
         },
-        "Main_Page.volumeBtns.sysVol3MuteBtn.Press": {
+        "Main_Page.volumeBtns.sysVol2DownBtn.Press": {
           "joinId": 4,
+          "smartObjectId": 7
+        },
+        "Main_Page.volumeBtns.sysVol3MuteBtn.Press": {
+          "joinId": 5,
           "smartObjectId": 7
         },
         "Main_Page.systemPowerPage.shutdownCancel.Press": {
