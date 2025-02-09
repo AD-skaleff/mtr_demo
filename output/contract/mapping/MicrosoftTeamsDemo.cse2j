@@ -1,6 +1,6 @@
 {
   "name": "MicrosoftTeamsDemo",
-  "timestamp": "2025-02-09T21:58:47.97266+00:00",
+  "timestamp": "2025-02-09T23:19:30.1819704+00:00",
   "version": "1.0.0.0",
   "schema_version": 1,
   "extra_value": "",
@@ -11,11 +11,7 @@
           "1": "Main_Page.sourceCamera.Visibility_fb"
         },
         "7": {
-          "1": "Main_Page.volumeBtns.sysVolAnaVal.Visibility_fb",
-          "2": "Main_Page.volumeBtns.Visibility_fb",
-          "4": "Main_Page.volumeBtns.sysVol1UpBtn.Selected",
-          "5": "Main_Page.volumeBtns.sysVol2DownBtn.Selected",
-          "6": "Main_Page.volumeBtns.sysVol3MuteBtn.Selected"
+          "1": "Main_Page.volumeBtns.Visibility_fb"
         },
         "8": {
           "1": "Main_Page.systemPowerPage.Visibility_fb",
@@ -109,7 +105,14 @@
           "627": "widgetSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.presentItemSync.Selected",
           "628": "widgetSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Selected"
         },
-        "23": {
+        "22": {
+          "1": "volume.sysVol3MuteBtn.Visibility_fb",
+          "2": "volume.sysVolVal.Visibility_fb",
+          "4": "volume.sysVol1UpBtn.Selected",
+          "5": "volume.sysVol2DownBtn.Selected",
+          "6": "volume.sysVol3MuteBtn.Selected"
+        },
+        "24": {
           "1": "widgetActivitiesMenu.actItemList.List_Visible",
           "2": "widgetActivitiesMenu.actItemList.List_Item1_Visible",
           "3": "widgetActivitiesMenu.actItemList.List_Item2_Visible",
@@ -196,7 +199,7 @@
           "2": "systemHeader.sysRoomName.Indirect",
           "3": "systemHeader.sysTime.Indirect"
         },
-        "23": {
+        "24": {
           "1": "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemLabel.Indirect",
           "2": "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemLabel.Indirect",
           "3": "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemLabel.Indirect",
@@ -214,22 +217,6 @@
     },
     "events": {
       "boolean": {
-        "Main_Page.volumeBtns.sysVol3MuteBtn.Visibility": {
-          "joinId": 1,
-          "smartObjectId": 7
-        },
-        "Main_Page.volumeBtns.sysVol1UpBtn.Press": {
-          "joinId": 3,
-          "smartObjectId": 7
-        },
-        "Main_Page.volumeBtns.sysVol2DownBtn.Press": {
-          "joinId": 4,
-          "smartObjectId": 7
-        },
-        "Main_Page.volumeBtns.sysVol3MuteBtn.Press": {
-          "joinId": 5,
-          "smartObjectId": 7
-        },
         "Main_Page.systemPowerPage.shutdownCancel.Press": {
           "joinId": 2,
           "smartObjectId": 8
@@ -482,29 +469,41 @@
           "joinId": 618,
           "smartObjectId": 20
         },
+        "volume.sysVol1UpBtn.Press": {
+          "joinId": 2,
+          "smartObjectId": 22
+        },
+        "volume.sysVol2DownBtn.Press": {
+          "joinId": 3,
+          "smartObjectId": 22
+        },
+        "volume.sysVol3MuteBtn.Press": {
+          "joinId": 4,
+          "smartObjectId": 22
+        },
         "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemBtn.Press": {
           "joinId": 1,
-          "smartObjectId": 23
+          "smartObjectId": 24
         },
         "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemBtn.Press": {
           "joinId": 2,
-          "smartObjectId": 23
+          "smartObjectId": 24
         },
         "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemBtn.Press": {
           "joinId": 3,
-          "smartObjectId": 23
+          "smartObjectId": 24
         },
         "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemBtn.Press": {
           "joinId": 4,
-          "smartObjectId": 23
+          "smartObjectId": 24
         },
         "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemBtn.Press": {
           "joinId": 5,
-          "smartObjectId": 23
+          "smartObjectId": 24
         },
         "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemBtn.Press": {
           "joinId": 6,
-          "smartObjectId": 23
+          "smartObjectId": 24
         }
       },
       "numeric": {
