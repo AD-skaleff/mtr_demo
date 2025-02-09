@@ -1,0 +1,37 @@
+{FileMetadata}
+Schema = "1.0.0.0"
+CreatedByAppHost = "2.101.8.0"
+Created = 2025-02-07 17:45:17.689044-08:00
+LastModifiedByAppHost = "2.101.8.0"
+Modified = 2025-02-07 17:45:17.68904-08:00
+CreatedByProjectApp = "1.3701.9.0"
+LastModifiedByProjectApp = "1.3701.9.0"
+MinimumProjectApp = "1.2600.1"
+MinimumAppHost = "2.0.0"
+
+{Html}
+<div id="iceeh5qys3"></div>
+
+{Css}
+@media (max-width: 99999px){#iceeh5qys3{width: 260px;height: 64px; left: 0; top: 0; position: absolute;}}@media (orientation: landscape) and (max-width: 1281px) and (max-height: 801px), (orientation: landscape) and (max-width: 1279px){#iceeh5qys3{ width: 260px; height: 64px; left: 0; top: 0; position: absolute; }}
+
+{PageAttributes}
+
+[Attributes]
+Name = "volume"
+PageMode = "absolute"
+Id = "a252a61c-660e-4287-8566-7c5a4474b97d"
+DisplayBackgroundColor = "False"
+
+[[Elements]]
+Name = ""
+Type = "widgetContainer"
+Status = ""
+Content = ""
+Draggable = false
+Copyable = false
+
+[Elements.Attributes]
+id = "iceeh5qys3"
+devicesVisited = "[\"TSW-1070\"]"
+

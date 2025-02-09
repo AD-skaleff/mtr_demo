@@ -1,0 +1,102 @@
+{FileMetadata}
+Schema = "1.0.0.0"
+CreatedByAppHost = "2.101.8.0"
+Created = 2025-02-07 17:41:23.586111-08:00
+LastModifiedByAppHost = "2.101.8.0"
+Modified = 2025-02-07 17:41:23.586104-08:00
+CreatedByProjectApp = "1.3701.9.0"
+LastModifiedByProjectApp = "1.3701.9.0"
+MinimumProjectApp = "1.2600.1"
+MinimumAppHost = "2.0.0"
+
+{Html}
+<div categoryname="system" id="i4hrfqnwte" devicesVisited="[&quot;TSW-1070&quot;]" defaultWidth="1280px" defaultHeight="800px" globalControlContract="on" class="widget-container"><ch5-text clearLabel="false" labelmodeadvncomponent="simple" horizontalalignment="center" verticalalignment="middle" multilinesupport="false" truncatetext="false" labelinnerhtml="System Is Offline" id="iuyj" componentName="Formatted-Text" ccid_linkSendReceive="True" devicesVisited="[&quot;TSW-1070&quot;]" ccid_themeCSSSet="true">
+              </ch5-text><ch5-text clearLabel="false" labelmodeadvncomponent="simple" horizontalalignment="center" verticalalignment="middle" multilinesupport="false" truncatetext="false" labelinnerhtml="Contact Technical Support for Assistance" id="it24" componentName="Formatted-Text_1" ccid_linkSendReceive="True" devicesVisited="[&quot;TSW-1070&quot;]" ccid_themeCSSSet="true">
+              </ch5-text><ch5-animation startanimating="true" customvstheme="custom" size="regular" animationstyle="spinner" id="igaa" componentName="Animation" ccid_linkSendReceive="True" devicesVisited="[&quot;TSW-1070&quot;]" ccid_themeCSSSet="true">
+              </ch5-animation></div>
+
+{Css}
+@media (max-width: 99999px){#i4hrfqnwte{width:1280px;height:800px;left:0;top:0;position:absolute;background-color:#000000ba;}.widget-container{background-image:linear-gradient(45deg, #DAE2EA 25%, transparent 25%), linear-gradient(-45deg, #DAE2EA 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #DAE2EA 75%), linear-gradient(-45deg, transparent 75%, #DAE2EA 75%);background-size:20px 20px;background-position:0 0, 0 10px, 10px -10px, -10px 0px;z-index:0;}#iuyj .ch5-text{width:990px;height:48px;min-height:10px;min-width:10px;padding:0px;font-size:48px;custom-font-size:48px;color:#c4314b;font-weight:700;}#iuyj{width:990px;height:48px;font-family:Roboto;display:block;left:145px;top:274px;position:absolute;font-weight:700;}#it24 .ch5-text{width:1031px;height:48px;min-height:10px;min-width:10px;padding:0px;font-size:30px;custom-font-size:30px;color:#ffffff;}#it24{width:1031px;height:48px;font-family:Roboto;display:block;left:124px;top:478px;position:absolute;}#igaa{display:block;left:604px;top:622px;position:absolute;animationColor_color:#3f3f3f;width:auto;height:auto;}#igaa .ch5-animation{animationColor_color:#ffffff;color:#ffffff;}#wrapper{background-color:#ffffff;}}@media (orientation: landscape) and (max-width: 1281px) and (max-height: 801px), (orientation: landscape) and (max-width: 1279px){#i4hrfqnwte{width:1280px;height:800px;left:0;top:0;position:absolute;}#iuyj{width:990px;height:48px;font-family:Roboto;display:block;left:145px;top:274px;position:absolute;font-weight:700;}#it24{width:1031px;height:48px;font-family:Roboto;display:block;left:124px;top:478px;position:absolute;}#igaa{display:block;left:604px;top:622px;position:absolute;animationColor_color:#ffffff;width:auto;height:auto;}}
+
+{PageAttributes}
+
+[Attributes]
+Name = "systemOffline"
+PageMode = "absolute"
+Id = "3387cb38-4c4e-466a-a08b-1ca1e0c23286"
+DisplayBackgroundColor = "True"
+BackgroundColor = "#000000ba"
+
+[[Elements]]
+Type = "widgetContainer"
+Classes = ["widget-container"]
+
+[[Elements.Components]]
+Type = "Ch5 Text"
+Editable = true
+
+[[Elements.Components.Components]]
+Type = "textnode"
+Content = "\n              "
+
+[Elements.Components.Attributes]
+clearLabel = "false"
+labelmodeadvncomponent = "simple"
+horizontalalignment = "center"
+verticalalignment = "middle"
+multilinesupport = "false"
+truncatetext = "false"
+labelinnerhtml = "System Is Offline"
+id = "iuyj"
+componentName = "Formatted-Text"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+ccid_themeCSSSet = "true"
+[[Elements.Components]]
+Type = "Ch5 Text"
+Editable = true
+
+[[Elements.Components.Components]]
+Type = "textnode"
+Content = "\n              "
+
+[Elements.Components.Attributes]
+clearLabel = "false"
+labelmodeadvncomponent = "simple"
+horizontalalignment = "center"
+verticalalignment = "middle"
+multilinesupport = "false"
+truncatetext = "false"
+labelinnerhtml = "Contact Technical Support for Assistance"
+id = "it24"
+componentName = "Formatted-Text_1"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+ccid_themeCSSSet = "true"
+[[Elements.Components]]
+Type = "Ch5 Animation"
+Editable = true
+
+[[Elements.Components.Components]]
+Type = "textnode"
+Content = "\n              "
+
+[Elements.Components.Attributes]
+startanimating = "true"
+customvstheme = "custom"
+size = "regular"
+animationstyle = "spinner"
+id = "igaa"
+componentName = "Animation"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+ccid_themeCSSSet = "true"
+
+[Elements.Attributes]
+categoryname = "system"
+id = "i4hrfqnwte"
+devicesVisited = "[\"TSW-1070\"]"
+defaultWidth = "1280px"
+defaultHeight = "800px"
+globalControlContract = "on"
+

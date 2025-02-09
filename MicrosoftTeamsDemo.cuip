@@ -1,0 +1,27 @@
+{FileMetadata}
+Schema = "1.0.0.0"
+CreatedByAppHost = "1.3400.20.0"
+Created = 2024-06-26 08:50:29.512215-07:00
+LastModifiedByAppHost = "2.101.8.0"
+Modified = 2025-02-07 15:42:50.893235-08:00
+CreatedByProjectApp = "1.3400.20.0"
+LastModifiedByProjectApp = "1.3701.9.0"
+MinimumProjectApp = "1.2600.1"
+MinimumAppHost = "2.0.0"
+
+{DeviceResolutionSource}
+[]
+
+{ProjectAttributes}
+
+[Attributes]
+Name = "MicrosoftTeamsDemo"
+ThemeId = "light-theme.css"
+ThemePageColor = "blue"
+SdkId = "CH5:2.11.1.2"
+ComponentKey = "UiEditor"
+Id = "894c8dbf-06b5-4f2f-b99a-871d0948562d"
+DeviceResolutionIds = "D-L-TSW1070-1280-0800"
+ipId = "10"
+ProjectSchemaVersion = "6"
+

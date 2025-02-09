@@ -1,0 +1,21 @@
+{FileMetadata}
+Schema = "1.0.0.0"
+CreatedByAppHost = "1.3301.18.0"
+Created = 2024-06-10 19:05:52.187664-04:00
+LastModifiedByAppHost = "1.3301.18.0"
+Modified = 2024-06-10 19:05:52.187657-04:00
+CreatedByProjectApp = "1.3301.18.0"
+LastModifiedByProjectApp = "1.3301.18.0"
+MinimumProjectApp = ""
+
+{AssetAttributes}
+
+[Attributes]
+Id = "dc619170-a7d7-49bd-91a5-5bdfb99bc04e"
+Name = "Bkd_Poly"
+SourceUri = "Bkd_Poly.png"
+AspectRatio = "1.6"
+AssetSourceType = "File"
+Username = ""
+Password = ""
+
