@@ -1,6 +1,6 @@
 {
   "name": "MicrosoftTeamsDemo",
-  "timestamp": "2025-02-09T21:51:40.245789+00:00",
+  "timestamp": "2025-02-09T21:55:11.513997+00:00",
   "version": "1.0.0.0",
   "schema_version": 1,
   "extra_value": "",
@@ -11,10 +11,11 @@
           "1": "Main_Page.sourceCamera.Visibility_fb"
         },
         "7": {
-          "1": "Main_Page.volume.sysVolAnaVal.Visibility_fb",
-          "3": "Main_Page.volume.sysVol1UpBtn.Selected",
-          "4": "Main_Page.volume.sysVol2DownBtn.Selected",
-          "5": "Main_Page.volume.sysVol3MuteBtn.Selected"
+          "1": "Main_Page.volumeBtns.sysVolAnaVal.Visibility_fb",
+          "2": "Main_Page.volumeBtns.Visibility_fb",
+          "4": "Main_Page.volumeBtns.sysVol1UpBtn.Selected",
+          "5": "Main_Page.volumeBtns.sysVol2DownBtn.Selected",
+          "6": "Main_Page.volumeBtns.sysVol3MuteBtn.Selected"
         },
         "8": {
           "1": "Main_Page.systemPowerPage.Visibility_fb",
@@ -213,15 +214,15 @@
     },
     "events": {
       "boolean": {
-        "Main_Page.volume.sysVol1UpBtn.Press": {
+        "Main_Page.volumeBtns.sysVol1UpBtn.Press": {
           "joinId": 2,
           "smartObjectId": 7
         },
-        "Main_Page.volume.sysVol2DownBtn.Press": {
+        "Main_Page.volumeBtns.sysVol2DownBtn.Press": {
           "joinId": 3,
           "smartObjectId": 7
         },
-        "Main_Page.volume.sysVol3MuteBtn.Press": {
+        "Main_Page.volumeBtns.sysVol3MuteBtn.Press": {
           "joinId": 4,
           "smartObjectId": 7
         },
