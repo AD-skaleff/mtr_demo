@@ -1,0 +1,558 @@
+{
+  "name": "MicrosoftTeamsDemo",
+  "timestamp": "2024-11-05T17:38:06.2050896+00:00",
+  "version": "1.0.0.0",
+  "schema_version": 1,
+  "extra_value": "",
+  "signals": {
+    "states": {
+      "boolean": {
+        "1": {
+          "3": "Components.Button.Selected",
+          "4": "Components.Source_Laptop.Selected"
+        },
+        "5": {
+          "3": "Main_Page.Lights_Call.Selected",
+          "4": "Main_Page.Lights_Lower.Selected",
+          "5": "Main_Page.Lights_Present.Selected",
+          "6": "Main_Page.Lights_Raise.Selected",
+          "7": "Main_Page.Menu_Mics.Selected",
+          "8": "Main_Page.Menu_Power.Selected",
+          "9": "Main_Page.Presen_Vol_Mute_Tog.Selected",
+          "10": "Main_Page.Shades_Close.Selected",
+          "11": "Main_Page.Shades_Lower.Selected",
+          "12": "Main_Page.Shades_Open.Selected",
+          "13": "Main_Page.Shades_Raise.Selected",
+          "14": "Main_Page.Source_AppleTV.Selected",
+          "15": "Main_Page.Source_CATV.Selected",
+          "16": "Main_Page.Source_Laptop.Selected",
+          "17": "Main_Page.Source_PC.Selected",
+          "18": "Main_Page.Speech_Vol_Mute_Tog.Selected"
+        },
+        "6": {
+          "1": "Main_Page.Popup_Controls_CATV.Visibility_fb",
+          "3": "Main_Page.Popup_Controls_CATV.CATV_Menu_Fav.Selected",
+          "4": "Main_Page.Popup_Controls_CATV.CATV_Menu_Guide.Selected",
+          "5": "Main_Page.Popup_Controls_CATV.CATV_Menu_Keypad.Selected",
+          "6": "Main_Page.Popup_Controls_CATV.Close_Controls.Selected"
+        },
+        "7": {
+          "1": "Main_Page.Popup_Power.Visibility_fb",
+          "3": "Main_Page.Popup_Power.Shutdown_No.Selected",
+          "4": "Main_Page.Popup_Power.Shutdown_Yes.Selected"
+        },
+        "8": {
+          "1": "Main_Page.Sub_Controls_CATV_Keypad.Visibility_fb",
+          "3": "Main_Page.Sub_Controls_CATV_Keypad.Channel_Down.Selected",
+          "4": "Main_Page.Sub_Controls_CATV_Keypad.Channel_Up.Selected"
+        },
+        "10": {
+          "1": "Main_Page.Sub_Controls_CATV_Guide.Visibility_fb",
+          "3": "Main_Page.Sub_Controls_CATV_Guide.Back.Selected",
+          "4": "Main_Page.Sub_Controls_CATV_Guide.Channel_Down.Selected",
+          "5": "Main_Page.Sub_Controls_CATV_Guide.Channel_Up.Selected",
+          "6": "Main_Page.Sub_Controls_CATV_Guide.Guide.Selected",
+          "7": "Main_Page.Sub_Controls_CATV_Guide.Info.Selected",
+          "8": "Main_Page.Sub_Controls_CATV_Guide.Menu.Selected",
+          "9": "Main_Page.Sub_Controls_CATV_Guide.Page_Down.Selected",
+          "10": "Main_Page.Sub_Controls_CATV_Guide.Page_Up.Selected"
+        },
+        "12": {
+          "1": "Main_Page.Popup_Mics.Visibility_fb",
+          "3": "Main_Page.Popup_Mics.Close_Controls.Selected"
+        },
+        "13": {
+          "1": "Main_Page.Popup_Mics.Mic_Controls.List_Item1_Visible",
+          "2": "Main_Page.Popup_Mics.Mic_Controls.List_Item2_Visible",
+          "3": "Main_Page.Popup_Mics.Mic_Controls.List_Item3_Visible",
+          "4": "Main_Page.Popup_Mics.Mic_Controls.List_Item4_Visible",
+          "5": "Main_Page.Popup_Mics.Mic_Controls.List_Item5_Visible",
+          "6": "Main_Page.Popup_Mics.Mic_Controls.List_Item6_Visible",
+          "7": "Main_Page.Popup_Mics.Mic_Controls.List_Item7_Visible",
+          "8": "Main_Page.Popup_Mics.Mic_Controls.List_Item8_Visible",
+          "9": "Main_Page.Popup_Mics.Mic_Controls.List_Item9_Visible",
+          "10": "Main_Page.Popup_Mics.Mic_Controls.List_Item10_Visible",
+          "611": "Main_Page.Popup_Mics.Mic_Controls.Items[0].WR_Audio_LevelCONTRACT.Mute.Selected",
+          "612": "Main_Page.Popup_Mics.Mic_Controls.Items[1].WR_Audio_LevelCONTRACT.Mute.Selected",
+          "613": "Main_Page.Popup_Mics.Mic_Controls.Items[2].WR_Audio_LevelCONTRACT.Mute.Selected",
+          "614": "Main_Page.Popup_Mics.Mic_Controls.Items[3].WR_Audio_LevelCONTRACT.Mute.Selected",
+          "615": "Main_Page.Popup_Mics.Mic_Controls.Items[4].WR_Audio_LevelCONTRACT.Mute.Selected",
+          "616": "Main_Page.Popup_Mics.Mic_Controls.Items[5].WR_Audio_LevelCONTRACT.Mute.Selected",
+          "617": "Main_Page.Popup_Mics.Mic_Controls.Items[6].WR_Audio_LevelCONTRACT.Mute.Selected",
+          "618": "Main_Page.Popup_Mics.Mic_Controls.Items[7].WR_Audio_LevelCONTRACT.Mute.Selected",
+          "619": "Main_Page.Popup_Mics.Mic_Controls.Items[8].WR_Audio_LevelCONTRACT.Mute.Selected",
+          "620": "Main_Page.Popup_Mics.Mic_Controls.Items[9].WR_Audio_LevelCONTRACT.Mute.Selected"
+        },
+        "14": {
+          "1": "Main_Page.Sub_Controls_CATV_Fav.Visibility_fb",
+          "3": "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav1.Selected",
+          "4": "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav2.Selected",
+          "5": "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav3.Selected",
+          "6": "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav4.Selected",
+          "7": "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav5.Selected",
+          "8": "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav6.Selected",
+          "9": "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav7.Selected",
+          "10": "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav8.Selected"
+        },
+        "15": {
+          "1": "Main_Page.Popup_Controls_AppleTV.Visibility_fb",
+          "3": "Main_Page.Popup_Controls_AppleTV.Back.Selected",
+          "4": "Main_Page.Popup_Controls_AppleTV.Close_Controls.Selected",
+          "5": "Main_Page.Popup_Controls_AppleTV.Mute.Selected",
+          "6": "Main_Page.Popup_Controls_AppleTV.Play_Pause.Selected",
+          "7": "Main_Page.Popup_Controls_AppleTV.Play_Pause1.Selected",
+          "8": "Main_Page.Popup_Controls_AppleTV.Play_Pause2.Selected",
+          "9": "Main_Page.Popup_Controls_AppleTV.TV_Home.Selected",
+          "10": "Main_Page.Popup_Controls_AppleTV.Volume_Down.Selected",
+          "11": "Main_Page.Popup_Controls_AppleTV.Volume_Up.Selected"
+        }
+      },
+      "numeric": {
+        "1": {
+          "4": "Components.Presen_Vol_Level.LowerTouchfb"
+        },
+        "5": {
+          "4": "Main_Page.Presen_Vol_Level.LowerTouchfb",
+          "5": "Main_Page.Speech_Vol_Level.LowerTouchfb"
+        },
+        "13": {
+          "1801": "Main_Page.Popup_Mics.Mic_Controls.Items[0].WR_Audio_LevelCONTRACT.Level.LowerTouchfb",
+          "1802": "Main_Page.Popup_Mics.Mic_Controls.Items[1].WR_Audio_LevelCONTRACT.Level.LowerTouchfb",
+          "1803": "Main_Page.Popup_Mics.Mic_Controls.Items[2].WR_Audio_LevelCONTRACT.Level.LowerTouchfb",
+          "1804": "Main_Page.Popup_Mics.Mic_Controls.Items[3].WR_Audio_LevelCONTRACT.Level.LowerTouchfb",
+          "1805": "Main_Page.Popup_Mics.Mic_Controls.Items[4].WR_Audio_LevelCONTRACT.Level.LowerTouchfb",
+          "1806": "Main_Page.Popup_Mics.Mic_Controls.Items[5].WR_Audio_LevelCONTRACT.Level.LowerTouchfb",
+          "1807": "Main_Page.Popup_Mics.Mic_Controls.Items[6].WR_Audio_LevelCONTRACT.Level.LowerTouchfb",
+          "1808": "Main_Page.Popup_Mics.Mic_Controls.Items[7].WR_Audio_LevelCONTRACT.Level.LowerTouchfb",
+          "1809": "Main_Page.Popup_Mics.Mic_Controls.Items[8].WR_Audio_LevelCONTRACT.Level.LowerTouchfb",
+          "1810": "Main_Page.Popup_Mics.Mic_Controls.Items[9].WR_Audio_LevelCONTRACT.Level.LowerTouchfb"
+        }
+      },
+      "string": {
+        "13": {
+          "1": "Main_Page.Popup_Mics.Mic_Controls.Items[0].WR_Audio_LevelCONTRACT.Label.Indirect",
+          "2": "Main_Page.Popup_Mics.Mic_Controls.Items[1].WR_Audio_LevelCONTRACT.Label.Indirect",
+          "3": "Main_Page.Popup_Mics.Mic_Controls.Items[2].WR_Audio_LevelCONTRACT.Label.Indirect",
+          "4": "Main_Page.Popup_Mics.Mic_Controls.Items[3].WR_Audio_LevelCONTRACT.Label.Indirect",
+          "5": "Main_Page.Popup_Mics.Mic_Controls.Items[4].WR_Audio_LevelCONTRACT.Label.Indirect",
+          "6": "Main_Page.Popup_Mics.Mic_Controls.Items[5].WR_Audio_LevelCONTRACT.Label.Indirect",
+          "7": "Main_Page.Popup_Mics.Mic_Controls.Items[6].WR_Audio_LevelCONTRACT.Label.Indirect",
+          "8": "Main_Page.Popup_Mics.Mic_Controls.Items[7].WR_Audio_LevelCONTRACT.Label.Indirect",
+          "9": "Main_Page.Popup_Mics.Mic_Controls.Items[8].WR_Audio_LevelCONTRACT.Label.Indirect",
+          "10": "Main_Page.Popup_Mics.Mic_Controls.Items[9].WR_Audio_LevelCONTRACT.Label.Indirect"
+        }
+      }
+    },
+    "events": {
+      "boolean": {
+        "Components.Button.Press": {
+          "joinId": 3,
+          "smartObjectId": 1
+        },
+        "Components.Source_Laptop.Press": {
+          "joinId": 4,
+          "smartObjectId": 1
+        },
+        "Components.Keypad.Press1": {
+          "joinId": 3,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.Press2": {
+          "joinId": 4,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.Press3": {
+          "joinId": 5,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.Press4": {
+          "joinId": 6,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.Press5": {
+          "joinId": 7,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.Press6": {
+          "joinId": 8,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.Press7": {
+          "joinId": 9,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.Press8": {
+          "joinId": 10,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.Press9": {
+          "joinId": 11,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.Press0": {
+          "joinId": 12,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.PressStar": {
+          "joinId": 13,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.PressHash": {
+          "joinId": 14,
+          "smartObjectId": 2
+        },
+        "Components.Keypad.PressExtraButton": {
+          "joinId": 15,
+          "smartObjectId": 2
+        },
+        "Main_Page.Lights_Call.Press": {
+          "joinId": 3,
+          "smartObjectId": 5
+        },
+        "Main_Page.Lights_Lower.Press": {
+          "joinId": 4,
+          "smartObjectId": 5
+        },
+        "Main_Page.Lights_Present.Press": {
+          "joinId": 5,
+          "smartObjectId": 5
+        },
+        "Main_Page.Lights_Raise.Press": {
+          "joinId": 6,
+          "smartObjectId": 5
+        },
+        "Main_Page.Menu_Mics.Press": {
+          "joinId": 7,
+          "smartObjectId": 5
+        },
+        "Main_Page.Menu_Power.Press": {
+          "joinId": 8,
+          "smartObjectId": 5
+        },
+        "Main_Page.Presen_Vol_Mute_Tog.Press": {
+          "joinId": 9,
+          "smartObjectId": 5
+        },
+        "Main_Page.Shades_Close.Press": {
+          "joinId": 10,
+          "smartObjectId": 5
+        },
+        "Main_Page.Shades_Lower.Press": {
+          "joinId": 11,
+          "smartObjectId": 5
+        },
+        "Main_Page.Shades_Open.Press": {
+          "joinId": 12,
+          "smartObjectId": 5
+        },
+        "Main_Page.Shades_Raise.Press": {
+          "joinId": 13,
+          "smartObjectId": 5
+        },
+        "Main_Page.Source_AppleTV.Press": {
+          "joinId": 14,
+          "smartObjectId": 5
+        },
+        "Main_Page.Source_CATV.Press": {
+          "joinId": 15,
+          "smartObjectId": 5
+        },
+        "Main_Page.Source_Laptop.Press": {
+          "joinId": 16,
+          "smartObjectId": 5
+        },
+        "Main_Page.Source_PC.Press": {
+          "joinId": 17,
+          "smartObjectId": 5
+        },
+        "Main_Page.Speech_Vol_Mute_Tog.Press": {
+          "joinId": 18,
+          "smartObjectId": 5
+        },
+        "Main_Page.Popup_Controls_CATV.CATV_Menu_Fav.Press": {
+          "joinId": 2,
+          "smartObjectId": 6
+        },
+        "Main_Page.Popup_Controls_CATV.CATV_Menu_Guide.Press": {
+          "joinId": 3,
+          "smartObjectId": 6
+        },
+        "Main_Page.Popup_Controls_CATV.CATV_Menu_Keypad.Press": {
+          "joinId": 4,
+          "smartObjectId": 6
+        },
+        "Main_Page.Popup_Controls_CATV.Close_Controls.Press": {
+          "joinId": 5,
+          "smartObjectId": 6
+        },
+        "Main_Page.Popup_Power.Shutdown_No.Press": {
+          "joinId": 2,
+          "smartObjectId": 7
+        },
+        "Main_Page.Popup_Power.Shutdown_Yes.Press": {
+          "joinId": 3,
+          "smartObjectId": 7
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Channel_Down.Press": {
+          "joinId": 2,
+          "smartObjectId": 8
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Channel_Up.Press": {
+          "joinId": 3,
+          "smartObjectId": 8
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.Press1": {
+          "joinId": 3,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.Press2": {
+          "joinId": 4,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.Press3": {
+          "joinId": 5,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.Press4": {
+          "joinId": 6,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.Press5": {
+          "joinId": 7,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.Press6": {
+          "joinId": 8,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.Press7": {
+          "joinId": 9,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.Press8": {
+          "joinId": 10,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.Press9": {
+          "joinId": 11,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.Press0": {
+          "joinId": 12,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.PressStar": {
+          "joinId": 13,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.PressHash": {
+          "joinId": 14,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Keypad.Keypad.PressExtraButton": {
+          "joinId": 15,
+          "smartObjectId": 9
+        },
+        "Main_Page.Sub_Controls_CATV_Guide.Back.Press": {
+          "joinId": 2,
+          "smartObjectId": 10
+        },
+        "Main_Page.Sub_Controls_CATV_Guide.Channel_Down.Press": {
+          "joinId": 3,
+          "smartObjectId": 10
+        },
+        "Main_Page.Sub_Controls_CATV_Guide.Channel_Up.Press": {
+          "joinId": 4,
+          "smartObjectId": 10
+        },
+        "Main_Page.Sub_Controls_CATV_Guide.Guide.Press": {
+          "joinId": 5,
+          "smartObjectId": 10
+        },
+        "Main_Page.Sub_Controls_CATV_Guide.Info.Press": {
+          "joinId": 6,
+          "smartObjectId": 10
+        },
+        "Main_Page.Sub_Controls_CATV_Guide.Menu.Press": {
+          "joinId": 7,
+          "smartObjectId": 10
+        },
+        "Main_Page.Sub_Controls_CATV_Guide.Page_Down.Press": {
+          "joinId": 8,
+          "smartObjectId": 10
+        },
+        "Main_Page.Sub_Controls_CATV_Guide.Page_Up.Press": {
+          "joinId": 9,
+          "smartObjectId": 10
+        },
+        "Main_Page.Popup_Mics.Close_Controls.Press": {
+          "joinId": 2,
+          "smartObjectId": 12
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[0].WR_Audio_LevelCONTRACT.Mute.Press": {
+          "joinId": 1201,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[1].WR_Audio_LevelCONTRACT.Mute.Press": {
+          "joinId": 1202,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[2].WR_Audio_LevelCONTRACT.Mute.Press": {
+          "joinId": 1203,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[3].WR_Audio_LevelCONTRACT.Mute.Press": {
+          "joinId": 1204,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[4].WR_Audio_LevelCONTRACT.Mute.Press": {
+          "joinId": 1205,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[5].WR_Audio_LevelCONTRACT.Mute.Press": {
+          "joinId": 1206,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[6].WR_Audio_LevelCONTRACT.Mute.Press": {
+          "joinId": 1207,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[7].WR_Audio_LevelCONTRACT.Mute.Press": {
+          "joinId": 1208,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[8].WR_Audio_LevelCONTRACT.Mute.Press": {
+          "joinId": 1209,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[9].WR_Audio_LevelCONTRACT.Mute.Press": {
+          "joinId": 1210,
+          "smartObjectId": 13
+        },
+        "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav1.Press": {
+          "joinId": 2,
+          "smartObjectId": 14
+        },
+        "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav2.Press": {
+          "joinId": 3,
+          "smartObjectId": 14
+        },
+        "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav3.Press": {
+          "joinId": 4,
+          "smartObjectId": 14
+        },
+        "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav4.Press": {
+          "joinId": 5,
+          "smartObjectId": 14
+        },
+        "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav5.Press": {
+          "joinId": 6,
+          "smartObjectId": 14
+        },
+        "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav6.Press": {
+          "joinId": 7,
+          "smartObjectId": 14
+        },
+        "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav7.Press": {
+          "joinId": 8,
+          "smartObjectId": 14
+        },
+        "Main_Page.Sub_Controls_CATV_Fav.CATV_Fav8.Press": {
+          "joinId": 9,
+          "smartObjectId": 14
+        },
+        "Main_Page.Popup_Controls_AppleTV.Back.Press": {
+          "joinId": 2,
+          "smartObjectId": 15
+        },
+        "Main_Page.Popup_Controls_AppleTV.Close_Controls.Press": {
+          "joinId": 3,
+          "smartObjectId": 15
+        },
+        "Main_Page.Popup_Controls_AppleTV.Mute.Press": {
+          "joinId": 4,
+          "smartObjectId": 15
+        },
+        "Main_Page.Popup_Controls_AppleTV.Play_Pause.Press": {
+          "joinId": 5,
+          "smartObjectId": 15
+        },
+        "Main_Page.Popup_Controls_AppleTV.Play_Pause1.Press": {
+          "joinId": 6,
+          "smartObjectId": 15
+        },
+        "Main_Page.Popup_Controls_AppleTV.Play_Pause2.Press": {
+          "joinId": 7,
+          "smartObjectId": 15
+        },
+        "Main_Page.Popup_Controls_AppleTV.TV_Home.Press": {
+          "joinId": 8,
+          "smartObjectId": 15
+        },
+        "Main_Page.Popup_Controls_AppleTV.Volume_Down.Press": {
+          "joinId": 9,
+          "smartObjectId": 15
+        },
+        "Main_Page.Popup_Controls_AppleTV.Volume_Up.Press": {
+          "joinId": 10,
+          "smartObjectId": 15
+        }
+      },
+      "numeric": {
+        "Components.Presen_Vol_Level.LowerTouch": {
+          "joinId": 4,
+          "smartObjectId": 1
+        },
+        "Main_Page.Presen_Vol_Level.LowerTouch": {
+          "joinId": 4,
+          "smartObjectId": 5
+        },
+        "Main_Page.Speech_Vol_Level.LowerTouch": {
+          "joinId": 5,
+          "smartObjectId": 5
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[0].WR_Audio_LevelCONTRACT.Level.LowerTouch": {
+          "joinId": 1801,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[1].WR_Audio_LevelCONTRACT.Level.LowerTouch": {
+          "joinId": 1802,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[2].WR_Audio_LevelCONTRACT.Level.LowerTouch": {
+          "joinId": 1803,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[3].WR_Audio_LevelCONTRACT.Level.LowerTouch": {
+          "joinId": 1804,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[4].WR_Audio_LevelCONTRACT.Level.LowerTouch": {
+          "joinId": 1805,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[5].WR_Audio_LevelCONTRACT.Level.LowerTouch": {
+          "joinId": 1806,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[6].WR_Audio_LevelCONTRACT.Level.LowerTouch": {
+          "joinId": 1807,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[7].WR_Audio_LevelCONTRACT.Level.LowerTouch": {
+          "joinId": 1808,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[8].WR_Audio_LevelCONTRACT.Level.LowerTouch": {
+          "joinId": 1809,
+          "smartObjectId": 13
+        },
+        "Main_Page.Popup_Mics.Mic_Controls.Items[9].WR_Audio_LevelCONTRACT.Level.LowerTouch": {
+          "joinId": 1810,
+          "smartObjectId": 13
+        }
+      },
+      "string": {}
+    }
+  }
+}

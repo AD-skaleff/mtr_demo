@@ -1,0 +1,179 @@
+{
+  "projectName": "shell-template",
+  "projectType": "shell-template",
+  "forceDeviceXPanel": false,
+  "version": "0.0.1",
+  "faviconPath": "favicon.ico",
+  "menuOrientation": "none",
+  "selectedTheme": "light-theme.css",
+  "useWebXPanel": true,
+  "themes": [
+    {
+      "name": "light-theme.css",
+      "extends": "light-theme",
+      "brandLogo": {
+        "url": "./app/template/assets/img/ch5-logo-light.svg",
+        "alt": "Crestron Logo",
+        "receiveStateUrl": ""
+      },
+      "backgroundProperties": {
+        "backgroundColor": [
+          "blue"
+        ]
+      }
+    },
+    {
+      "name": "dark-theme.css",
+      "extends": "dark-theme",
+      "brandLogo": {
+        "url": "../app/template/assets/img/ch5-logo-dark.svg",
+        "alt": "Crestron Logo",
+        "receiveStateUrl": ""
+      },
+      "backgroundProperties": {
+        "backgroundColor": [
+          "#4d4d4d"
+        ]
+      }
+    }
+  ],
+  "config": {
+    "controlSystem": {
+      "ipId": "0x03"
+    }
+  },
+  "customSignals": {
+    "receiveStateTheme": "templateTheme",
+    "sendEventTheme": "templateTheme"
+  },
+  "header": {
+    "display": false,
+    "displayInfo": false,
+    "displayTheme": true,
+    "$component": "",
+    "diagnostics": {
+      "logs": {
+        "logAfterProjectLoad": true,
+        "receiveStateLogDiagnostics": "",
+        "logDiagnostics": "none"
+      }
+    }
+  },
+  "footer": {
+    "display": false,
+    "$component": ""
+  },
+  "content": {
+    "$defaultView": "mainpage",
+    "triggerViewProperties": {
+      "gestureable": false,
+      "disableAnimation": true
+    },
+    "pages": [
+      {
+        "pageName": "programming",
+        "fullPath": "./app/project/components/pages/programming/",
+        "fileName": "programming.html",
+        "standAloneView": false,
+        "cachePage": false,
+        "preloadPage": true,
+        "triggerViewChildProperties": {
+          "receiveStateShow": "0"
+        },
+        "navigation": {
+          "sequence": 9,
+          "label": "programming",
+          "isI18nLabel": true,
+          "iconClass": "",
+          "iconUrl": "",
+          "iconPosition": "bottom"
+        }
+      },
+      {
+        "pageName": "components",
+        "fullPath": "./app/project/components/pages/components/",
+        "fileName": "components.html",
+        "standAloneView": false,
+        "cachePage": false,
+        "preloadPage": true,
+        "triggerViewChildProperties": {
+          "receiveStateShow": "0"
+        },
+        "navigation": {
+          "sequence": 10,
+          "label": "components",
+          "isI18nLabel": true,
+          "iconClass": "",
+          "iconUrl": "",
+          "iconPosition": "bottom"
+        }
+      },
+      {
+        "pageName": "mainpage",
+        "fullPath": "./app/project/components/pages/mainpage/",
+        "fileName": "mainpage.html",
+        "standAloneView": false,
+        "cachePage": false,
+        "preloadPage": true,
+        "triggerViewChildProperties": {
+          "receiveStateShow": "0"
+        },
+        "navigation": {
+          "sequence": 11,
+          "label": "mainpage",
+          "isI18nLabel": true,
+          "iconClass": "",
+          "iconUrl": "",
+          "iconPosition": "bottom"
+        }
+      }
+    ],
+    "widgets": [
+      {
+        "widgetName": "popupcontrolsappletv",
+        "fullPath": "./app/project/components/widgets/popupcontrolsappletv/",
+        "fileName": "popupcontrolsappletv.html"
+      },
+      {
+        "widgetName": "subcontrolscatvfav",
+        "fullPath": "./app/project/components/widgets/subcontrolscatvfav/",
+        "fileName": "subcontrolscatvfav.html"
+      },
+      {
+        "widgetName": "popupmics",
+        "fullPath": "./app/project/components/widgets/popupmics/",
+        "fileName": "popupmics.html"
+      },
+      {
+        "widgetName": "subcontrolscatvguide",
+        "fullPath": "./app/project/components/widgets/subcontrolscatvguide/",
+        "fileName": "subcontrolscatvguide.html"
+      },
+      {
+        "widgetName": "wraudiolevel",
+        "fullPath": "./app/project/components/widgets/wraudiolevel/",
+        "fileName": "wraudiolevel.html"
+      },
+      {
+        "widgetName": "popuppower",
+        "fullPath": "./app/project/components/widgets/popuppower/",
+        "fileName": "popuppower.html"
+      },
+      {
+        "widgetName": "popupcontrolscatvmain",
+        "fullPath": "./app/project/components/widgets/popupcontrolscatvmain/",
+        "fileName": "popupcontrolscatvmain.html"
+      },
+      {
+        "widgetName": "subpage",
+        "fullPath": "./app/project/components/widgets/subpage/",
+        "fileName": "subpage.html"
+      },
+      {
+        "widgetName": "subcontrolscatvkeypad",
+        "fullPath": "./app/project/components/widgets/subcontrolscatvkeypad/",
+        "fileName": "subcontrolscatvkeypad.html"
+      }
+    ]
+  }
+}
