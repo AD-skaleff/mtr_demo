@@ -7,3 +7,33 @@ output/
 #Construct Project state
 .cse
 
+# Archives
+*_archive.zip
+*_compiled.zip
+
+# SIMPL Output files
+*.ASV
+*.arcv
+*.bin
+*.cdm
+*.lpz
+*.sig
+*.sm2
+*.smft
+*.spz
+*.um2
+*.hash
+
+# SmartGraphics files
+*.ced
+*.sgd
+*.sgd_
+*.sgd2
+*.bak
+
+# Project databases
+ProjDabs.ldb
+ProjDabs.mdb
+
+# SIMPL+ build
+SPlsWork/

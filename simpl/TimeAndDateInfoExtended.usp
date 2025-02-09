@@ -1,0 +1,75 @@
+
+digital_input Update_Time;
+digital_input Update_Date;
+analog_input  DateFormat;
+
+analog_output day_of_week;
+analog_output _month;
+analog_output _day;
+analog_output MonthDayWord;
+analog_output _year;
+analog_output hour;
+analog_output minute;
+analog_output second;
+
+string_output day_of_week$;
+string_output short_day_of_week$;
+string_output month$;
+string_output time$;
+string_output date$;
+string_output day$;
+string_output day_month_date$;
+
+function UpdateDateInfo()
+{
+   day_of_week = GetDayOfWeekNum();
+   
+   _month = GetMonthNum();
+   _day   = GetDateNum();
+   _year  = GetYearNum();
+   
+   day_of_week$ = day();
+   month$ = month();
+   date$ = date(DateFormat);
+   
+   switch (day_of_week)
+   {
+     case (0):
+       {short_day_of_week$ = "Sun";}
+     case (1):
+       {short_day_of_week$ = "Mon";}
+     case (2):
+       {short_day_of_week$ = "Tue";}
+    case (3):
+       {short_day_of_week$ = "Wed";}
+     case (4):
+       {short_day_of_week$ = "Thu";}
+     case (5):
+       {short_day_of_week$ = "Fri";}
+     case (6):
+       {short_day_of_week$ = "Sat";}
+   }
+   
+   MonthDayWord = _month * 256 + _day;
+   makestring(day_month_date$,"%s, %s %s",day(),month(),itoa(GetDateNum()));
+   
+}
+
+push Update_Date
+{
+  call UpdateDateInfo();
+}
+
+push Update_Time
+{
+   hour   = GetHourNum();
+   minute = GetMinutesNum();
+   second = GetSecondsNum();
+   time$ = time();   
+}
+
+
+function main()
+{
+   call UpdateDateInfo();
+}
