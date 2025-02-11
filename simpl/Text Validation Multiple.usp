@@ -1,0 +1,71 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Dealer Name:Delicate Electronics Sales
+System Name:
+System Number:
+Programmer:TMC
+Comments:
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+  (Uncomment and declare compiler directives as needed)
+*******************************************************************************************/
+#SYMBOL_NAME "Text Validation Multiple"
+// #HINT ""
+// #DEFINE_CONSTANT
+// #CATEGORY "" 
+// #DEFAULT_VOLATILE
+// #DIGITAL_EXPAND 
+// #ANALOG_SERIAL_EXPAND 
+// #OUTPUT_SHIFT 
+#DEFAULT_NONVOLATILE
+#ANALOG_SERIAL_EXPAND AllWithAny
+#DIGITAL_EXPAND AllWithAny
+
+// ANALOG_INPUT 
+STRING_INPUT Text$[50][20];
+// BUFFER_INPUT 
+
+DIGITAL_OUTPUT Text_Valid[20];
+// ANALOG_OUTPUT 
+
+INTEGER X;
+
+
+
+CHANGE Text$
+{
+  IF (IsSignalDefined(Text$[GetLastModifiedArrayIndex()]))
+  {	
+	IF (Len(Text$[GetLastModifiedArrayIndex()]))
+	{
+
+		Text_Valid[GetLastModifiedArrayIndex()] = 1;
+	}
+	Else
+	{
+		Text_Valid[GetLastModifiedArrayIndex()] = 0;
+	}
+  }
+}
+
+
+
+Function Main()
+{
+    // TODO:  Add code here
+    // Initialize declared global and local variables/arrays as needed.
+
+    WaitForInitializationComplete();
+    // If you are reading any Input or Output variables, uncomment
+    //   the WaitForInitializationComplete statement above and read
+    //   them afterwards.  Input/Output variables will not have
+    //   their correct values set until after the logic processor
+    //   runs and propagates the values to them.
+}
+
+

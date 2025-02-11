@@ -33,9 +33,9 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
     {
 
         /// <summary>
-        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Press (from panel to Control System)
+        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Press (from panel to Control System)
         /// </summary>
-        event EventHandler<ItemEventArgs> advRouteDestBtn2_PressEvent;
+        event EventHandler<ItemEventArgs> advDestBtn_PressEvent;
 
         /// <summary>
         /// home.popUpAdvRouting.popUpAdvRouteDest.List_Item1_Visible Feedback
@@ -52,32 +52,32 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
         void List_Item_Visible(ushort listItemIndex, bool digital);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="itemIndex">Index of the Widget List (0 based).</param>
         /// <param name="callback">The bool delegate to update the panel.</param>
-        void advRouteDestBtn2_Selected(ushort itemIndex, popUpAdvRouteDestBoolInputSigDelegate callback);
+        void advDestBtn_Selected(ushort itemIndex, popUpAdvRouteDestBoolInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="itemIndex">Index of the Widget List (0 based).</param>
         /// <param name="digital">The bool value to send to the panel.</param>
-        void advRouteDestBtn2_Selected(ushort itemIndex, bool digital);
+        void advDestBtn_Selected(ushort itemIndex, bool digital);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="itemIndex">Index of the Widget List (0 based).</param>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void advRouteDestBtn2_IndirectRichText(ushort itemIndex, popUpAdvRouteDestStringInputSigDelegate callback);
+        void advDestBtn_IndirectRichText(ushort itemIndex, popUpAdvRouteDestStringInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="itemIndex">Index of the Widget List (0 based).</param>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void advRouteDestBtn2_IndirectRichText(ushort itemIndex, string serial);
+        void advDestBtn_IndirectRichText(ushort itemIndex, string serial);
     }
 
 
@@ -88,27 +88,27 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
     {
         #region CH5 Contract
         /// <inheritdoc/>
-        public event EventHandler<ItemEventArgs> advRouteDestBtn2_PressEvent;
-        private void onadvRouteDestBtn2_Press(IndexedEventArgs eventArgs)
+        public event EventHandler<ItemEventArgs> advDestBtn_PressEvent;
+        private void onadvDestBtn_Press(IndexedEventArgs eventArgs)
         {
-            EventHandler<ItemEventArgs> handler = advRouteDestBtn2_PressEvent;
+            EventHandler<ItemEventArgs> handler = advDestBtn_PressEvent;
             if (handler != null)
                 handler(this, new ItemEventArgs((SmartObjectEventArgs)eventArgs.SigArgs, eventArgs.ItemIndex));
         }
 
         /// <inheritdoc/>
-        public void advRouteDestBtn2_Selected(ushort itemIndex, popUpAdvRouteDestBoolInputSigDelegate callback)
+        public void advDestBtn_Selected(ushort itemIndex, popUpAdvRouteDestBoolInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_0__advRouteDestBtn2_SelectedState + (uint) itemIndex], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_0__advDestBtn_SelectedState + (uint) itemIndex], this);
             }
         }
 
         /// <inheritdoc/>
-        public void advRouteDestBtn2_Selected(ushort itemIndex, bool digital)
+        public void advDestBtn_Selected(ushort itemIndex, bool digital)
         {
-            advRouteDestBtn2_Selected(itemIndex, (sig, component) => sig.BoolValue = digital);
+            advDestBtn_Selected(itemIndex, (sig, component) => sig.BoolValue = digital);
         }
         /// <inheritdoc/>
         public void List_Item_Visible(ushort listItemIndex, popUpAdvRouteDestBoolInputSigDelegate callback)
@@ -127,18 +127,18 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
 
 
         /// <inheritdoc/>
-        public void advRouteDestBtn2_IndirectRichText(ushort itemIndex, popUpAdvRouteDestStringInputSigDelegate callback)
+        public void advDestBtn_IndirectRichText(ushort itemIndex, popUpAdvRouteDestStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__advRouteDestBtn2_IndirectRichTextState + (uint) itemIndex * 1], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__advDestBtn_IndirectRichTextState + (uint) itemIndex * 1], this);
             }
         }
 
         /// <inheritdoc/>
-        public void advRouteDestBtn2_IndirectRichText(ushort itemIndex, string serial)
+        public void advDestBtn_IndirectRichText(ushort itemIndex, string serial)
         {
-            advRouteDestBtn2_IndirectRichText(itemIndex, (sig, component) => sig.StringValue = serial);
+            advDestBtn_IndirectRichText(itemIndex, (sig, component) => sig.StringValue = serial);
         }
 
         #endregion
@@ -152,34 +152,34 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
         object UserObject { get; set; }
 
         /// <summary>
-        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Press (from panel to Control System)
+        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Press (from panel to Control System)
         /// </summary>
-        event EventHandler<UIEventArgs> Items_0__advRouteDestBtn2_PressEvent;
+        event EventHandler<UIEventArgs> Items_0__advDestBtn_PressEvent;
 
         /// <summary>
-        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advRouteDestBtn2.Press (from panel to Control System)
+        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advDestBtn.Press (from panel to Control System)
         /// </summary>
-        event EventHandler<UIEventArgs> Items_1__advRouteDestBtn2_PressEvent;
+        event EventHandler<UIEventArgs> Items_1__advDestBtn_PressEvent;
 
         /// <summary>
-        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advRouteDestBtn2.Press (from panel to Control System)
+        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advDestBtn.Press (from panel to Control System)
         /// </summary>
-        event EventHandler<UIEventArgs> Items_2__advRouteDestBtn2_PressEvent;
+        event EventHandler<UIEventArgs> Items_2__advDestBtn_PressEvent;
 
         /// <summary>
-        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advRouteDestBtn2.Press (from panel to Control System)
+        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advDestBtn.Press (from panel to Control System)
         /// </summary>
-        event EventHandler<UIEventArgs> Items_3__advRouteDestBtn2_PressEvent;
+        event EventHandler<UIEventArgs> Items_3__advDestBtn_PressEvent;
 
         /// <summary>
-        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advRouteDestBtn2.Press (from panel to Control System)
+        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advDestBtn.Press (from panel to Control System)
         /// </summary>
-        event EventHandler<UIEventArgs> Items_4__advRouteDestBtn2_PressEvent;
+        event EventHandler<UIEventArgs> Items_4__advDestBtn_PressEvent;
 
         /// <summary>
-        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advRouteDestBtn2.Press (from panel to Control System)
+        /// Event home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advDestBtn.Press (from panel to Control System)
         /// </summary>
-        event EventHandler<UIEventArgs> Items_5__advRouteDestBtn2_PressEvent;
+        event EventHandler<UIEventArgs> Items_5__advDestBtn_PressEvent;
 
         /// <summary>
         /// home.popUpAdvRouting.popUpAdvRouteDest.List_Item1_Visible Feedback
@@ -254,148 +254,148 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
         void popUpAdvRouteDest_List_Item6_Visible(bool digital);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
-        void Items_0__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
+        void Items_0__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
-        void Items_0__advRouteDestBtn2_Selected(bool digital);
+        void Items_0__advDestBtn_Selected(bool digital);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
-        void Items_1__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
+        void Items_1__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
-        void Items_1__advRouteDestBtn2_Selected(bool digital);
+        void Items_1__advDestBtn_Selected(bool digital);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
-        void Items_2__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
+        void Items_2__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
-        void Items_2__advRouteDestBtn2_Selected(bool digital);
+        void Items_2__advDestBtn_Selected(bool digital);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
-        void Items_3__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
+        void Items_3__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
-        void Items_3__advRouteDestBtn2_Selected(bool digital);
+        void Items_3__advDestBtn_Selected(bool digital);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
-        void Items_4__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
+        void Items_4__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
-        void Items_4__advRouteDestBtn2_Selected(bool digital);
+        void Items_4__advDestBtn_Selected(bool digital);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
-        void Items_5__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
+        void Items_5__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advRouteDestBtn2.Selected Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advDestBtn.Selected Feedback
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
-        void Items_5__advRouteDestBtn2_Selected(bool digital);
+        void Items_5__advDestBtn_Selected(bool digital);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_0__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
+        void Items_0__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_0__advRouteDestBtn2_IndirectRichText(string serial);
+        void Items_0__advDestBtn_IndirectRichText(string serial);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_1__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
+        void Items_1__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_1__advRouteDestBtn2_IndirectRichText(string serial);
+        void Items_1__advDestBtn_IndirectRichText(string serial);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_2__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
+        void Items_2__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_2__advRouteDestBtn2_IndirectRichText(string serial);
+        void Items_2__advDestBtn_IndirectRichText(string serial);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_3__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
+        void Items_3__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_3__advRouteDestBtn2_IndirectRichText(string serial);
+        void Items_3__advDestBtn_IndirectRichText(string serial);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_4__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
+        void Items_4__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_4__advRouteDestBtn2_IndirectRichText(string serial);
+        void Items_4__advDestBtn_IndirectRichText(string serial);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_5__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
+        void Items_5__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback);
 
         /// <summary>
-        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advRouteDestBtn2.Indirect Rich Text Feedback
+        /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advDestBtn.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_5__advRouteDestBtn2_IndirectRichText(string serial);
+        void Items_5__advDestBtn_IndirectRichText(string serial);
     }
 
     /// <summary>
@@ -450,40 +450,40 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
             internal static class Booleans
             {
                 /// <summary>
-                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDest2CONTRACT.advRouteDestBtn2.Press
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Press
+                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.Press
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Press
                 /// </summary>
-                public const uint Items_0__advRouteDestBtn2_PressEvent = 1201;
+                public const uint Items_0__advDestBtn_PressEvent = 1201;
 
                 /// <summary>
-                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDest2CONTRACT.advRouteDestBtn2.Press
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advRouteDestBtn2.Press
+                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.Press
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advDestBtn.Press
                 /// </summary>
-                public const uint Items_1__advRouteDestBtn2_PressEvent = 1202;
+                public const uint Items_1__advDestBtn_PressEvent = 1202;
 
                 /// <summary>
-                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDest2CONTRACT.advRouteDestBtn2.Press
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advRouteDestBtn2.Press
+                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.Press
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advDestBtn.Press
                 /// </summary>
-                public const uint Items_2__advRouteDestBtn2_PressEvent = 1203;
+                public const uint Items_2__advDestBtn_PressEvent = 1203;
 
                 /// <summary>
-                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDest2CONTRACT.advRouteDestBtn2.Press
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advRouteDestBtn2.Press
+                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.Press
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advDestBtn.Press
                 /// </summary>
-                public const uint Items_3__advRouteDestBtn2_PressEvent = 1204;
+                public const uint Items_3__advDestBtn_PressEvent = 1204;
 
                 /// <summary>
-                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDest2CONTRACT.advRouteDestBtn2.Press
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advRouteDestBtn2.Press
+                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.Press
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advDestBtn.Press
                 /// </summary>
-                public const uint Items_4__advRouteDestBtn2_PressEvent = 1205;
+                public const uint Items_4__advDestBtn_PressEvent = 1205;
 
                 /// <summary>
-                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDest2CONTRACT.advRouteDestBtn2.Press
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advRouteDestBtn2.Press
+                /// Output or Event digital joinInfo from panel to Control System: home.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.Press
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advDestBtn.Press
                 /// </summary>
-                public const uint Items_5__advRouteDestBtn2_PressEvent = 1206;
+                public const uint Items_5__advDestBtn_PressEvent = 1206;
 
 
                 /// <summary>
@@ -523,40 +523,40 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
                 public const uint popUpAdvRouteDest_List_Item6_VisibleState = 6;
 
                 /// <summary>
-                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDest2CONTRACT.advRouteDestBtn2.Selected
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Selected
+                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.Selected
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Selected
                 /// </summary>
-                public const uint Items_0__advRouteDestBtn2_SelectedState = 607;
+                public const uint Items_0__advDestBtn_SelectedState = 607;
 
                 /// <summary>
-                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDest2CONTRACT.advRouteDestBtn2.Selected
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advRouteDestBtn2.Selected
+                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.Selected
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advDestBtn.Selected
                 /// </summary>
-                public const uint Items_1__advRouteDestBtn2_SelectedState = 608;
+                public const uint Items_1__advDestBtn_SelectedState = 608;
 
                 /// <summary>
-                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDest2CONTRACT.advRouteDestBtn2.Selected
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advRouteDestBtn2.Selected
+                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.Selected
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advDestBtn.Selected
                 /// </summary>
-                public const uint Items_2__advRouteDestBtn2_SelectedState = 609;
+                public const uint Items_2__advDestBtn_SelectedState = 609;
 
                 /// <summary>
-                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDest2CONTRACT.advRouteDestBtn2.Selected
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advRouteDestBtn2.Selected
+                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.Selected
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advDestBtn.Selected
                 /// </summary>
-                public const uint Items_3__advRouteDestBtn2_SelectedState = 610;
+                public const uint Items_3__advDestBtn_SelectedState = 610;
 
                 /// <summary>
-                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDest2CONTRACT.advRouteDestBtn2.Selected
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advRouteDestBtn2.Selected
+                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.Selected
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advDestBtn.Selected
                 /// </summary>
-                public const uint Items_4__advRouteDestBtn2_SelectedState = 611;
+                public const uint Items_4__advDestBtn_SelectedState = 611;
 
                 /// <summary>
-                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDest2CONTRACT.advRouteDestBtn2.Selected
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advRouteDestBtn2.Selected
+                /// Input or Feedback digital joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.Selected
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advDestBtn.Selected
                 /// </summary>
-                public const uint Items_5__advRouteDestBtn2_SelectedState = 612;
+                public const uint Items_5__advDestBtn_SelectedState = 612;
 
             }
             /// <summary>
@@ -566,35 +566,35 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
             {
 
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDest2CONTRACT.advRouteDestBtn2.IndirectRichText
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advRouteDestBtn2.Indirect Rich Text
+                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.IndirectRichText
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[0].advDestBtn.Indirect Rich Text
                 /// </summary>
-                public const uint Items_0__advRouteDestBtn2_IndirectRichTextState = 1;
+                public const uint Items_0__advDestBtn_IndirectRichTextState = 1;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDest2CONTRACT.advRouteDestBtn2.IndirectRichText
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advRouteDestBtn2.Indirect Rich Text
+                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.IndirectRichText
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[1].advDestBtn.Indirect Rich Text
                 /// </summary>
-                public const uint Items_1__advRouteDestBtn2_IndirectRichTextState = 2;
+                public const uint Items_1__advDestBtn_IndirectRichTextState = 2;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDest2CONTRACT.advRouteDestBtn2.IndirectRichText
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advRouteDestBtn2.Indirect Rich Text
+                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.IndirectRichText
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[2].advDestBtn.Indirect Rich Text
                 /// </summary>
-                public const uint Items_2__advRouteDestBtn2_IndirectRichTextState = 3;
+                public const uint Items_2__advDestBtn_IndirectRichTextState = 3;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDest2CONTRACT.advRouteDestBtn2.IndirectRichText
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advRouteDestBtn2.Indirect Rich Text
+                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.IndirectRichText
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[3].advDestBtn.Indirect Rich Text
                 /// </summary>
-                public const uint Items_3__advRouteDestBtn2_IndirectRichTextState = 4;
+                public const uint Items_3__advDestBtn_IndirectRichTextState = 4;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDest2CONTRACT.advRouteDestBtn2.IndirectRichText
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advRouteDestBtn2.Indirect Rich Text
+                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.IndirectRichText
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[4].advDestBtn.Indirect Rich Text
                 /// </summary>
-                public const uint Items_4__advRouteDestBtn2_IndirectRichTextState = 5;
+                public const uint Items_4__advDestBtn_IndirectRichTextState = 5;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDest2CONTRACT.advRouteDestBtn2.IndirectRichText
-                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advRouteDestBtn2.Indirect Rich Text
+                /// Input or Feedback serial joinInfo from Control System to panel: home.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.IndirectRichText
+                /// home.popUpAdvRouting.popUpAdvRouteDest.Items[5].advDestBtn.Indirect Rich Text
                 /// </summary>
-                public const uint Items_5__advRouteDestBtn2_IndirectRichTextState = 6;
+                public const uint Items_5__advDestBtn_IndirectRichTextState = 6;
             }
         }
 
@@ -645,20 +645,20 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
  
             _devices = new List<BasicTriListWithSmartObject>(); 
  
-            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_0__advRouteDestBtn2_PressEvent.ToString(), new Indexes(0, (ushort)Joins.Booleans.Items_0__advRouteDestBtn2_PressEvent, false));
-            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_1__advRouteDestBtn2_PressEvent.ToString(), new Indexes(1, (ushort)Joins.Booleans.Items_0__advRouteDestBtn2_PressEvent, false));
-            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_2__advRouteDestBtn2_PressEvent.ToString(), new Indexes(2, (ushort)Joins.Booleans.Items_0__advRouteDestBtn2_PressEvent, false));
-            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_3__advRouteDestBtn2_PressEvent.ToString(), new Indexes(3, (ushort)Joins.Booleans.Items_0__advRouteDestBtn2_PressEvent, false));
-            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_4__advRouteDestBtn2_PressEvent.ToString(), new Indexes(4, (ushort)Joins.Booleans.Items_0__advRouteDestBtn2_PressEvent, false));
-            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_5__advRouteDestBtn2_PressEvent.ToString(), new Indexes(5, (ushort)Joins.Booleans.Items_0__advRouteDestBtn2_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_0__advDestBtn_PressEvent.ToString(), new Indexes(0, (ushort)Joins.Booleans.Items_0__advDestBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_1__advDestBtn_PressEvent.ToString(), new Indexes(1, (ushort)Joins.Booleans.Items_0__advDestBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_2__advDestBtn_PressEvent.ToString(), new Indexes(2, (ushort)Joins.Booleans.Items_0__advDestBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_3__advDestBtn_PressEvent.ToString(), new Indexes(3, (ushort)Joins.Booleans.Items_0__advDestBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_4__advDestBtn_PressEvent.ToString(), new Indexes(4, (ushort)Joins.Booleans.Items_0__advDestBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_5__advDestBtn_PressEvent.ToString(), new Indexes(5, (ushort)Joins.Booleans.Items_0__advDestBtn_PressEvent, false));
 
-            ComponentMediator.ConfigureBooleanItemEvent(controlJoinId, Joins.Booleans.Items_0__advRouteDestBtn2_PressEvent, GetIndexes, onadvRouteDestBtn2_Press);
-            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_0__advRouteDestBtn2_PressEvent, onItems_0__advRouteDestBtn2_Press);
-            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_1__advRouteDestBtn2_PressEvent, onItems_1__advRouteDestBtn2_Press);
-            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_2__advRouteDestBtn2_PressEvent, onItems_2__advRouteDestBtn2_Press);
-            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_3__advRouteDestBtn2_PressEvent, onItems_3__advRouteDestBtn2_Press);
-            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_4__advRouteDestBtn2_PressEvent, onItems_4__advRouteDestBtn2_Press);
-            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_5__advRouteDestBtn2_PressEvent, onItems_5__advRouteDestBtn2_Press);
+            ComponentMediator.ConfigureBooleanItemEvent(controlJoinId, Joins.Booleans.Items_0__advDestBtn_PressEvent, GetIndexes, onadvDestBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_0__advDestBtn_PressEvent, onItems_0__advDestBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_1__advDestBtn_PressEvent, onItems_1__advDestBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_2__advDestBtn_PressEvent, onItems_2__advDestBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_3__advDestBtn_PressEvent, onItems_3__advDestBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_4__advDestBtn_PressEvent, onItems_4__advDestBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_5__advDestBtn_PressEvent, onItems_5__advDestBtn_Press);
         }
 
         /// <summary>
@@ -695,142 +695,142 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
         #region CH5 Contract
 
         /// <inheritdoc/>
-        public event EventHandler<UIEventArgs> Items_0__advRouteDestBtn2_PressEvent;
-        private void onItems_0__advRouteDestBtn2_Press(SmartObjectEventArgs eventArgs)
+        public event EventHandler<UIEventArgs> Items_0__advDestBtn_PressEvent;
+        private void onItems_0__advDestBtn_Press(SmartObjectEventArgs eventArgs)
         {
-            EventHandler<UIEventArgs> handler = Items_0__advRouteDestBtn2_PressEvent;
+            EventHandler<UIEventArgs> handler = Items_0__advDestBtn_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
 
         /// <inheritdoc/>
-        public event EventHandler<UIEventArgs> Items_1__advRouteDestBtn2_PressEvent;
-        private void onItems_1__advRouteDestBtn2_Press(SmartObjectEventArgs eventArgs)
+        public event EventHandler<UIEventArgs> Items_1__advDestBtn_PressEvent;
+        private void onItems_1__advDestBtn_Press(SmartObjectEventArgs eventArgs)
         {
-            EventHandler<UIEventArgs> handler = Items_1__advRouteDestBtn2_PressEvent;
+            EventHandler<UIEventArgs> handler = Items_1__advDestBtn_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
 
         /// <inheritdoc/>
-        public event EventHandler<UIEventArgs> Items_2__advRouteDestBtn2_PressEvent;
-        private void onItems_2__advRouteDestBtn2_Press(SmartObjectEventArgs eventArgs)
+        public event EventHandler<UIEventArgs> Items_2__advDestBtn_PressEvent;
+        private void onItems_2__advDestBtn_Press(SmartObjectEventArgs eventArgs)
         {
-            EventHandler<UIEventArgs> handler = Items_2__advRouteDestBtn2_PressEvent;
+            EventHandler<UIEventArgs> handler = Items_2__advDestBtn_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
 
         /// <inheritdoc/>
-        public event EventHandler<UIEventArgs> Items_3__advRouteDestBtn2_PressEvent;
-        private void onItems_3__advRouteDestBtn2_Press(SmartObjectEventArgs eventArgs)
+        public event EventHandler<UIEventArgs> Items_3__advDestBtn_PressEvent;
+        private void onItems_3__advDestBtn_Press(SmartObjectEventArgs eventArgs)
         {
-            EventHandler<UIEventArgs> handler = Items_3__advRouteDestBtn2_PressEvent;
+            EventHandler<UIEventArgs> handler = Items_3__advDestBtn_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
 
         /// <inheritdoc/>
-        public event EventHandler<UIEventArgs> Items_4__advRouteDestBtn2_PressEvent;
-        private void onItems_4__advRouteDestBtn2_Press(SmartObjectEventArgs eventArgs)
+        public event EventHandler<UIEventArgs> Items_4__advDestBtn_PressEvent;
+        private void onItems_4__advDestBtn_Press(SmartObjectEventArgs eventArgs)
         {
-            EventHandler<UIEventArgs> handler = Items_4__advRouteDestBtn2_PressEvent;
+            EventHandler<UIEventArgs> handler = Items_4__advDestBtn_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
 
         /// <inheritdoc/>
-        public event EventHandler<UIEventArgs> Items_5__advRouteDestBtn2_PressEvent;
-        private void onItems_5__advRouteDestBtn2_Press(SmartObjectEventArgs eventArgs)
+        public event EventHandler<UIEventArgs> Items_5__advDestBtn_PressEvent;
+        private void onItems_5__advDestBtn_Press(SmartObjectEventArgs eventArgs)
         {
-            EventHandler<UIEventArgs> handler = Items_5__advRouteDestBtn2_PressEvent;
+            EventHandler<UIEventArgs> handler = Items_5__advDestBtn_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
 
         /// <inheritdoc/>
-        public void Items_0__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
+        public void Items_0__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_0__advRouteDestBtn2_SelectedState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_0__advDestBtn_SelectedState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_0__advRouteDestBtn2_Selected(bool digital)
+        public void Items_0__advDestBtn_Selected(bool digital)
         {
-            Items_0__advRouteDestBtn2_Selected((sig, component) => sig.BoolValue = digital);
+            Items_0__advDestBtn_Selected((sig, component) => sig.BoolValue = digital);
         }
         /// <inheritdoc/>
-        public void Items_1__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
+        public void Items_1__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_1__advRouteDestBtn2_SelectedState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_1__advDestBtn_SelectedState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_1__advRouteDestBtn2_Selected(bool digital)
+        public void Items_1__advDestBtn_Selected(bool digital)
         {
-            Items_1__advRouteDestBtn2_Selected((sig, component) => sig.BoolValue = digital);
+            Items_1__advDestBtn_Selected((sig, component) => sig.BoolValue = digital);
         }
         /// <inheritdoc/>
-        public void Items_2__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
+        public void Items_2__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_2__advRouteDestBtn2_SelectedState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_2__advDestBtn_SelectedState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_2__advRouteDestBtn2_Selected(bool digital)
+        public void Items_2__advDestBtn_Selected(bool digital)
         {
-            Items_2__advRouteDestBtn2_Selected((sig, component) => sig.BoolValue = digital);
+            Items_2__advDestBtn_Selected((sig, component) => sig.BoolValue = digital);
         }
         /// <inheritdoc/>
-        public void Items_3__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
+        public void Items_3__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_3__advRouteDestBtn2_SelectedState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_3__advDestBtn_SelectedState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_3__advRouteDestBtn2_Selected(bool digital)
+        public void Items_3__advDestBtn_Selected(bool digital)
         {
-            Items_3__advRouteDestBtn2_Selected((sig, component) => sig.BoolValue = digital);
+            Items_3__advDestBtn_Selected((sig, component) => sig.BoolValue = digital);
         }
         /// <inheritdoc/>
-        public void Items_4__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
+        public void Items_4__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_4__advRouteDestBtn2_SelectedState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_4__advDestBtn_SelectedState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_4__advRouteDestBtn2_Selected(bool digital)
+        public void Items_4__advDestBtn_Selected(bool digital)
         {
-            Items_4__advRouteDestBtn2_Selected((sig, component) => sig.BoolValue = digital);
+            Items_4__advDestBtn_Selected((sig, component) => sig.BoolValue = digital);
         }
         /// <inheritdoc/>
-        public void Items_5__advRouteDestBtn2_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
+        public void Items_5__advDestBtn_Selected(popUpAdvRouteDestBoolInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_5__advRouteDestBtn2_SelectedState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_5__advDestBtn_SelectedState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_5__advRouteDestBtn2_Selected(bool digital)
+        public void Items_5__advDestBtn_Selected(bool digital)
         {
-            Items_5__advRouteDestBtn2_Selected((sig, component) => sig.BoolValue = digital);
+            Items_5__advDestBtn_Selected((sig, component) => sig.BoolValue = digital);
         }
         /// <inheritdoc/>
         public void popUpAdvRouteDest_List_Item1_Visible(popUpAdvRouteDestBoolInputSigDelegate callback)
@@ -919,88 +919,88 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
 
 
         /// <inheritdoc/>
-        public void Items_0__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
+        public void Items_0__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__advRouteDestBtn2_IndirectRichTextState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__advDestBtn_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_0__advRouteDestBtn2_IndirectRichText(string serial)
+        public void Items_0__advDestBtn_IndirectRichText(string serial)
         {
-            Items_0__advRouteDestBtn2_IndirectRichText((sig, component) => sig.StringValue = serial);
+            Items_0__advDestBtn_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_1__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
+        public void Items_1__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_1__advRouteDestBtn2_IndirectRichTextState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_1__advDestBtn_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_1__advRouteDestBtn2_IndirectRichText(string serial)
+        public void Items_1__advDestBtn_IndirectRichText(string serial)
         {
-            Items_1__advRouteDestBtn2_IndirectRichText((sig, component) => sig.StringValue = serial);
+            Items_1__advDestBtn_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_2__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
+        public void Items_2__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_2__advRouteDestBtn2_IndirectRichTextState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_2__advDestBtn_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_2__advRouteDestBtn2_IndirectRichText(string serial)
+        public void Items_2__advDestBtn_IndirectRichText(string serial)
         {
-            Items_2__advRouteDestBtn2_IndirectRichText((sig, component) => sig.StringValue = serial);
+            Items_2__advDestBtn_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_3__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
+        public void Items_3__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_3__advRouteDestBtn2_IndirectRichTextState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_3__advDestBtn_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_3__advRouteDestBtn2_IndirectRichText(string serial)
+        public void Items_3__advDestBtn_IndirectRichText(string serial)
         {
-            Items_3__advRouteDestBtn2_IndirectRichText((sig, component) => sig.StringValue = serial);
+            Items_3__advDestBtn_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_4__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
+        public void Items_4__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_4__advRouteDestBtn2_IndirectRichTextState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_4__advDestBtn_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_4__advRouteDestBtn2_IndirectRichText(string serial)
+        public void Items_4__advDestBtn_IndirectRichText(string serial)
         {
-            Items_4__advRouteDestBtn2_IndirectRichText((sig, component) => sig.StringValue = serial);
+            Items_4__advDestBtn_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_5__advRouteDestBtn2_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
+        public void Items_5__advDestBtn_IndirectRichText(popUpAdvRouteDestStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_5__advRouteDestBtn2_IndirectRichTextState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_5__advDestBtn_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_5__advRouteDestBtn2_IndirectRichText(string serial)
+        public void Items_5__advDestBtn_IndirectRichText(string serial)
         {
-            Items_5__advRouteDestBtn2_IndirectRichText((sig, component) => sig.StringValue = serial);
+            Items_5__advDestBtn_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
 
         #endregion
@@ -1030,13 +1030,13 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
 
             IsDisposed = true;
 
-            advRouteDestBtn2_PressEvent = null;
-            Items_0__advRouteDestBtn2_PressEvent = null;
-            Items_1__advRouteDestBtn2_PressEvent = null;
-            Items_2__advRouteDestBtn2_PressEvent = null;
-            Items_3__advRouteDestBtn2_PressEvent = null;
-            Items_4__advRouteDestBtn2_PressEvent = null;
-            Items_5__advRouteDestBtn2_PressEvent = null;
+            advDestBtn_PressEvent = null;
+            Items_0__advDestBtn_PressEvent = null;
+            Items_1__advDestBtn_PressEvent = null;
+            Items_2__advDestBtn_PressEvent = null;
+            Items_3__advDestBtn_PressEvent = null;
+            Items_4__advDestBtn_PressEvent = null;
+            Items_5__advDestBtn_PressEvent = null;
         }
 
         #endregion

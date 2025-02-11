@@ -68,7 +68,7 @@ namespace MicrosoftTeamsDemo.home.popUpAdvRouting
         MicrosoftTeamsDemo.home.popUpAdvRouting.IpopUpAdvRouteSources popUpAdvRouteSources { get; }
 
         /// <summary>
-        /// ComplexComponent listItem_advDest2
+        /// ComplexComponent listItem_advDest
         /// </summary>
         MicrosoftTeamsDemo.home.popUpAdvRouting.IpopUpAdvRouteDest popUpAdvRouteDest { get; }
     }

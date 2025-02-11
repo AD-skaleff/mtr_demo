@@ -1,0 +1,24 @@
+                                                                        
+
+string_input siLine1Color[255],siLine1Text[255],siLine2Color[255],siLine2Text[255];
+string_output soLabel;
+
+
+function fProcess()
+{
+	makestring(soLabel,"<font color=\x22%s\x22>%s</font><br><font color=\x22%s\x22>%s</font>",siLine1Color,siLine1Text,siLine2Color,siLine2Text);
+}
+
+change siLine1Color
+change siLine1Text
+change siLine2Color
+change siLine2Text
+{
+    fProcess();
+}
+
+function main()
+{
+	WaitForInitializationComplete();
+
+}
