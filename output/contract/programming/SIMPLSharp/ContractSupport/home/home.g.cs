@@ -69,6 +69,11 @@ namespace MicrosoftTeamsDemo.home
         /// ComplexComponent SourceSelect
         /// </summary>
         MicrosoftTeamsDemo.home.ISourceSelect SourceSelect { get; }
+
+        /// <summary>
+        /// ComplexComponent popUpAdvRouting
+        /// </summary>
+        MicrosoftTeamsDemo.home.popUpAdvRouting.IpopUpAdvRouting popUpAdvRouting { get; }
     }
 
     /// <summary>
@@ -174,6 +179,7 @@ namespace MicrosoftTeamsDemo.home
             popUpMics = new MicrosoftTeamsDemo.home.popUpMics.popUpMics(ComponentMediator, 9);
             systemPowerPage = new MicrosoftTeamsDemo.home.systemPowerPage(ComponentMediator, 11);
             SourceSelect = new MicrosoftTeamsDemo.home.SourceSelect(ComponentMediator, 12);
+            popUpAdvRouting = new MicrosoftTeamsDemo.home.popUpAdvRouting.popUpAdvRouting(ComponentMediator, 13);
         }
 
         public void AddDevice(BasicTriListWithSmartObject device)
@@ -190,6 +196,8 @@ namespace MicrosoftTeamsDemo.home
             ((MicrosoftTeamsDemo.home.systemPowerPage)systemPowerPage).AddDevice(device);
 
             ((MicrosoftTeamsDemo.home.SourceSelect)SourceSelect).AddDevice(device);
+
+            ((MicrosoftTeamsDemo.home.popUpAdvRouting.popUpAdvRouting)popUpAdvRouting).AddDevice(device);
         }
 
         public void RemoveDevice(BasicTriListWithSmartObject device)
@@ -206,6 +214,8 @@ namespace MicrosoftTeamsDemo.home
             ((MicrosoftTeamsDemo.home.systemPowerPage)systemPowerPage).RemoveDevice(device);
 
             ((MicrosoftTeamsDemo.home.SourceSelect)SourceSelect).RemoveDevice(device);
+
+            ((MicrosoftTeamsDemo.home.popUpAdvRouting.popUpAdvRouting)popUpAdvRouting).RemoveDevice(device);
         }
 
         #endregion
@@ -251,6 +261,11 @@ namespace MicrosoftTeamsDemo.home
         /// ComplexComponent SourceSelect
         /// </summary>
         public MicrosoftTeamsDemo.home.ISourceSelect SourceSelect { get; private set; }
+
+        /// <summary>
+        /// ComplexComponent popUpAdvRouting
+        /// </summary>
+        public MicrosoftTeamsDemo.home.popUpAdvRouting.IpopUpAdvRouting popUpAdvRouting { get; private set; }
 
         #endregion
 

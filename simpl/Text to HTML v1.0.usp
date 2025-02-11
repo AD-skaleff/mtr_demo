@@ -1,0 +1,76 @@
+// SIMPL+ Module Information
+/*
+Dealer Name:		Amplified Design
+System Name:		HTML Color Encoding
+Programmer:			
+Comments:
+*/
+
+// Compiler Directives
+#ENABLE_DYNAMIC
+#SYMBOL_NAME "HTML Color Encode"
+#CATEGORY "10" // Serial
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#ENCODING_ASCII
+#DEFINE_CONSTANT MAX_ITEMS       40 
+
+#HELP_BEGIN
+#HELP_END        
+
+// DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+DIGITAL_INPUT	_SKIP_, _SKIP_,_SKIP_,
+				Refresh;
+STRING_INPUT 	_SKIP_,
+				Text$[MAX_ITEMS][1000];
+STRING_OUTPUT 	_SKIP_, _SKIP_,_SKIP_,_SKIP_, _SKIP_, 
+				FormatText$[MAX_ITEMS];
+
+// PARAMETERS
+STRING_PARAMETER	FontColor[6];
+
+#BEGIN_PARAMETER_PROPERTIES FontColor
+	propValidUnits = unitString;
+  propDefaultValue = "ffffff";
+#END_PARAMETER_PROPERTIES
+     
+// GLOBAL VARIABLES      
+INTEGER i,Marker,Busy;
+STRING Line1_Text[100],Line2_Text[100];
+
+// FUNCTION
+
+
+// EVENT HANDLERS
+
+PUSH Refresh
+CHANGE Text$
+{
+	IF (Busy = 0)
+		{
+		Busy = 1;
+		Wait(50)
+		For (i = 1 To MAX_ITEMS -1)
+//		i = GetLastModifiedArrayIndex();
+			{
+    		Marker = FIND ("\x0D",Text$[i]);
+
+			IF (Marker = 0)
+				{	
+				MAKESTRING(FormatText$[i], "<FONT color=\x22#%s\x22>%s</FONT>", FontColor, Text$[i]);
+				}		
+			ELSE
+				{
+				}
+			}
+		Busy = 0;
+		}
+}
+
+Function Main()
+{
+	WaitForInitializationComplete();	
+	Busy=0; i=0;
+}
+

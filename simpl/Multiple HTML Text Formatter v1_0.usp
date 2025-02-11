@@ -1,0 +1,66 @@
+// SIMPL+ Module Information
+/*
+Dealer Name:		FSS
+System Name:		Core3 Text Formater
+Programmer:			cdr
+Comments:
+*/
+
+// Compiler Directives
+#ENABLE_DYNAMIC
+#SYMBOL_NAME "Multiple HTML Text Formater"
+#CATEGORY "10" // Serial
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#ENCODING_ASCII
+#DEFINE_CONSTANT MAX_ITEMS       100         
+
+// DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+STRING_INPUT 	_SKIP_, _SKIP_,Text$[MAX_ITEMS][1000];
+STRING_OUTPUT 	_SKIP_, _SKIP_, FormatText$[MAX_ITEMS];
+
+// Parameters
+INTEGER_PARAMETER	FontSize;
+STRING_PARAMETER	Color[7];
+
+// Parameter Properties
+#BEGIN_PARAMETER_PROPERTIES FontSize
+  propValidUnits = unitDecimal;
+  propBounds = 0d , 500d;
+  propDefaultValue = 12d;
+#END_PARAMETER_PROPERTIES
+#BEGIN_PARAMETER_PROPERTIES Color
+	propValidUnits = unitString;
+  propDefaultValue = "#000000";
+#END_PARAMETER_PROPERTIES
+           
+INTEGER i,Semaphore;
+
+// Function
+
+Function Generate()
+{
+	IF (Semaphore = 0)
+	{
+		Semaphore = 1;
+		MAKESTRING(FormatText$[i], "<FONT size=\x22%d\x22 color=\x22%s\x22>%s</FONT>",FontSize, Color, Text$[i]);
+		ProcessLogic();
+		Semaphore = 0;	
+	}
+}
+
+// Event Handlers
+
+CHANGE Text$
+{
+	i = GetLastModifiedArrayIndex();
+	Generate();
+}	
+
+Function Main()
+{
+	i=0;
+	Semaphore=0;
+}
+

@@ -51,14 +51,17 @@ namespace MicrosoftTeamsDemo
         public MicrosoftTeamsDemo.home.Ihome home { get { return (MicrosoftTeamsDemo.home.Ihome)Internalhome; } }
         private MicrosoftTeamsDemo.home.home Internalhome { get; set; }
 
-        public MicrosoftTeamsDemo.widgetSrcCameras.IwidgetSrcCameras widgetSrcCameras { get { return (MicrosoftTeamsDemo.widgetSrcCameras.IwidgetSrcCameras)InternalwidgetSrcCameras; } }
-        private MicrosoftTeamsDemo.widgetSrcCameras.widgetSrcCameras InternalwidgetSrcCameras { get; set; }
+        public MicrosoftTeamsDemo.popUps.IpopUps popUps { get { return (MicrosoftTeamsDemo.popUps.IpopUps)InternalpopUps; } }
+        private MicrosoftTeamsDemo.popUps.popUps InternalpopUps { get; set; }
+
+        public MicrosoftTeamsDemo.cardSrcCameras.IcardSrcCameras cardSrcCameras { get { return (MicrosoftTeamsDemo.cardSrcCameras.IcardSrcCameras)InternalcardSrcCameras; } }
+        private MicrosoftTeamsDemo.cardSrcCameras.cardSrcCameras InternalcardSrcCameras { get; set; }
 
         public MicrosoftTeamsDemo.IsystemFooter systemFooter { get { return (MicrosoftTeamsDemo.IsystemFooter)InternalsystemFooter; } }
         private MicrosoftTeamsDemo.systemFooter InternalsystemFooter { get; set; }
 
-        public MicrosoftTeamsDemo.widgetSourceSelectList.IwidgetSourceSelectList widgetSourceSelectList { get { return (MicrosoftTeamsDemo.widgetSourceSelectList.IwidgetSourceSelectList)InternalwidgetSourceSelectList; } }
-        private MicrosoftTeamsDemo.widgetSourceSelectList.widgetSourceSelectList InternalwidgetSourceSelectList { get; set; }
+        public MicrosoftTeamsDemo.cardSourceSelectList.IcardSourceSelectList cardSourceSelectList { get { return (MicrosoftTeamsDemo.cardSourceSelectList.IcardSourceSelectList)InternalcardSourceSelectList; } }
+        private MicrosoftTeamsDemo.cardSourceSelectList.cardSourceSelectList InternalcardSourceSelectList { get; set; }
 
         public MicrosoftTeamsDemo.IsystemHeader systemHeader { get { return (MicrosoftTeamsDemo.IsystemHeader)InternalsystemHeader; } }
         private MicrosoftTeamsDemo.systemHeader InternalsystemHeader { get; set; }
@@ -69,8 +72,8 @@ namespace MicrosoftTeamsDemo
         public MicrosoftTeamsDemo.widgetActivitiesMenu.IwidgetActivitiesMenu widgetActivitiesMenu { get { return (MicrosoftTeamsDemo.widgetActivitiesMenu.IwidgetActivitiesMenu)InternalwidgetActivitiesMenu; } }
         private MicrosoftTeamsDemo.widgetActivitiesMenu.widgetActivitiesMenu InternalwidgetActivitiesMenu { get; set; }
 
-        public MicrosoftTeamsDemo.widgetSrcATV.IwidgetSrcATV widgetSrcATV { get { return (MicrosoftTeamsDemo.widgetSrcATV.IwidgetSrcATV)InternalwidgetSrcATV; } }
-        private MicrosoftTeamsDemo.widgetSrcATV.widgetSrcATV InternalwidgetSrcATV { get; set; }
+        public MicrosoftTeamsDemo.cardSrcATV.IcardSrcATV cardSrcATV { get { return (MicrosoftTeamsDemo.cardSrcATV.IcardSrcATV)InternalcardSrcATV; } }
+        private MicrosoftTeamsDemo.cardSrcATV.cardSrcATV InternalcardSrcATV { get; set; }
 
         #endregion
 
@@ -96,19 +99,21 @@ namespace MicrosoftTeamsDemo
 
             Internalhome = new MicrosoftTeamsDemo.home.home(ComponentMediator, 3);
 
-            InternalwidgetSrcCameras = new MicrosoftTeamsDemo.widgetSrcCameras.widgetSrcCameras(ComponentMediator, 16);
+            InternalpopUps = new MicrosoftTeamsDemo.popUps.popUps(ComponentMediator, 18);
 
-            InternalsystemFooter = new MicrosoftTeamsDemo.systemFooter(ComponentMediator, 19);
+            InternalcardSrcCameras = new MicrosoftTeamsDemo.cardSrcCameras.cardSrcCameras(ComponentMediator, 23);
 
-            InternalwidgetSourceSelectList = new MicrosoftTeamsDemo.widgetSourceSelectList.widgetSourceSelectList(ComponentMediator, 20);
+            InternalsystemFooter = new MicrosoftTeamsDemo.systemFooter(ComponentMediator, 26);
 
-            InternalsystemHeader = new MicrosoftTeamsDemo.systemHeader(ComponentMediator, 22);
+            InternalcardSourceSelectList = new MicrosoftTeamsDemo.cardSourceSelectList.cardSourceSelectList(ComponentMediator, 27);
 
-            Internalvolume = new MicrosoftTeamsDemo.volume(ComponentMediator, 23);
+            InternalsystemHeader = new MicrosoftTeamsDemo.systemHeader(ComponentMediator, 29);
 
-            InternalwidgetActivitiesMenu = new MicrosoftTeamsDemo.widgetActivitiesMenu.widgetActivitiesMenu(ComponentMediator, 24);
+            Internalvolume = new MicrosoftTeamsDemo.volume(ComponentMediator, 30);
 
-            InternalwidgetSrcATV = new MicrosoftTeamsDemo.widgetSrcATV.widgetSrcATV(ComponentMediator, 26);
+            InternalwidgetActivitiesMenu = new MicrosoftTeamsDemo.widgetActivitiesMenu.widgetActivitiesMenu(ComponentMediator, 31);
+
+            InternalcardSrcATV = new MicrosoftTeamsDemo.cardSrcATV.cardSrcATV(ComponentMediator, 33);
 
 
             for (int index = 0; index < devices.Length; index++)
@@ -136,26 +141,28 @@ namespace MicrosoftTeamsDemo
         public void AddDevice(BasicTriListWithSmartObject device)
         {
             Internalhome.AddDevice(device);
-            InternalwidgetSrcCameras.AddDevice(device);
+            InternalpopUps.AddDevice(device);
+            InternalcardSrcCameras.AddDevice(device);
             InternalsystemFooter.AddDevice(device);
-            InternalwidgetSourceSelectList.AddDevice(device);
+            InternalcardSourceSelectList.AddDevice(device);
             InternalsystemHeader.AddDevice(device);
             Internalvolume.AddDevice(device);
             InternalwidgetActivitiesMenu.AddDevice(device);
-            InternalwidgetSrcATV.AddDevice(device);
+            InternalcardSrcATV.AddDevice(device);
 
         }
 
         public void RemoveDevice(BasicTriListWithSmartObject device)
         {
             Internalhome.RemoveDevice(device);
-            InternalwidgetSrcCameras.RemoveDevice(device);
+            InternalpopUps.RemoveDevice(device);
+            InternalcardSrcCameras.RemoveDevice(device);
             InternalsystemFooter.RemoveDevice(device);
-            InternalwidgetSourceSelectList.RemoveDevice(device);
+            InternalcardSourceSelectList.RemoveDevice(device);
             InternalsystemHeader.RemoveDevice(device);
             Internalvolume.RemoveDevice(device);
             InternalwidgetActivitiesMenu.RemoveDevice(device);
-            InternalwidgetSrcATV.RemoveDevice(device);
+            InternalcardSrcATV.RemoveDevice(device);
         }
 
         #endregion
@@ -172,13 +179,14 @@ namespace MicrosoftTeamsDemo
             IsDisposed = true;
 
             Internalhome.Dispose();
-            InternalwidgetSrcCameras.Dispose();
+            InternalpopUps.Dispose();
+            InternalcardSrcCameras.Dispose();
             InternalsystemFooter.Dispose();
-            InternalwidgetSourceSelectList.Dispose();
+            InternalcardSourceSelectList.Dispose();
             InternalsystemHeader.Dispose();
             Internalvolume.Dispose();
             InternalwidgetActivitiesMenu.Dispose();
-            InternalwidgetSrcATV.Dispose();
+            InternalcardSrcATV.Dispose();
 
             ComponentMediator.Dispose(); 
         }

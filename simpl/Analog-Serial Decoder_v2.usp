@@ -1,0 +1,125 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Dealer Name:
+System Name:
+System Number:
+Programmer:TMC
+Comments:
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+  (Uncomment and declare compiler directives as needed)
+*******************************************************************************************/
+#SYMBOL_NAME "Analog to Serial Decoder v2"
+// #HINT ""
+#DEFINE_CONSTANT MAX_ITEMS 32
+// #CATEGORY "" 
+// #DEFAULT_VOLATILE
+// #ANALOG_SERIAL_EXPAND 
+// #OUTPUT_SHIFT 
+#DEFAULT_NONVOLATILE
+#ANALOG_SERIAL_EXPAND Separately
+
+// ANALOG_INPUT 
+STRING_INPUT sZero$[50],Serial[MAX_ITEMS][50];
+ANALOG_INPUT Analog[MAX_ITEMS];
+// BUFFER_INPUT 
+
+STRING_OUTPUT Serial_For_Analog[MAX_ITEMS];
+INTEGER iAnalog_Num,x;
+
+Function fEval1(integer x)
+{
+	If (Analog[x])
+	{
+		Serial_For_Analog[x] = Serial[Analog[x]];
+	}
+	Else
+	{
+     	Serial_For_Analog[x] = sZero$;
+	}
+}
+
+Function fEval1Serial(integer x)
+{
+
+	integer i;
+
+ 	for (i=1 to iAnalog_Num)
+	{
+		if (Analog[i]=x)
+		{
+			if (IsSignalDefined(Serial[Analog[i]]))
+			{
+				if (Analog[i] > 0)
+				{
+					Serial_For_Analog[i] = Serial[Analog[i]];
+				}
+				else
+					Serial_For_Analog[i] = "";
+			}
+		}
+	}
+}
+
+Function fEval()
+{
+	integer i;
+
+	for (i=1 to iAnalog_Num)
+	{
+		if (Analog[i])
+		{
+			if (IsSignalDefined(Serial[Analog[i]]))
+			{
+				Serial_For_Analog[i] = Serial[Analog[i]];
+			}
+		}
+		else if(Analog[i] = 0)
+		{
+			Serial_For_Analog[i] = sZero$;
+		}
+
+	}
+}
+
+CHANGE Serial
+{
+	//delay (50);
+	fEval1Serial(getlastmodifiedarrayindex());
+}
+
+CHANGE sZero$
+{
+	//delay (50);
+	fEval();
+}
+
+
+Change Analog
+{
+    fEval1(getlastmodifiedarrayindex());
+}
+
+
+Function Main()
+{
+    // TODO:  Add code here
+    // Initialize declared global and local variables/arrays as needed.
+	integer i;
+
+    WaitForInitializationComplete();
+
+	For (i=MAX_ITEMS to 1 Step -1)
+	{
+     	If(IsSignalDefined(Analog[i]))
+			Break;
+	}iAnalog_Num = i;
+
+}
+
+
