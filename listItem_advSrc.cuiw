@@ -1,16 +1,16 @@
 {FileMetadata}
 Schema = "1.0.0.0"
 CreatedByAppHost = "2.101.8.0"
-Created = 2025-02-11 10:00:32.126647-08:00
+Created = 2025-02-13 11:02:14.53018-08:00
 LastModifiedByAppHost = "2.101.8.0"
-Modified = 2025-02-11 10:00:32.126641-08:00
+Modified = 2025-02-13 11:02:14.530176-08:00
 CreatedByProjectApp = "1.3701.9.0"
 LastModifiedByProjectApp = "1.3701.9.0"
 MinimumProjectApp = "1.2600.1"
 MinimumAppHost = "2.0.0"
 
 {Html}
-<div categoryname="Widget Components" id="imxqhdcgkd" devicesvisited="[&quot;TSW-1070&quot;]" defaultwidth="250px" defaultheight="120px" class="widget-container"><ch5-button type="default" halignlabel="center" valignlabel="middle" checkboxshow="false" checkboxposition="left" disabled="false" orientation="horizontal" pageflipattributename="pageflip" clearlabel="false" ccid_imageicontype="iconclass" ccid_linksendreceive="True" iconurlfilltype="initial" customclass="ccid-custom" affectedbypreviewstate="True" shape="rounded-rectangle" size="custom" previewstate="selected" iconposition="first" tagname="ch5-button" ccid_syncproperties="disabled" ccid_lastsizeselected="regular" ccid_componenttype="button" ccid_ch5type="button" customvstheme="custom" id="ianhefu1sh" assetid="0" pageflip="0" labelmode="advanced" componentname="advSrcBtn" ccid_themecssset="true" devicesvisited="[&quot;TSW-1070&quot;]" oldid="imjdv" sendeventontouch="Contract Enabled" pd-receivestateselected="Contract Enabled" pd-receivestatescriptlabelhtml="Contract Enabled" labelinnerhtml="<FONT color=&quot;ffffff&quot;>label</FONT>" selected="true">
+<div categoryname="widgets-listItems" id="imxqhdcgkd" devicesvisited="[&quot;TSW-1070&quot;]" defaultwidth="250px" defaultheight="120px" class="widget-container"><ch5-button type="default" halignlabel="center" valignlabel="middle" checkboxshow="false" checkboxposition="left" disabled="false" orientation="horizontal" pageflipattributename="pageflip" clearlabel="false" ccid_imageicontype="iconclass" ccid_linksendreceive="True" iconurlfilltype="initial" customclass="ccid-custom" affectedbypreviewstate="True" shape="rounded-rectangle" size="custom" previewstate="selected" iconposition="first" tagname="ch5-button" ccid_syncproperties="disabled" ccid_lastsizeselected="regular" ccid_componenttype="button" ccid_ch5type="button" customvstheme="custom" id="ianhefu1sh" assetid="0" pageflip="0" labelmode="advanced" componentname="advSrcBtn" ccid_themecssset="true" devicesvisited="[&quot;TSW-1070&quot;]" oldid="imjdv" sendeventontouch="Contract Enabled" pd-receivestateselected="Contract Enabled" pd-receivestatescriptlabelhtml="Contract Enabled" labelinnerhtml="<FONT color=&quot;ffffff&quot;>label</FONT>" selected="true">
               </ch5-button><ch5-button type="default" halignlabel="center" valignlabel="middle" checkboxshow="false" checkboxposition="left" disabled="false" orientation="horizontal" pageflipattributename="pageflip" clearlabel="true" ccid_imageicontype="iconclass" ccid_linksendreceive="True" iconurlfilltype="initial" customclass="ccid-custom" affectedbypreviewstate="True" shape="circle" size="custom" previewstate="normal" iconposition="first" tagname="ch5-button" ccid_syncproperties="disabled" ccid_lastsizeselected="regular" ccid_componenttype="button" ccid_ch5type="button" customvstheme="custom" id="ihyhp57wlq" assetid="0" pageflip="0" labelmode="simple" componentname="presentItemSync" ccid_themecssset="true" devicesvisited="[&quot;TSW-1070&quot;]" labelinnerhtml="" sendeventontouch="Contract Enabled" pd-receivestateselected="Contract Enabled" oldid="ila7">
               </ch5-button></div>
 
@@ -121,7 +121,7 @@ pd-receivestateselected = "Contract Enabled"
 oldID = "ila7"
 
 [Elements.Attributes]
-categoryname = "Widget Components"
+categoryname = "widgets-listItems"
 id = "imxqhdcgkd"
 devicesVisited = "[\"TSW-1070\"]"
 defaultWidth = "250px"

@@ -119,7 +119,7 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
             _devices = new List<BasicTriListWithSmartObject>(); 
  
 
-            actItemList = new MicrosoftTeamsDemo.widgetActivitiesMenu.actItemList(ComponentMediator, 32);
+            actItemList = new MicrosoftTeamsDemo.widgetActivitiesMenu.actItemList(ComponentMediator, 37);
         }
 
         public void AddDevice(BasicTriListWithSmartObject device)

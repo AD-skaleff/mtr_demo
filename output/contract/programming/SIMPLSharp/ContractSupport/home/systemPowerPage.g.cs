@@ -34,26 +34,6 @@ namespace MicrosoftTeamsDemo.home
         object UserObject { get; set; }
 
         /// <summary>
-        /// Event home.systemPowerPage.shutdownCancel.Press (from panel to Control System)
-        /// </summary>
-        event EventHandler<UIEventArgs> shutdownCancel_PressEvent;
-
-        /// <summary>
-        /// Event home.systemPowerPage.shutdownConfirm.Press (from panel to Control System)
-        /// </summary>
-        event EventHandler<UIEventArgs> shutdownConfirm_PressEvent;
-
-        /// <summary>
-        /// Event home.systemPowerPage.shutdownDismiss.Press (from panel to Control System)
-        /// </summary>
-        event EventHandler<UIEventArgs> shutdownDismiss_PressEvent;
-
-        /// <summary>
-        /// Event home.systemPowerPage.shutdownTimeGauge.Lower Touch (from panel to Control System)
-        /// </summary>
-        event EventHandler<UIEventArgs> shutdownTimeGauge_LowerTouchEvent;
-
-        /// <summary>
         /// systemPowerPage.Visibility Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
@@ -64,60 +44,6 @@ namespace MicrosoftTeamsDemo.home
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
         void systemPowerPage_Visibility_fb(bool digital);
-
-        /// <summary>
-        /// home.systemPowerPage.shutdownCancel.Selected Feedback
-        /// </summary>
-        /// <param name="callback">The bool delegate to update the panel.</param>
-        void shutdownCancel_Selected(systemPowerPageBoolInputSigDelegate callback);
-
-        /// <summary>
-        /// home.systemPowerPage.shutdownCancel.Selected Feedback
-        /// </summary>
-        /// <param name="digital">The bool to update the panel.</param>
-        void shutdownCancel_Selected(bool digital);
-
-        /// <summary>
-        /// home.systemPowerPage.shutdownConfirm.Selected Feedback
-        /// </summary>
-        /// <param name="callback">The bool delegate to update the panel.</param>
-        void shutdownConfirm_Selected(systemPowerPageBoolInputSigDelegate callback);
-
-        /// <summary>
-        /// home.systemPowerPage.shutdownConfirm.Selected Feedback
-        /// </summary>
-        /// <param name="digital">The bool to update the panel.</param>
-        void shutdownConfirm_Selected(bool digital);
-
-        /// <summary>
-        /// home.systemPowerPage.shutdownDismiss.Selected Feedback
-        /// </summary>
-        /// <param name="callback">The bool delegate to update the panel.</param>
-        void shutdownDismiss_Selected(systemPowerPageBoolInputSigDelegate callback);
-
-        /// <summary>
-        /// home.systemPowerPage.shutdownDismiss.Selected Feedback
-        /// </summary>
-        /// <param name="digital">The bool to update the panel.</param>
-        void shutdownDismiss_Selected(bool digital);
-
-        /// <summary>
-        /// home.systemPowerPage.shutdownTimeGauge.Lower Touch fb Feedback
-        /// </summary>
-        /// <param name="callback">The ushort delegate to update the panel.</param>
-        void shutdownTimeGauge_LowerTouchfb(systemPowerPageUShortInputSigDelegate callback);
-
-        /// <summary>
-        /// home.systemPowerPage.shutdownTimeGauge.Lower Touch fb Feedback
-        /// </summary>
-        /// <param name="callback">The ushort analog to update the panel.</param>
-        void shutdownTimeGauge_LowerTouchfb(ushort analog);
-
-        /// <summary>
-        /// home.systemPowerPage.shutdownTimeGauge.Lower Touch fb Feedback
-        /// </summary>
-        /// <param name="callback">The short analog to update the panel.</param>
-        void shutdownTimeGauge_LowerTouchfb(short analog);
     }
 
     /// <summary>
@@ -126,12 +52,6 @@ namespace MicrosoftTeamsDemo.home
     /// <param name="boolInputSig">The <see cref="BoolInputSig"/> joinInfo data.</param>
     /// <param name="systempowerpage">The <see cref="IsystemPowerPage"/> on which to apply the feedback.</param>
     public delegate void systemPowerPageBoolInputSigDelegate(BoolInputSig boolInputSig, IsystemPowerPage systempowerpage);
-    /// <summary>
-    /// Digital callback used in feedback events.
-    /// </summary>
-    /// <param name="uShortInputSig">The <see cref="UShortInputSig"/> joinInfo data.</param>
-    /// <param name="systempowerpage">The <see cref="IsystemPowerPage"/> on which to apply the feedback.</param>
-    public delegate void systemPowerPageUShortInputSigDelegate(UShortInputSig uShortInputSig, IsystemPowerPage systempowerpage);
 
     /// <summary>
     /// systemPowerPage
@@ -167,67 +87,12 @@ namespace MicrosoftTeamsDemo.home
             /// </summary>
             internal static class Booleans
             {
-                /// <summary>
-                /// Output or Event digital joinInfo from panel to Control System: home.systemPowerPage.shutdownCancel.Press
-                /// home.systemPowerPage.shutdownCancel.Press
-                /// </summary>
-                public const uint shutdownCancel_PressEvent = 2;
-
-                /// <summary>
-                /// Output or Event digital joinInfo from panel to Control System: home.systemPowerPage.shutdownConfirm.Press
-                /// home.systemPowerPage.shutdownConfirm.Press
-                /// </summary>
-                public const uint shutdownConfirm_PressEvent = 3;
-
-                /// <summary>
-                /// Output or Event digital joinInfo from panel to Control System: home.systemPowerPage.shutdownDismiss.Press
-                /// home.systemPowerPage.shutdownDismiss.Press
-                /// </summary>
-                public const uint shutdownDismiss_PressEvent = 4;
-
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: home.systemPowerPage.Visibility_fb
                 /// systemPowerPage.Visibility
                 /// </summary>
                 public const uint systemPowerPage_Visibility_fbState = 1;
-
-                /// <summary>
-                /// Input or Feedback digital joinInfo from Control System to panel: home.systemPowerPage.shutdownCancel.Selected
-                /// home.systemPowerPage.shutdownCancel.Selected
-                /// </summary>
-                public const uint shutdownCancel_SelectedState = 3;
-
-                /// <summary>
-                /// Input or Feedback digital joinInfo from Control System to panel: home.systemPowerPage.shutdownConfirm.Selected
-                /// home.systemPowerPage.shutdownConfirm.Selected
-                /// </summary>
-                public const uint shutdownConfirm_SelectedState = 4;
-
-                /// <summary>
-                /// Input or Feedback digital joinInfo from Control System to panel: home.systemPowerPage.shutdownDismiss.Selected
-                /// home.systemPowerPage.shutdownDismiss.Selected
-                /// </summary>
-                public const uint shutdownDismiss_SelectedState = 5;
-
-            }
-            /// <summary>
-            /// Analog signals.
-            /// </summary>
-            internal static class Numerics
-            {
-                /// <summary>
-                /// Output or Event analog joinInfo from panel to Control System: home.systemPowerPage.shutdownTimeGauge.LowerTouch
-                /// home.systemPowerPage.shutdownTimeGauge.Lower Touch
-                /// </summary>
-                public const uint shutdownTimeGauge_LowerTouchEvent = 4;
-
-
-                /// <summary>
-                /// Input or Feedback analog joinInfo from Control System to panel: home.systemPowerPage.shutdownTimeGauge.LowerTouchfb
-                /// home.systemPowerPage.shutdownTimeGauge.Lower Touch fb
-                /// </summary>
-                public const uint shutdownTimeGauge_LowerTouchfbState = 4;
 
             }
         }
@@ -280,10 +145,6 @@ namespace MicrosoftTeamsDemo.home
             _devices = new List<BasicTriListWithSmartObject>(); 
  
 
-            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.shutdownCancel_PressEvent, onshutdownCancel_Press);
-            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.shutdownConfirm_PressEvent, onshutdownConfirm_Press);
-            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.shutdownDismiss_PressEvent, onshutdownDismiss_Press);
-            ComponentMediator.ConfigureNumericEvent(controlJoinId, Joins.Numerics.shutdownTimeGauge_LowerTouchEvent, onshutdownTimeGauge_LowerTouch);
         }
 
         public void AddDevice(BasicTriListWithSmartObject device)
@@ -303,84 +164,6 @@ namespace MicrosoftTeamsDemo.home
         #region CH5 Contract
 
         /// <inheritdoc/>
-        public event EventHandler<UIEventArgs> shutdownCancel_PressEvent;
-        private void onshutdownCancel_Press(SmartObjectEventArgs eventArgs)
-        {
-            EventHandler<UIEventArgs> handler = shutdownCancel_PressEvent;
-            if (handler != null)
-                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
-        }
-
-        /// <inheritdoc/>
-        public event EventHandler<UIEventArgs> shutdownConfirm_PressEvent;
-        private void onshutdownConfirm_Press(SmartObjectEventArgs eventArgs)
-        {
-            EventHandler<UIEventArgs> handler = shutdownConfirm_PressEvent;
-            if (handler != null)
-                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
-        }
-
-        /// <inheritdoc/>
-        public event EventHandler<UIEventArgs> shutdownDismiss_PressEvent;
-        private void onshutdownDismiss_Press(SmartObjectEventArgs eventArgs)
-        {
-            EventHandler<UIEventArgs> handler = shutdownDismiss_PressEvent;
-            if (handler != null)
-                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
-        }
-
-        /// <inheritdoc/>
-        public event EventHandler<UIEventArgs> shutdownTimeGauge_LowerTouchEvent;
-        private void onshutdownTimeGauge_LowerTouch(SmartObjectEventArgs eventArgs)
-        {
-            EventHandler<UIEventArgs> handler = shutdownTimeGauge_LowerTouchEvent;
-            if (handler != null)
-                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
-        }
-
-        /// <inheritdoc/>
-        public void shutdownCancel_Selected(systemPowerPageBoolInputSigDelegate callback)
-        {
-            for (int index = 0; index < Devices.Count; index++)
-            {
-                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.shutdownCancel_SelectedState], this);
-            }
-        }
-
-        /// <inheritdoc/>
-        public void shutdownCancel_Selected(bool digital)
-        {
-            shutdownCancel_Selected((sig, component) => sig.BoolValue = digital);
-        }
-        /// <inheritdoc/>
-        public void shutdownConfirm_Selected(systemPowerPageBoolInputSigDelegate callback)
-        {
-            for (int index = 0; index < Devices.Count; index++)
-            {
-                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.shutdownConfirm_SelectedState], this);
-            }
-        }
-
-        /// <inheritdoc/>
-        public void shutdownConfirm_Selected(bool digital)
-        {
-            shutdownConfirm_Selected((sig, component) => sig.BoolValue = digital);
-        }
-        /// <inheritdoc/>
-        public void shutdownDismiss_Selected(systemPowerPageBoolInputSigDelegate callback)
-        {
-            for (int index = 0; index < Devices.Count; index++)
-            {
-                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.shutdownDismiss_SelectedState], this);
-            }
-        }
-
-        /// <inheritdoc/>
-        public void shutdownDismiss_Selected(bool digital)
-        {
-            shutdownDismiss_Selected((sig, component) => sig.BoolValue = digital);
-        }
-        /// <inheritdoc/>
         public void systemPowerPage_Visibility_fb(systemPowerPageBoolInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
@@ -393,27 +176,6 @@ namespace MicrosoftTeamsDemo.home
         public void systemPowerPage_Visibility_fb(bool digital)
         {
             systemPowerPage_Visibility_fb((sig, component) => sig.BoolValue = digital);
-        }
-
-        /// <inheritdoc/>
-        public void shutdownTimeGauge_LowerTouchfb(systemPowerPageUShortInputSigDelegate callback)
-        {
-            for (int index = 0; index < Devices.Count; index++)
-            {
-                callback(Devices[index].SmartObjects[ControlJoinId].UShortInput[Joins.Numerics.shutdownTimeGauge_LowerTouchfbState], this);
-            }
-        }
-
-        /// <inheritdoc/>
-        public void shutdownTimeGauge_LowerTouchfb(ushort analog)
-        {
-            shutdownTimeGauge_LowerTouchfb((sig, component) => sig.UShortValue = analog);
-        }
-
-        /// <inheritdoc/>
-        public void shutdownTimeGauge_LowerTouchfb(short analog)
-        {
-            shutdownTimeGauge_LowerTouchfb((sig, component) => sig.ShortValue = analog);
         }
 
         #endregion
@@ -443,10 +205,6 @@ namespace MicrosoftTeamsDemo.home
 
             IsDisposed = true;
 
-            shutdownCancel_PressEvent = null;
-            shutdownConfirm_PressEvent = null;
-            shutdownDismiss_PressEvent = null;
-            shutdownTimeGauge_LowerTouchEvent = null;
         }
 
         #endregion

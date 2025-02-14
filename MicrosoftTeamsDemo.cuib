@@ -7,7 +7,7 @@
     "_created": "2024-05-06T20:39:54.6851428-07:00",
     "_lastModifiedByAppHost": "2.101.8.0",
     "_minimumAppHost": "2.0.0",
-    "_modified": "2025-02-10T13:38:59.3326578-08:00"
+    "_modified": "2025-02-13T14:25:42.86126-08:00"
   },
   "HardButtons": [
     {
@@ -182,7 +182,63 @@
             "HasModifications": false
           }
         ],
-        "af072570-45a4-4b82-a6a4-05323739fa6b": [
+        "72c2363c-60ca-4400-a153-59450a93a32f": [
+          {
+            "ButtonIndex": 1,
+            "ButtonLabel": "Power",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-power-off",
+            "Type": 2,
+            "HasModifications": false
+          },
+          {
+            "ButtonIndex": 2,
+            "ButtonLabel": "Home",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-home",
+            "Type": 2,
+            "HasModifications": false
+          },
+          {
+            "ButtonIndex": 3,
+            "ButtonLabel": "Lights",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-lightbulb-o",
+            "Type": 2,
+            "HasModifications": false
+          },
+          {
+            "ButtonIndex": 4,
+            "ButtonLabel": "Up",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-arrow-up",
+            "Type": 2,
+            "HasModifications": false
+          },
+          {
+            "ButtonIndex": 5,
+            "ButtonLabel": "Down",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-arrow-down",
+            "Type": 2,
+            "HasModifications": false
+          },
+          {
+            "ButtonIndex": 6,
+            "ButtonLabel": "Mic",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-microphone",
+            "Type": 2,
+            "HasModifications": false
+          }
+        ],
+        "fd4674d7-3989-4390-89ba-13a3ecc6a51a": [
           {
             "ButtonIndex": 1,
             "ButtonLabel": "Power",
@@ -412,7 +468,63 @@
             "HasModifications": false
           }
         ],
-        "af072570-45a4-4b82-a6a4-05323739fa6b": [
+        "72c2363c-60ca-4400-a153-59450a93a32f": [
+          {
+            "ButtonIndex": 1,
+            "ButtonLabel": "Power",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-power-off",
+            "Type": 4,
+            "HasModifications": false
+          },
+          {
+            "ButtonIndex": 2,
+            "ButtonLabel": "Home",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-home",
+            "Type": 4,
+            "HasModifications": false
+          },
+          {
+            "ButtonIndex": 3,
+            "ButtonLabel": "Lights",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-lightbulb-o",
+            "Type": 4,
+            "HasModifications": false
+          },
+          {
+            "ButtonIndex": 4,
+            "ButtonLabel": "Up",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-arrow-up",
+            "Type": 4,
+            "HasModifications": false
+          },
+          {
+            "ButtonIndex": 5,
+            "ButtonLabel": "Down",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-arrow-down",
+            "Type": 4,
+            "HasModifications": false
+          },
+          {
+            "ButtonIndex": 6,
+            "ButtonLabel": "Mic",
+            "SendEventOnClick": "",
+            "PageFlip": "",
+            "IconTag": "fa-microphone",
+            "Type": 4,
+            "HasModifications": false
+          }
+        ],
+        "fd4674d7-3989-4390-89ba-13a3ecc6a51a": [
           {
             "ButtonIndex": 1,
             "ButtonLabel": "Power",

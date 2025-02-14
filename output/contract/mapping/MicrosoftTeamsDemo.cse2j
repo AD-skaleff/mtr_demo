@@ -1,182 +1,192 @@
 {
   "name": "MicrosoftTeamsDemo",
-  "timestamp": "2025-02-11T17:42:29.5568347+00:00",
+  "timestamp": "2025-02-14T00:07:45.2439174+00:00",
   "version": "1.0.0.0",
   "schema_version": 1,
   "extra_value": "",
   "signals": {
     "states": {
       "boolean": {
-        "3": {
-          "1": "homeVisibilityJoin"
+        "4": {
+          "1": "inCall.camSelListBtn.Visibility_fb",
+          "2": "inCall.sharingStopBtn.Visibility_fb",
+          "3": "inCall.camSelHeader.Visibility_fb",
+          "4": "inCallVisibilityJoin",
+          "6": "inCall.camSelListBtn.Selected",
+          "7": "inCall.sharingStopBtn.Selected",
+          "8": "inCall.sysreturn.Selected"
+        },
+        "6": {
+          "1": "inCall.cameraSelList.Visibility_fb"
         },
         "7": {
-          "1": "home.widgetSrcATV.Visibility_fb"
+          "1": "inCall.cameraDpad.HideCenterButton"
         },
         "8": {
-          "1": "home.widgetSrcCameras.Visibility_fb"
+          "1": "inCall.contentSharingList.List_Visible",
+          "2": "inCall.contentSharingList.List_Item1_Visible",
+          "3": "inCall.contentSharingList.List_Item2_Visible",
+          "4": "inCall.contentSharingList.List_Item3_Visible",
+          "5": "inCall.contentSharingList.List_Item4_Visible",
+          "6": "inCall.contentSharingList.List_Item5_Visible",
+          "7": "inCall.contentSharingList.List_Item6_Visible",
+          "8": "inCall.contentSharingList.List_Item7_Visible",
+          "9": "inCall.contentSharingList.List_Item8_Visible",
+          "10": "inCall.contentSharingList.List_Item9_Visible",
+          "611": "inCall.contentSharingList.Items[0].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "612": "inCall.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "613": "inCall.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "614": "inCall.contentSharingList.Items[1].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "615": "inCall.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "616": "inCall.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "617": "inCall.contentSharingList.Items[2].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "618": "inCall.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "619": "inCall.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "620": "inCall.contentSharingList.Items[3].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "621": "inCall.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "622": "inCall.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "623": "inCall.contentSharingList.Items[4].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "624": "inCall.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "625": "inCall.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "626": "inCall.contentSharingList.Items[5].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "627": "inCall.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "628": "inCall.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "629": "inCall.contentSharingList.Items[6].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "630": "inCall.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "631": "inCall.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "632": "inCall.contentSharingList.Items[7].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "633": "inCall.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "634": "inCall.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "635": "inCall.contentSharingList.Items[8].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "636": "inCall.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "637": "inCall.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListLabel.Selected"
         },
         "9": {
-          "1": "home.popUpMics.Visibility_fb",
-          "3": "home.popUpMics.popUpCloseBtn.Selected"
-        },
-        "10": {
-          "1": "home.popUpMics.MicsList.List_Item1_Visible",
-          "2": "home.popUpMics.MicsList.List_Item2_Visible",
-          "3": "home.popUpMics.MicsList.List_Item3_Visible",
-          "4": "home.popUpMics.MicsList.List_Item4_Visible",
-          "5": "home.popUpMics.MicsList.List_Item5_Visible",
-          "6": "home.popUpMics.MicsList.List_Item6_Visible",
-          "7": "home.popUpMics.MicsList.List_Item7_Visible",
-          "8": "home.popUpMics.MicsList.List_Item8_Visible",
-          "9": "home.popUpMics.MicsList.List_Item9_Visible",
-          "10": "home.popUpMics.MicsList.List_Item10_Visible",
-          "611": "home.popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
-          "612": "home.popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
-          "613": "home.popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
-          "614": "home.popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
-          "615": "home.popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
-          "616": "home.popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
-          "617": "home.popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
-          "618": "home.popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
-          "619": "home.popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
-          "620": "home.popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
-          "621": "home.popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
-          "622": "home.popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
-          "623": "home.popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
-          "624": "home.popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
-          "625": "home.popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
-          "626": "home.popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
-          "627": "home.popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
-          "628": "home.popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
-          "629": "home.popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
-          "630": "home.popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
-          "631": "home.popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
-          "632": "home.popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
-          "633": "home.popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
-          "634": "home.popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
-          "635": "home.popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
-          "636": "home.popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
-          "637": "home.popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
-          "638": "home.popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
-          "639": "home.popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
-          "640": "home.popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol3Mute.Selected"
-        },
-        "11": {
-          "1": "home.systemPowerPage.Visibility_fb",
-          "3": "home.systemPowerPage.shutdownCancel.Selected",
-          "4": "home.systemPowerPage.shutdownConfirm.Selected",
-          "5": "home.systemPowerPage.shutdownDismiss.Selected"
-        },
-        "12": {
-          "1": "home.SourceSelect.Visibility_fb"
+          "1": "homeVisibilityJoin"
         },
         "13": {
-          "1": "home.popUpAdvRouting.Visibility_fb",
-          "3": "home.popUpAdvRouting.popUpCloseBtn.Selected"
+          "1": "home.cardSrcATV.Visibility_fb"
         },
         "14": {
-          "1": "home.popUpAdvRouting.popUpAdvRouteSources.List_Item1_Visible",
-          "2": "home.popUpAdvRouting.popUpAdvRouteSources.List_Item2_Visible",
-          "3": "home.popUpAdvRouting.popUpAdvRouteSources.List_Item3_Visible",
-          "4": "home.popUpAdvRouting.popUpAdvRouteSources.List_Item4_Visible",
-          "5": "home.popUpAdvRouting.popUpAdvRouteSources.List_Item5_Visible",
-          "6": "home.popUpAdvRouting.popUpAdvRouteSources.List_Item6_Visible",
-          "7": "home.popUpAdvRouting.popUpAdvRouteSources.List_Item7_Visible",
-          "8": "home.popUpAdvRouting.popUpAdvRouteSources.List_Item8_Visible",
-          "9": "home.popUpAdvRouting.popUpAdvRouteSources.List_Item9_Visible",
-          "610": "home.popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "611": "home.popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "612": "home.popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "613": "home.popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "614": "home.popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "615": "home.popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "616": "home.popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "617": "home.popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "618": "home.popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "619": "home.popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "620": "home.popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "621": "home.popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "622": "home.popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "623": "home.popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "624": "home.popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "625": "home.popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "626": "home.popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "627": "home.popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.presentItemSync.Selected"
+          "1": "home.popUpMics.Visibility_fb"
         },
         "15": {
-          "1": "home.popUpAdvRouting.popUpAdvRouteDest.List_Item1_Visible",
-          "2": "home.popUpAdvRouting.popUpAdvRouteDest.List_Item2_Visible",
-          "3": "home.popUpAdvRouting.popUpAdvRouteDest.List_Item3_Visible",
-          "4": "home.popUpAdvRouting.popUpAdvRouteDest.List_Item4_Visible",
-          "5": "home.popUpAdvRouting.popUpAdvRouteDest.List_Item5_Visible",
-          "6": "home.popUpAdvRouting.popUpAdvRouteDest.List_Item6_Visible",
-          "607": "home.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.Selected",
-          "608": "home.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.Selected",
-          "609": "home.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.Selected",
-          "610": "home.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.Selected",
-          "611": "home.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.Selected",
-          "612": "home.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.Selected"
+          "1": "home.systemPowerPage.Visibility_fb"
+        },
+        "16": {
+          "1": "home.cardSourceSelect.Visibility_fb"
+        },
+        "17": {
+          "1": "home.popUpAdvRouting.Visibility_fb"
         },
         "19": {
-          "3": "popUps.popUpAdvRouting.popUpCloseBtn.Selected"
+          "1": "configVisibilityJoin"
         },
-        "20": {
-          "1": "popUps.popUpAdvRouting.popUpAdvRouteSources.List_Item1_Visible",
-          "2": "popUps.popUpAdvRouting.popUpAdvRouteSources.List_Item2_Visible",
-          "3": "popUps.popUpAdvRouting.popUpAdvRouteSources.List_Item3_Visible",
-          "4": "popUps.popUpAdvRouting.popUpAdvRouteSources.List_Item4_Visible",
-          "5": "popUps.popUpAdvRouting.popUpAdvRouteSources.List_Item5_Visible",
-          "6": "popUps.popUpAdvRouting.popUpAdvRouteSources.List_Item6_Visible",
-          "7": "popUps.popUpAdvRouting.popUpAdvRouteSources.List_Item7_Visible",
-          "8": "popUps.popUpAdvRouting.popUpAdvRouteSources.List_Item8_Visible",
-          "9": "popUps.popUpAdvRouting.popUpAdvRouteSources.List_Item9_Visible",
-          "610": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "611": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "612": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "613": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "614": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "615": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "616": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "617": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "618": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "619": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "620": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "621": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "622": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "623": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "624": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "625": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.presentItemSync.Selected",
-          "626": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.advSrcBtn.Selected",
-          "627": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.presentItemSync.Selected"
-        },
-        "21": {
-          "1": "popUps.popUpAdvRouting.popUpAdvRouteDest.List_Item1_Visible",
-          "2": "popUps.popUpAdvRouting.popUpAdvRouteDest.List_Item2_Visible",
-          "3": "popUps.popUpAdvRouting.popUpAdvRouteDest.List_Item3_Visible",
-          "4": "popUps.popUpAdvRouting.popUpAdvRouteDest.List_Item4_Visible",
-          "5": "popUps.popUpAdvRouting.popUpAdvRouteDest.List_Item5_Visible",
-          "6": "popUps.popUpAdvRouting.popUpAdvRouteDest.List_Item6_Visible",
-          "607": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.Selected",
-          "608": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.Selected",
-          "609": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.Selected",
-          "610": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.Selected",
-          "611": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.Selected",
-          "612": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.Selected"
+        "22": {
+          "1": "cardSourceSharing.contentSharingList.List_Visible",
+          "2": "cardSourceSharing.contentSharingList.List_Item1_Visible",
+          "3": "cardSourceSharing.contentSharingList.List_Item2_Visible",
+          "4": "cardSourceSharing.contentSharingList.List_Item3_Visible",
+          "5": "cardSourceSharing.contentSharingList.List_Item4_Visible",
+          "6": "cardSourceSharing.contentSharingList.List_Item5_Visible",
+          "7": "cardSourceSharing.contentSharingList.List_Item6_Visible",
+          "8": "cardSourceSharing.contentSharingList.List_Item7_Visible",
+          "9": "cardSourceSharing.contentSharingList.List_Item8_Visible",
+          "10": "cardSourceSharing.contentSharingList.List_Item9_Visible",
+          "611": "cardSourceSharing.contentSharingList.Items[0].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "612": "cardSourceSharing.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "613": "cardSourceSharing.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "614": "cardSourceSharing.contentSharingList.Items[1].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "615": "cardSourceSharing.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "616": "cardSourceSharing.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "617": "cardSourceSharing.contentSharingList.Items[2].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "618": "cardSourceSharing.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "619": "cardSourceSharing.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "620": "cardSourceSharing.contentSharingList.Items[3].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "621": "cardSourceSharing.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "622": "cardSourceSharing.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "623": "cardSourceSharing.contentSharingList.Items[4].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "624": "cardSourceSharing.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "625": "cardSourceSharing.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "626": "cardSourceSharing.contentSharingList.Items[5].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "627": "cardSourceSharing.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "628": "cardSourceSharing.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "629": "cardSourceSharing.contentSharingList.Items[6].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "630": "cardSourceSharing.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "631": "cardSourceSharing.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "632": "cardSourceSharing.contentSharingList.Items[7].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "633": "cardSourceSharing.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "634": "cardSourceSharing.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "635": "cardSourceSharing.contentSharingList.Items[8].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "636": "cardSourceSharing.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "637": "cardSourceSharing.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListLabel.Selected"
         },
         "25": {
           "1": "cardSrcCameras.cameraDpad.HideCenterButton"
         },
         "26": {
+          "3": "systemPower.shutdownCancel.Selected",
+          "4": "systemPower.shutdownConfirm.Selected",
+          "5": "systemPower.shutdownDismiss.Selected"
+        },
+        "27": {
+          "2": "systemFooter.sysPowerBtn.Enable",
           "3": "systemFooter.popUpMicsBtn.Selected",
           "4": "systemFooter.sysHomeBtn.Selected",
           "5": "systemFooter.sysPowerBtn.Selected"
         },
-        "27": {
-          "1": "cardSourceSelectList.presentAdvRoutingBtn.Visibility_fb",
-          "3": "cardSourceSelectList.presentAdvRoutingBtn.Selected"
-        },
         "28": {
+          "3": "popUpMics.popUpCloseBtn.Selected"
+        },
+        "29": {
+          "1": "popUpMics.MicsList.List_Item1_Visible",
+          "2": "popUpMics.MicsList.List_Item2_Visible",
+          "3": "popUpMics.MicsList.List_Item3_Visible",
+          "4": "popUpMics.MicsList.List_Item4_Visible",
+          "5": "popUpMics.MicsList.List_Item5_Visible",
+          "6": "popUpMics.MicsList.List_Item6_Visible",
+          "7": "popUpMics.MicsList.List_Item7_Visible",
+          "8": "popUpMics.MicsList.List_Item8_Visible",
+          "9": "popUpMics.MicsList.List_Item9_Visible",
+          "10": "popUpMics.MicsList.List_Item10_Visible",
+          "611": "popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "612": "popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "613": "popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "614": "popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "615": "popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "616": "popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "617": "popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "618": "popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "619": "popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "620": "popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "621": "popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "622": "popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "623": "popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "624": "popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "625": "popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "626": "popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "627": "popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "628": "popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "629": "popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "630": "popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "631": "popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "632": "popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "633": "popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "634": "popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "635": "popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "636": "popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "637": "popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol3Mute.Selected",
+          "638": "popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol1Up.Selected",
+          "639": "popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol2Down.Selected",
+          "640": "popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol3Mute.Selected"
+        },
+        "30": {
+          "1": "cardSourceSelectList.presentAdvRoutingBtn.Visibility_fb",
+          "2": "cardSourceSelectList.syswarming.Visibility_fb",
+          "3": "cardSourceSelectList.syswarmingSpinner.Visibility_fb",
+          "5": "cardSourceSelectList.presentAdvRoutingBtn.Selected"
+        },
+        "31": {
           "1": "cardSourceSelectList.presentSelectList.List_Visible",
           "2": "cardSourceSelectList.presentSelectList.List_Item1_Visible",
           "3": "cardSourceSelectList.presentSelectList.List_Item2_Visible",
@@ -189,31 +199,45 @@
           "10": "cardSourceSelectList.presentSelectList.List_Item9_Visible",
           "611": "cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.presentItemSync.Selected",
           "612": "cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListBtn.Selected",
-          "613": "cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.presentItemSync.Selected",
-          "614": "cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListBtn.Selected",
-          "615": "cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.presentItemSync.Selected",
-          "616": "cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListBtn.Selected",
-          "617": "cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.presentItemSync.Selected",
-          "618": "cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListBtn.Selected",
-          "619": "cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.presentItemSync.Selected",
-          "620": "cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListBtn.Selected",
-          "621": "cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.presentItemSync.Selected",
-          "622": "cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListBtn.Selected",
-          "623": "cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.presentItemSync.Selected",
-          "624": "cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListBtn.Selected",
-          "625": "cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.presentItemSync.Selected",
-          "626": "cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListBtn.Selected",
-          "627": "cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.presentItemSync.Selected",
-          "628": "cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Selected"
+          "613": "cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "614": "cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "615": "cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "616": "cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "617": "cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "618": "cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "619": "cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "620": "cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "621": "cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "622": "cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "623": "cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "624": "cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "625": "cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "626": "cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "627": "cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "628": "cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "629": "cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "630": "cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "631": "cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "632": "cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "633": "cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "634": "cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListLabel.Selected",
+          "635": "cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.presentItemSync.Selected",
+          "636": "cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Selected",
+          "637": "cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListLabel.Selected"
         },
-        "30": {
+        "33": {
           "1": "volume.sysVol3MuteBtn.Visibility_fb",
           "2": "volume.sysVolVal.Visibility_fb",
           "4": "volume.sysVol1UpBtn.Selected",
           "5": "volume.sysVol2DownBtn.Selected",
           "6": "volume.sysVol3MuteBtn.Selected"
         },
-        "32": {
+        "34": {
+          "3": "cardSrcCable.cblGuide.Selected",
+          "4": "cardSrcCable.cblPlay.Selected",
+          "5": "cardSrcCable.navReturn.Selected"
+        },
+        "37": {
           "1": "widgetActivitiesMenu.actItemList.List_Visible",
           "2": "widgetActivitiesMenu.actItemList.List_Item1_Visible",
           "3": "widgetActivitiesMenu.actItemList.List_Item2_Visible",
@@ -229,88 +253,151 @@
           "13": "widgetActivitiesMenu.actItemList.List_Item5_Enable",
           "14": "widgetActivitiesMenu.actItemList.List_Item6_Enable",
           "15": "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemBtn.Selected",
-          "16": "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemBtn.Selected",
-          "17": "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemBtn.Selected",
-          "18": "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemBtn.Selected",
-          "19": "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemBtn.Selected",
-          "20": "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemBtn.Selected"
+          "16": "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemLabel.Selected",
+          "17": "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemBtn.Selected",
+          "18": "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemLabel.Selected",
+          "19": "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemBtn.Selected",
+          "20": "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemLabel.Selected",
+          "21": "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemBtn.Selected",
+          "22": "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemLabel.Selected",
+          "23": "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemBtn.Selected",
+          "24": "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemLabel.Selected",
+          "25": "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemBtn.Selected",
+          "26": "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemLabel.Selected"
         },
-        "33": {
+        "38": {
+          "3": "popUpAdvRouting.popUpCloseBtn.Selected"
+        },
+        "39": {
+          "1": "popUpAdvRouting.popUpAdvRouteSources.List_Item1_Visible",
+          "2": "popUpAdvRouting.popUpAdvRouteSources.List_Item2_Visible",
+          "3": "popUpAdvRouting.popUpAdvRouteSources.List_Item3_Visible",
+          "4": "popUpAdvRouting.popUpAdvRouteSources.List_Item4_Visible",
+          "5": "popUpAdvRouting.popUpAdvRouteSources.List_Item5_Visible",
+          "6": "popUpAdvRouting.popUpAdvRouteSources.List_Item6_Visible",
+          "7": "popUpAdvRouting.popUpAdvRouteSources.List_Item7_Visible",
+          "8": "popUpAdvRouting.popUpAdvRouteSources.List_Item8_Visible",
+          "9": "popUpAdvRouting.popUpAdvRouteSources.List_Item9_Visible",
+          "610": "popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.advSrcBtn.Selected",
+          "611": "popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.presentItemSync.Selected",
+          "612": "popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.advSrcBtn.Selected",
+          "613": "popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.presentItemSync.Selected",
+          "614": "popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.advSrcBtn.Selected",
+          "615": "popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.presentItemSync.Selected",
+          "616": "popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.advSrcBtn.Selected",
+          "617": "popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.presentItemSync.Selected",
+          "618": "popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.advSrcBtn.Selected",
+          "619": "popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.presentItemSync.Selected",
+          "620": "popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.advSrcBtn.Selected",
+          "621": "popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.presentItemSync.Selected",
+          "622": "popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.advSrcBtn.Selected",
+          "623": "popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.presentItemSync.Selected",
+          "624": "popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.advSrcBtn.Selected",
+          "625": "popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.presentItemSync.Selected",
+          "626": "popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.advSrcBtn.Selected",
+          "627": "popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.presentItemSync.Selected"
+        },
+        "40": {
+          "1": "popUpAdvRouting.popUpAdvRouteDest.List_Item1_Visible",
+          "2": "popUpAdvRouting.popUpAdvRouteDest.List_Item2_Visible",
+          "3": "popUpAdvRouting.popUpAdvRouteDest.List_Item3_Visible",
+          "4": "popUpAdvRouting.popUpAdvRouteDest.List_Item4_Visible",
+          "5": "popUpAdvRouting.popUpAdvRouteDest.List_Item5_Visible",
+          "6": "popUpAdvRouting.popUpAdvRouteDest.List_Item6_Visible",
+          "607": "popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.Selected",
+          "608": "popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.Selected",
+          "609": "popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.Selected",
+          "610": "popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.Selected",
+          "611": "popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.Selected",
+          "612": "popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.Selected"
+        },
+        "42": {
+          "1001": "cameraSelList.cameraSelList.Button1ItemSelected",
+          "1002": "cameraSelList.cameraSelList.Button2ItemSelected",
+          "1003": "cameraSelList.cameraSelList.Button3ItemSelected",
+          "1004": "cameraSelList.cameraSelList.Button4ItemSelected"
+        },
+        "43": {
           "3": "cardSrcATV.atvBack.Selected",
           "4": "cardSrcATV.atvPlay.Selected",
           "5": "cardSrcATV.navReturn.Selected"
         }
       },
       "numeric": {
-        "10": {
-          "1801": "home.popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
-          "1802": "home.popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
-          "1803": "home.popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
-          "1804": "home.popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
-          "1805": "home.popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
-          "1806": "home.popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
-          "1807": "home.popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
-          "1808": "home.popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
-          "1809": "home.popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
-          "1810": "home.popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb"
-        },
-        "11": {
-          "4": "home.systemPowerPage.shutdownTimeGauge.LowerTouchfb"
+        "5": {
+          "2": "inCall.cameraPresetList.ListNumberOfItems"
         },
         "24": {
           "2": "cardSrcCameras.cameraPresetList.ListNumberOfItems"
+        },
+        "26": {
+          "4": "systemPower.shutdownTimeGauge.LowerTouchfb"
+        },
+        "29": {
+          "1801": "popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1802": "popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1803": "popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1804": "popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1805": "popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1806": "popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1807": "popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1808": "popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1809": "popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb",
+          "1810": "popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemLvl.LowerTouchfb"
+        },
+        "42": {
+          "2": "cameraSelList.cameraSelList.ListNumberOfItems"
         }
       },
       "string": {
-        "10": {
-          "1": "home.popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemLabel.Indirect",
-          "2": "home.popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemLabel.Indirect",
-          "3": "home.popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemLabel.Indirect",
-          "4": "home.popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemLabel.Indirect",
-          "5": "home.popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemLabel.Indirect",
-          "6": "home.popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemLabel.Indirect",
-          "7": "home.popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemLabel.Indirect",
-          "8": "home.popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemLabel.Indirect",
-          "9": "home.popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemLabel.Indirect",
-          "10": "home.popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemLabel.Indirect"
+        "4": {
+          "1": "inCall.camSelListBtn.IndirectText"
         },
-        "14": {
-          "1": "home.popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "2": "home.popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "3": "home.popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "4": "home.popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "5": "home.popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "6": "home.popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "7": "home.popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "8": "home.popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "9": "home.popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText"
+        "5": {
+          "1": "inCall.cameraPresetList.Button1Text",
+          "2": "inCall.cameraPresetList.Button2Text",
+          "3": "inCall.cameraPresetList.Button3Text",
+          "4": "inCall.cameraPresetList.Button4Text"
         },
-        "15": {
-          "1": "home.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
-          "2": "home.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
-          "3": "home.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
-          "4": "home.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
-          "5": "home.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
-          "6": "home.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.IndirectRichText"
+        "8": {
+          "1": "inCall.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "2": "inCall.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "3": "inCall.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "4": "inCall.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "5": "inCall.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "6": "inCall.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "7": "inCall.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "8": "inCall.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "9": "inCall.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "2410": "inCall.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2411": "inCall.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2412": "inCall.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2413": "inCall.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2414": "inCall.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2415": "inCall.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2416": "inCall.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2417": "inCall.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2418": "inCall.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListBtn.IconURL"
         },
-        "20": {
-          "1": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "2": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "3": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "4": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "5": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "6": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "7": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "8": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
-          "9": "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText"
-        },
-        "21": {
-          "1": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
-          "2": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
-          "3": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
-          "4": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
-          "5": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
-          "6": "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.IndirectRichText"
+        "22": {
+          "1": "cardSourceSharing.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "2": "cardSourceSharing.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "3": "cardSourceSharing.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "4": "cardSourceSharing.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "5": "cardSourceSharing.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "6": "cardSourceSharing.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "7": "cardSourceSharing.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "8": "cardSourceSharing.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "9": "cardSourceSharing.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "2410": "cardSourceSharing.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2411": "cardSourceSharing.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2412": "cardSourceSharing.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2413": "cardSourceSharing.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2414": "cardSourceSharing.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2415": "cardSourceSharing.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2416": "cardSourceSharing.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2417": "cardSourceSharing.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListBtn.IconURL",
+          "2418": "cardSourceSharing.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListBtn.IconURL"
         },
         "24": {
           "1": "cardSrcCameras.cameraPresetList.Button1Text",
@@ -318,16 +405,28 @@
           "3": "cardSrcCameras.cameraPresetList.Button3Text",
           "4": "cardSrcCameras.cameraPresetList.Button4Text"
         },
-        "28": {
-          "1": "cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListLabel.Indirect",
-          "2": "cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListLabel.Indirect",
-          "3": "cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListLabel.Indirect",
-          "4": "cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListLabel.Indirect",
-          "5": "cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListLabel.Indirect",
-          "6": "cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListLabel.Indirect",
-          "7": "cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListLabel.Indirect",
-          "8": "cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListLabel.Indirect",
-          "9": "cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListLabel.Indirect",
+        "29": {
+          "1": "popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "2": "popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "3": "popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "4": "popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "5": "popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "6": "popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "7": "popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "8": "popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "9": "popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemLabel.Indirect",
+          "10": "popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemLabel.Indirect"
+        },
+        "31": {
+          "1": "cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "2": "cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "3": "cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "4": "cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "5": "cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "6": "cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "7": "cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "8": "cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
+          "9": "cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText",
           "2410": "cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListBtn.IconURL",
           "2411": "cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListBtn.IconURL",
           "2412": "cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListBtn.IconURL",
@@ -338,18 +437,27 @@
           "2417": "cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListBtn.IconURL",
           "2418": "cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListBtn.IconURL"
         },
-        "29": {
+        "32": {
           "1": "systemHeader.sysDate.Indirect",
           "2": "systemHeader.sysRoomName.Indirect",
           "3": "systemHeader.sysTime.Indirect"
         },
-        "32": {
-          "1": "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemLabel.Indirect",
-          "2": "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemLabel.Indirect",
-          "3": "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemLabel.Indirect",
-          "4": "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemLabel.Indirect",
-          "5": "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemLabel.Indirect",
-          "6": "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemLabel.Indirect",
+        "33": {
+          "1": "volume.sysVolVal.Indirect"
+        },
+        "34": {
+          "1": "cardSrcCable.cblGuide.IndirectRichText",
+          "2": "cardSrcCable.cblGuide.Icon",
+          "6": "cardSrcCable.cblBack.IconURL",
+          "7": "cardSrcCable.cblPlay.IconURL"
+        },
+        "37": {
+          "1": "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemLabel.IndirectRichText",
+          "2": "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemLabel.IndirectRichText",
+          "3": "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemLabel.IndirectRichText",
+          "4": "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemLabel.IndirectRichText",
+          "5": "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemLabel.IndirectRichText",
+          "6": "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemLabel.IndirectRichText",
           "2407": "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemBtn.IconURL",
           "2408": "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemBtn.IconURL",
           "2409": "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemBtn.IconURL",
@@ -357,7 +465,32 @@
           "2411": "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemBtn.IconURL",
           "2412": "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemBtn.IconURL"
         },
-        "33": {
+        "39": {
+          "1": "popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
+          "2": "popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
+          "3": "popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
+          "4": "popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
+          "5": "popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
+          "6": "popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
+          "7": "popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
+          "8": "popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText",
+          "9": "popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.advSrcBtn.IndirectRichText"
+        },
+        "40": {
+          "1": "popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
+          "2": "popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
+          "3": "popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
+          "4": "popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
+          "5": "popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.IndirectRichText",
+          "6": "popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.IndirectRichText"
+        },
+        "42": {
+          "1": "cameraSelList.cameraSelList.Button1Text",
+          "2": "cameraSelList.cameraSelList.Button2Text",
+          "3": "cameraSelList.cameraSelList.Button3Text",
+          "4": "cameraSelList.cameraSelList.Button4Text"
+        },
+        "43": {
           "6": "cardSrcATV.atvBack.IconURL",
           "7": "cardSrcATV.atvPlay.IconURL"
         }
@@ -365,341 +498,269 @@
     },
     "events": {
       "boolean": {
-        "home.popUpMics.popUpCloseBtn.Press": {
+        "inCall.camSelListBtn.Press": {
           "joinId": 2,
-          "smartObjectId": 9
+          "smartObjectId": 4
         },
-        "home.popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
-          "joinId": 1201,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
-          "joinId": 1202,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
-          "joinId": 1203,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
-          "joinId": 1204,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
-          "joinId": 1205,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
-          "joinId": 1206,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
-          "joinId": 1207,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
-          "joinId": 1208,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
-          "joinId": 1209,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
-          "joinId": 1210,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
-          "joinId": 1211,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
-          "joinId": 1212,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
-          "joinId": 1213,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
-          "joinId": 1214,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
-          "joinId": 1215,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
-          "joinId": 1216,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
-          "joinId": 1217,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
-          "joinId": 1218,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
-          "joinId": 1219,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
-          "joinId": 1220,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
-          "joinId": 1221,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
-          "joinId": 1222,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
-          "joinId": 1223,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
-          "joinId": 1224,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
-          "joinId": 1225,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
-          "joinId": 1226,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
-          "joinId": 1227,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
-          "joinId": 1228,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
-          "joinId": 1229,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
-          "joinId": 1230,
-          "smartObjectId": 10
-        },
-        "home.systemPowerPage.shutdownCancel.Press": {
-          "joinId": 2,
-          "smartObjectId": 11
-        },
-        "home.systemPowerPage.shutdownConfirm.Press": {
+        "inCall.sharingStopBtn.Press": {
           "joinId": 3,
-          "smartObjectId": 11
+          "smartObjectId": 4
         },
-        "home.systemPowerPage.shutdownDismiss.Press": {
+        "inCall.sysreturn.Press": {
           "joinId": 4,
-          "smartObjectId": 11
+          "smartObjectId": 4
         },
-        "home.popUpAdvRouting.popUpCloseBtn.Press": {
-          "joinId": 2,
-          "smartObjectId": 13
+        "inCall.cameraPresetList.Button1ItemPress": {
+          "joinId": 1001,
+          "smartObjectId": 5
         },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1201,
-          "smartObjectId": 14
+        "inCall.cameraPresetList.Button2ItemPress": {
+          "joinId": 1002,
+          "smartObjectId": 5
         },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1202,
-          "smartObjectId": 14
+        "inCall.cameraPresetList.Button3ItemPress": {
+          "joinId": 1003,
+          "smartObjectId": 5
         },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1203,
-          "smartObjectId": 14
+        "inCall.cameraPresetList.Button4ItemPress": {
+          "joinId": 1004,
+          "smartObjectId": 5
         },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1204,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1205,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1206,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1207,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1208,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1209,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1210,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1211,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1212,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1213,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1214,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1215,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1216,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1217,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1218,
-          "smartObjectId": 14
-        },
-        "home.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1201,
-          "smartObjectId": 15
-        },
-        "home.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1202,
-          "smartObjectId": 15
-        },
-        "home.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1203,
-          "smartObjectId": 15
-        },
-        "home.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1204,
-          "smartObjectId": 15
-        },
-        "home.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1205,
-          "smartObjectId": 15
-        },
-        "home.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1206,
-          "smartObjectId": 15
-        },
-        "popUps.popUpAdvRouting.popUpCloseBtn.Press": {
+        "inCall.cameraDpad.Up": {
           "joinId": 3,
-          "smartObjectId": 19
+          "smartObjectId": 7
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1201,
-          "smartObjectId": 20
+        "inCall.cameraDpad.Down": {
+          "joinId": 4,
+          "smartObjectId": 7
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1202,
-          "smartObjectId": 20
+        "inCall.cameraDpad.Left": {
+          "joinId": 5,
+          "smartObjectId": 7
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1203,
-          "smartObjectId": 20
+        "inCall.cameraDpad.Right": {
+          "joinId": 6,
+          "smartObjectId": 7
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1204,
-          "smartObjectId": 20
+        "inCall.cameraDpad.Center": {
+          "joinId": 7,
+          "smartObjectId": 7
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1205,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[0].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 601,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1206,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 602,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1207,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 603,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1208,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[1].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 604,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1209,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 605,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1210,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 606,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1211,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[2].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 607,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1212,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 608,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1213,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 609,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1214,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[3].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 610,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1215,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 611,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1216,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 612,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.advSrcBtn.Press": {
-          "joinId": 1217,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[4].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 613,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.presentItemSync.Press": {
-          "joinId": 1218,
-          "smartObjectId": 20
+        "inCall.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 614,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1201,
-          "smartObjectId": 21
+        "inCall.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 615,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1202,
-          "smartObjectId": 21
+        "inCall.contentSharingList.Items[5].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 616,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1203,
-          "smartObjectId": 21
+        "inCall.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 617,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1204,
-          "smartObjectId": 21
+        "inCall.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 618,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1205,
-          "smartObjectId": 21
+        "inCall.contentSharingList.Items[6].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 619,
+          "smartObjectId": 8
         },
-        "popUps.popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.Press": {
-          "joinId": 1206,
-          "smartObjectId": 21
+        "inCall.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 620,
+          "smartObjectId": 8
+        },
+        "inCall.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 621,
+          "smartObjectId": 8
+        },
+        "inCall.contentSharingList.Items[7].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 622,
+          "smartObjectId": 8
+        },
+        "inCall.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 623,
+          "smartObjectId": 8
+        },
+        "inCall.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 624,
+          "smartObjectId": 8
+        },
+        "inCall.contentSharingList.Items[8].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 625,
+          "smartObjectId": 8
+        },
+        "inCall.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 626,
+          "smartObjectId": 8
+        },
+        "inCall.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 627,
+          "smartObjectId": 8
+        },
+        "cardSourceSharing.contentSharingList.Items[0].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 601,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 602,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[0].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 603,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[1].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 604,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 605,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[1].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 606,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[2].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 607,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 608,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[2].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 609,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[3].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 610,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 611,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[3].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 612,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[4].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 613,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 614,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[4].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 615,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[5].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 616,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 617,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[5].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 618,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[6].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 619,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 620,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[6].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 621,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[7].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 622,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 623,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[7].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 624,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[8].listItem_sourceCONTRACT.presentItemSync.Press": {
+          "joinId": 625,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Press": {
+          "joinId": 626,
+          "smartObjectId": 22
+        },
+        "cardSourceSharing.contentSharingList.Items[8].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 627,
+          "smartObjectId": 22
         },
         "cardSrcCameras.cameraPresetList.Button1ItemPress": {
           "joinId": 1001,
@@ -737,207 +798,551 @@
           "joinId": 7,
           "smartObjectId": 25
         },
-        "systemFooter.popUpMicsBtn.Press": {
+        "systemPower.shutdownCancel.Press": {
           "joinId": 3,
           "smartObjectId": 26
         },
-        "systemFooter.sysHomeBtn.Press": {
+        "systemPower.shutdownConfirm.Press": {
           "joinId": 4,
           "smartObjectId": 26
         },
-        "systemFooter.sysPowerBtn.Press": {
+        "systemPower.shutdownDismiss.Press": {
           "joinId": 5,
           "smartObjectId": 26
         },
-        "cardSourceSelectList.presentAdvRoutingBtn.Press": {
+        "systemFooter.popUpMicsBtn.Press": {
           "joinId": 2,
           "smartObjectId": 27
         },
+        "systemFooter.sysHomeBtn.Press": {
+          "joinId": 3,
+          "smartObjectId": 27
+        },
+        "systemFooter.sysPowerBtn.Press": {
+          "joinId": 4,
+          "smartObjectId": 27
+        },
+        "popUpMics.popUpCloseBtn.Press": {
+          "joinId": 3,
+          "smartObjectId": 28
+        },
+        "popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1201,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1202,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1203,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1204,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1205,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1206,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1207,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1208,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1209,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1210,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1211,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1212,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1213,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1214,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1215,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1216,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1217,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1218,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1219,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1220,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1221,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1222,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1223,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1224,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1225,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1226,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1227,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol1Up.Press": {
+          "joinId": 1228,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol2Down.Press": {
+          "joinId": 1229,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemVol3Mute.Press": {
+          "joinId": 1230,
+          "smartObjectId": 29
+        },
+        "cardSourceSelectList.presentAdvRoutingBtn.Press": {
+          "joinId": 2,
+          "smartObjectId": 30
+        },
         "cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.presentItemSync.Press": {
           "joinId": 601,
-          "smartObjectId": 28
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListBtn.Press": {
           "joinId": 602,
-          "smartObjectId": 28
+          "smartObjectId": 31
+        },
+        "cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 603,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.presentItemSync.Press": {
-          "joinId": 603,
-          "smartObjectId": 28
+          "joinId": 604,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListBtn.Press": {
-          "joinId": 604,
-          "smartObjectId": 28
+          "joinId": 605,
+          "smartObjectId": 31
+        },
+        "cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 606,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.presentItemSync.Press": {
-          "joinId": 605,
-          "smartObjectId": 28
+          "joinId": 607,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListBtn.Press": {
-          "joinId": 606,
-          "smartObjectId": 28
+          "joinId": 608,
+          "smartObjectId": 31
+        },
+        "cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 609,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.presentItemSync.Press": {
-          "joinId": 607,
-          "smartObjectId": 28
+          "joinId": 610,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListBtn.Press": {
-          "joinId": 608,
-          "smartObjectId": 28
+          "joinId": 611,
+          "smartObjectId": 31
+        },
+        "cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 612,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.presentItemSync.Press": {
-          "joinId": 609,
-          "smartObjectId": 28
+          "joinId": 613,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListBtn.Press": {
-          "joinId": 610,
-          "smartObjectId": 28
+          "joinId": 614,
+          "smartObjectId": 31
+        },
+        "cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 615,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.presentItemSync.Press": {
-          "joinId": 611,
-          "smartObjectId": 28
+          "joinId": 616,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListBtn.Press": {
-          "joinId": 612,
-          "smartObjectId": 28
+          "joinId": 617,
+          "smartObjectId": 31
+        },
+        "cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 618,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.presentItemSync.Press": {
-          "joinId": 613,
-          "smartObjectId": 28
+          "joinId": 619,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListBtn.Press": {
-          "joinId": 614,
-          "smartObjectId": 28
+          "joinId": 620,
+          "smartObjectId": 31
+        },
+        "cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 621,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.presentItemSync.Press": {
-          "joinId": 615,
-          "smartObjectId": 28
+          "joinId": 622,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListBtn.Press": {
-          "joinId": 616,
-          "smartObjectId": 28
+          "joinId": 623,
+          "smartObjectId": 31
+        },
+        "cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 624,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.presentItemSync.Press": {
-          "joinId": 617,
-          "smartObjectId": 28
+          "joinId": 625,
+          "smartObjectId": 31
         },
         "cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Press": {
-          "joinId": 618,
-          "smartObjectId": 28
+          "joinId": 626,
+          "smartObjectId": 31
+        },
+        "cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListLabel.Press": {
+          "joinId": 627,
+          "smartObjectId": 31
         },
         "volume.sysVol1UpBtn.Press": {
           "joinId": 2,
-          "smartObjectId": 30
+          "smartObjectId": 33
         },
         "volume.sysVol2DownBtn.Press": {
           "joinId": 3,
-          "smartObjectId": 30
+          "smartObjectId": 33
         },
         "volume.sysVol3MuteBtn.Press": {
           "joinId": 4,
-          "smartObjectId": 30
+          "smartObjectId": 33
+        },
+        "cardSrcCable.cblGuide.Press": {
+          "joinId": 3,
+          "smartObjectId": 34
+        },
+        "cardSrcCable.cblPlay.Press": {
+          "joinId": 4,
+          "smartObjectId": 34
+        },
+        "cardSrcCable.navReturn.Press": {
+          "joinId": 5,
+          "smartObjectId": 34
+        },
+        "cardSrcCable.cblDpad.Up": {
+          "joinId": 3,
+          "smartObjectId": 35
+        },
+        "cardSrcCable.cblDpad.Down": {
+          "joinId": 4,
+          "smartObjectId": 35
+        },
+        "cardSrcCable.cblDpad.Left": {
+          "joinId": 5,
+          "smartObjectId": 35
+        },
+        "cardSrcCable.cblDpad.Right": {
+          "joinId": 6,
+          "smartObjectId": 35
+        },
+        "cardSrcCable.cblDpad.Center": {
+          "joinId": 7,
+          "smartObjectId": 35
         },
         "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemBtn.Press": {
           "joinId": 1,
-          "smartObjectId": 32
+          "smartObjectId": 37
+        },
+        "widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemLabel.Press": {
+          "joinId": 2,
+          "smartObjectId": 37
         },
         "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemBtn.Press": {
-          "joinId": 2,
-          "smartObjectId": 32
+          "joinId": 3,
+          "smartObjectId": 37
+        },
+        "widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemLabel.Press": {
+          "joinId": 4,
+          "smartObjectId": 37
         },
         "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemBtn.Press": {
-          "joinId": 3,
-          "smartObjectId": 32
+          "joinId": 5,
+          "smartObjectId": 37
+        },
+        "widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemLabel.Press": {
+          "joinId": 6,
+          "smartObjectId": 37
         },
         "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemBtn.Press": {
-          "joinId": 4,
-          "smartObjectId": 32
+          "joinId": 7,
+          "smartObjectId": 37
+        },
+        "widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemLabel.Press": {
+          "joinId": 8,
+          "smartObjectId": 37
         },
         "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemBtn.Press": {
-          "joinId": 5,
-          "smartObjectId": 32
+          "joinId": 9,
+          "smartObjectId": 37
+        },
+        "widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemLabel.Press": {
+          "joinId": 10,
+          "smartObjectId": 37
         },
         "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemBtn.Press": {
-          "joinId": 6,
-          "smartObjectId": 32
+          "joinId": 11,
+          "smartObjectId": 37
+        },
+        "widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemLabel.Press": {
+          "joinId": 12,
+          "smartObjectId": 37
+        },
+        "popUpAdvRouting.popUpCloseBtn.Press": {
+          "joinId": 3,
+          "smartObjectId": 38
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.advSrcBtn.Press": {
+          "joinId": 1201,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[0].listItem_advSrcCONTRACT.presentItemSync.Press": {
+          "joinId": 1202,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.advSrcBtn.Press": {
+          "joinId": 1203,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[1].listItem_advSrcCONTRACT.presentItemSync.Press": {
+          "joinId": 1204,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.advSrcBtn.Press": {
+          "joinId": 1205,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[2].listItem_advSrcCONTRACT.presentItemSync.Press": {
+          "joinId": 1206,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.advSrcBtn.Press": {
+          "joinId": 1207,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[3].listItem_advSrcCONTRACT.presentItemSync.Press": {
+          "joinId": 1208,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.advSrcBtn.Press": {
+          "joinId": 1209,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[4].listItem_advSrcCONTRACT.presentItemSync.Press": {
+          "joinId": 1210,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.advSrcBtn.Press": {
+          "joinId": 1211,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[5].listItem_advSrcCONTRACT.presentItemSync.Press": {
+          "joinId": 1212,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.advSrcBtn.Press": {
+          "joinId": 1213,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[6].listItem_advSrcCONTRACT.presentItemSync.Press": {
+          "joinId": 1214,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.advSrcBtn.Press": {
+          "joinId": 1215,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[7].listItem_advSrcCONTRACT.presentItemSync.Press": {
+          "joinId": 1216,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.advSrcBtn.Press": {
+          "joinId": 1217,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteSources.Items[8].listItem_advSrcCONTRACT.presentItemSync.Press": {
+          "joinId": 1218,
+          "smartObjectId": 39
+        },
+        "popUpAdvRouting.popUpAdvRouteDest.Items[0].listItem_advDestCONTRACT.advDestBtn.Press": {
+          "joinId": 1201,
+          "smartObjectId": 40
+        },
+        "popUpAdvRouting.popUpAdvRouteDest.Items[1].listItem_advDestCONTRACT.advDestBtn.Press": {
+          "joinId": 1202,
+          "smartObjectId": 40
+        },
+        "popUpAdvRouting.popUpAdvRouteDest.Items[2].listItem_advDestCONTRACT.advDestBtn.Press": {
+          "joinId": 1203,
+          "smartObjectId": 40
+        },
+        "popUpAdvRouting.popUpAdvRouteDest.Items[3].listItem_advDestCONTRACT.advDestBtn.Press": {
+          "joinId": 1204,
+          "smartObjectId": 40
+        },
+        "popUpAdvRouting.popUpAdvRouteDest.Items[4].listItem_advDestCONTRACT.advDestBtn.Press": {
+          "joinId": 1205,
+          "smartObjectId": 40
+        },
+        "popUpAdvRouting.popUpAdvRouteDest.Items[5].listItem_advDestCONTRACT.advDestBtn.Press": {
+          "joinId": 1206,
+          "smartObjectId": 40
+        },
+        "cameraSelList.cameraSelList.Button1ItemPress": {
+          "joinId": 1001,
+          "smartObjectId": 42
+        },
+        "cameraSelList.cameraSelList.Button2ItemPress": {
+          "joinId": 1002,
+          "smartObjectId": 42
+        },
+        "cameraSelList.cameraSelList.Button3ItemPress": {
+          "joinId": 1003,
+          "smartObjectId": 42
+        },
+        "cameraSelList.cameraSelList.Button4ItemPress": {
+          "joinId": 1004,
+          "smartObjectId": 42
         },
         "cardSrcATV.atvBack.Press": {
           "joinId": 3,
-          "smartObjectId": 33
+          "smartObjectId": 43
         },
         "cardSrcATV.atvPlay.Press": {
           "joinId": 4,
-          "smartObjectId": 33
+          "smartObjectId": 43
         },
         "cardSrcATV.navReturn.Press": {
           "joinId": 5,
-          "smartObjectId": 33
+          "smartObjectId": 43
         },
         "cardSrcATV.atvDpad.Up": {
           "joinId": 3,
-          "smartObjectId": 34
+          "smartObjectId": 44
         },
         "cardSrcATV.atvDpad.Down": {
           "joinId": 4,
-          "smartObjectId": 34
+          "smartObjectId": 44
         },
         "cardSrcATV.atvDpad.Left": {
           "joinId": 5,
-          "smartObjectId": 34
+          "smartObjectId": 44
         },
         "cardSrcATV.atvDpad.Right": {
           "joinId": 6,
-          "smartObjectId": 34
+          "smartObjectId": 44
         },
         "cardSrcATV.atvDpad.Center": {
           "joinId": 7,
-          "smartObjectId": 34
+          "smartObjectId": 44
         }
       },
       "numeric": {
-        "home.popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
-          "joinId": 1801,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
-          "joinId": 1802,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
-          "joinId": 1803,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
-          "joinId": 1804,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
-          "joinId": 1805,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
-          "joinId": 1806,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
-          "joinId": 1807,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
-          "joinId": 1808,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
-          "joinId": 1809,
-          "smartObjectId": 10
-        },
-        "home.popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
-          "joinId": 1810,
-          "smartObjectId": 10
-        },
-        "home.systemPowerPage.shutdownTimeGauge.LowerTouch": {
+        "systemPower.shutdownTimeGauge.LowerTouch": {
           "joinId": 4,
-          "smartObjectId": 11
+          "smartObjectId": 26
+        },
+        "popUpMics.MicsList.Items[0].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1801,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[1].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1802,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[2].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1803,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[3].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1804,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[4].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1805,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[5].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1806,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[6].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1807,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[7].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1808,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[8].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1809,
+          "smartObjectId": 29
+        },
+        "popUpMics.MicsList.Items[9].listItem_micLevelCONTRACT.micItemLvl.LowerTouch": {
+          "joinId": 1810,
+          "smartObjectId": 29
         }
       },
       "string": {}

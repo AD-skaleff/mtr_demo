@@ -46,34 +46,29 @@ namespace MicrosoftTeamsDemo.home
         void home_VisibilityJoin(bool digital);
 
         /// <summary>
-        /// ComplexComponent widgetSrcATV
+        /// ComplexComponent cardSrcATV
         /// </summary>
-        MicrosoftTeamsDemo.home.IwidgetSrcATV widgetSrcATV { get; }
-
-        /// <summary>
-        /// ComplexComponent widgetSrcCameras
-        /// </summary>
-        MicrosoftTeamsDemo.home.IwidgetSrcCameras widgetSrcCameras { get; }
+        MicrosoftTeamsDemo.home.IcardSrcATV cardSrcATV { get; }
 
         /// <summary>
         /// ComplexComponent popUpMics
         /// </summary>
-        MicrosoftTeamsDemo.home.popUpMics.IpopUpMics popUpMics { get; }
+        MicrosoftTeamsDemo.home.IpopUpMics popUpMics { get; }
 
         /// <summary>
-        /// ComplexComponent systemPower
+        /// ComplexComponent systemPowerPage
         /// </summary>
         MicrosoftTeamsDemo.home.IsystemPowerPage systemPowerPage { get; }
 
         /// <summary>
-        /// ComplexComponent SourceSelect
+        /// ComplexComponent cardSourceSelect
         /// </summary>
-        MicrosoftTeamsDemo.home.ISourceSelect SourceSelect { get; }
+        MicrosoftTeamsDemo.home.IcardSourceSelect cardSourceSelect { get; }
 
         /// <summary>
         /// ComplexComponent popUpAdvRouting
         /// </summary>
-        MicrosoftTeamsDemo.home.popUpAdvRouting.IpopUpAdvRouting popUpAdvRouting { get; }
+        MicrosoftTeamsDemo.home.IpopUpAdvRouting popUpAdvRouting { get; }
     }
 
     /// <summary>
@@ -174,12 +169,11 @@ namespace MicrosoftTeamsDemo.home
             _devices = new List<BasicTriListWithSmartObject>(); 
  
 
-            widgetSrcATV = new MicrosoftTeamsDemo.home.widgetSrcATV(ComponentMediator, 7);
-            widgetSrcCameras = new MicrosoftTeamsDemo.home.widgetSrcCameras(ComponentMediator, 8);
-            popUpMics = new MicrosoftTeamsDemo.home.popUpMics.popUpMics(ComponentMediator, 9);
-            systemPowerPage = new MicrosoftTeamsDemo.home.systemPowerPage(ComponentMediator, 11);
-            SourceSelect = new MicrosoftTeamsDemo.home.SourceSelect(ComponentMediator, 12);
-            popUpAdvRouting = new MicrosoftTeamsDemo.home.popUpAdvRouting.popUpAdvRouting(ComponentMediator, 13);
+            cardSrcATV = new MicrosoftTeamsDemo.home.cardSrcATV(ComponentMediator, 13);
+            popUpMics = new MicrosoftTeamsDemo.home.popUpMics(ComponentMediator, 14);
+            systemPowerPage = new MicrosoftTeamsDemo.home.systemPowerPage(ComponentMediator, 15);
+            cardSourceSelect = new MicrosoftTeamsDemo.home.cardSourceSelect(ComponentMediator, 16);
+            popUpAdvRouting = new MicrosoftTeamsDemo.home.popUpAdvRouting(ComponentMediator, 17);
         }
 
         public void AddDevice(BasicTriListWithSmartObject device)
@@ -187,17 +181,15 @@ namespace MicrosoftTeamsDemo.home
             Devices.Add(device);
             ComponentMediator.HookSmartObjectEvents(device.SmartObjects[ControlJoinId]);
 
-            ((MicrosoftTeamsDemo.home.widgetSrcATV)widgetSrcATV).AddDevice(device);
+            ((MicrosoftTeamsDemo.home.cardSrcATV)cardSrcATV).AddDevice(device);
 
-            ((MicrosoftTeamsDemo.home.widgetSrcCameras)widgetSrcCameras).AddDevice(device);
-
-            ((MicrosoftTeamsDemo.home.popUpMics.popUpMics)popUpMics).AddDevice(device);
+            ((MicrosoftTeamsDemo.home.popUpMics)popUpMics).AddDevice(device);
 
             ((MicrosoftTeamsDemo.home.systemPowerPage)systemPowerPage).AddDevice(device);
 
-            ((MicrosoftTeamsDemo.home.SourceSelect)SourceSelect).AddDevice(device);
+            ((MicrosoftTeamsDemo.home.cardSourceSelect)cardSourceSelect).AddDevice(device);
 
-            ((MicrosoftTeamsDemo.home.popUpAdvRouting.popUpAdvRouting)popUpAdvRouting).AddDevice(device);
+            ((MicrosoftTeamsDemo.home.popUpAdvRouting)popUpAdvRouting).AddDevice(device);
         }
 
         public void RemoveDevice(BasicTriListWithSmartObject device)
@@ -205,17 +197,15 @@ namespace MicrosoftTeamsDemo.home
             Devices.Remove(device);
             ComponentMediator.UnHookSmartObjectEvents(device.SmartObjects[ControlJoinId]);
 
-            ((MicrosoftTeamsDemo.home.widgetSrcATV)widgetSrcATV).RemoveDevice(device);
+            ((MicrosoftTeamsDemo.home.cardSrcATV)cardSrcATV).RemoveDevice(device);
 
-            ((MicrosoftTeamsDemo.home.widgetSrcCameras)widgetSrcCameras).RemoveDevice(device);
-
-            ((MicrosoftTeamsDemo.home.popUpMics.popUpMics)popUpMics).RemoveDevice(device);
+            ((MicrosoftTeamsDemo.home.popUpMics)popUpMics).RemoveDevice(device);
 
             ((MicrosoftTeamsDemo.home.systemPowerPage)systemPowerPage).RemoveDevice(device);
 
-            ((MicrosoftTeamsDemo.home.SourceSelect)SourceSelect).RemoveDevice(device);
+            ((MicrosoftTeamsDemo.home.cardSourceSelect)cardSourceSelect).RemoveDevice(device);
 
-            ((MicrosoftTeamsDemo.home.popUpAdvRouting.popUpAdvRouting)popUpAdvRouting).RemoveDevice(device);
+            ((MicrosoftTeamsDemo.home.popUpAdvRouting)popUpAdvRouting).RemoveDevice(device);
         }
 
         #endregion
@@ -238,19 +228,14 @@ namespace MicrosoftTeamsDemo.home
         }
 
         /// <summary>
-        /// ComplexComponent widgetSrcATV
+        /// ComplexComponent cardSrcATV
         /// </summary>
-        public MicrosoftTeamsDemo.home.IwidgetSrcATV widgetSrcATV { get; private set; }
-
-        /// <summary>
-        /// ComplexComponent widgetSrcCameras
-        /// </summary>
-        public MicrosoftTeamsDemo.home.IwidgetSrcCameras widgetSrcCameras { get; private set; }
+        public MicrosoftTeamsDemo.home.IcardSrcATV cardSrcATV { get; private set; }
 
         /// <summary>
         /// ComplexComponent popUpMics
         /// </summary>
-        public MicrosoftTeamsDemo.home.popUpMics.IpopUpMics popUpMics { get; private set; }
+        public MicrosoftTeamsDemo.home.IpopUpMics popUpMics { get; private set; }
 
         /// <summary>
         /// ComplexComponent systemPowerPage
@@ -258,14 +243,14 @@ namespace MicrosoftTeamsDemo.home
         public MicrosoftTeamsDemo.home.IsystemPowerPage systemPowerPage { get; private set; }
 
         /// <summary>
-        /// ComplexComponent SourceSelect
+        /// ComplexComponent cardSourceSelect
         /// </summary>
-        public MicrosoftTeamsDemo.home.ISourceSelect SourceSelect { get; private set; }
+        public MicrosoftTeamsDemo.home.IcardSourceSelect cardSourceSelect { get; private set; }
 
         /// <summary>
         /// ComplexComponent popUpAdvRouting
         /// </summary>
-        public MicrosoftTeamsDemo.home.popUpAdvRouting.IpopUpAdvRouting popUpAdvRouting { get; private set; }
+        public MicrosoftTeamsDemo.home.IpopUpAdvRouting popUpAdvRouting { get; private set; }
 
         #endregion
 

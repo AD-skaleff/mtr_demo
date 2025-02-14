@@ -51,6 +51,30 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         void presentAdvRoutingBtn_Visibility_fb(bool digital);
 
         /// <summary>
+        /// sys.warming.Visibility Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void syswarming_Visibility_fb(cardSourceSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// sys.warming.Visibility Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void syswarming_Visibility_fb(bool digital);
+
+        /// <summary>
+        /// sys.warmingSpinner.Visibility Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void syswarmingSpinner_Visibility_fb(cardSourceSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// sys.warmingSpinner.Visibility Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void syswarmingSpinner_Visibility_fb(bool digital);
+
+        /// <summary>
         /// presentAdvRoutingBtn.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
@@ -123,10 +147,22 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
                 public const uint presentAdvRoutingBtn_Visibility_fbState = 1;
 
                 /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.syswarming.Visibility_fb
+                /// sys.warming.Visibility
+                /// </summary>
+                public const uint syswarming_Visibility_fbState = 2;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.syswarmingSpinner.Visibility_fb
+                /// sys.warmingSpinner.Visibility
+                /// </summary>
+                public const uint syswarmingSpinner_Visibility_fbState = 3;
+
+                /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentAdvRoutingBtn.Selected
                 /// presentAdvRoutingBtn.Selected
                 /// </summary>
-                public const uint presentAdvRoutingBtn_SelectedState = 3;
+                public const uint presentAdvRoutingBtn_SelectedState = 5;
 
             }
         }
@@ -180,7 +216,7 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
  
 
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.presentAdvRoutingBtn_PressEvent, onpresentAdvRoutingBtn_Press);
-            presentSelectList = new MicrosoftTeamsDemo.cardSourceSelectList.presentSelectList(ComponentMediator, 28);
+            presentSelectList = new MicrosoftTeamsDemo.cardSourceSelectList.presentSelectList(ComponentMediator, 31);
         }
 
         public void AddDevice(BasicTriListWithSmartObject device)
@@ -239,6 +275,34 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         public void presentAdvRoutingBtn_Visibility_fb(bool digital)
         {
             presentAdvRoutingBtn_Visibility_fb((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void syswarming_Visibility_fb(cardSourceSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.syswarming_Visibility_fbState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void syswarming_Visibility_fb(bool digital)
+        {
+            syswarming_Visibility_fb((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void syswarmingSpinner_Visibility_fb(cardSourceSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.syswarmingSpinner_Visibility_fbState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void syswarmingSpinner_Visibility_fb(bool digital)
+        {
+            syswarmingSpinner_Visibility_fb((sig, component) => sig.BoolValue = digital);
         }
 
         /// <summary>

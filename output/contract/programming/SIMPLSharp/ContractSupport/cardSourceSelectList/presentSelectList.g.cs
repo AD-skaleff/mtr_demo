@@ -43,6 +43,11 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         event EventHandler<ItemEventArgs> sourceListBtn_PressEvent;
 
         /// <summary>
+        /// Event cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<ItemEventArgs> sourceListLabel_PressEvent;
+
+        /// <summary>
         /// presentSelectList.List_Item1_Visible Feedback
         /// </summary>
         /// <param name="listItemIndex">The index of the listItem (1 based).</param>
@@ -85,18 +90,32 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         void sourceListBtn_Selected(ushort itemIndex, bool digital);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="itemIndex">Index of the Widget List (0 based).</param>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void sourceListLabel_Selected(ushort itemIndex, presentSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="itemIndex">Index of the Widget List (0 based).</param>
+        /// <param name="digital">The bool value to send to the panel.</param>
+        void sourceListLabel_Selected(ushort itemIndex, bool digital);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="itemIndex">Index of the Widget List (0 based).</param>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void sourceListLabel_Indirect(ushort itemIndex, presentSelectListStringInputSigDelegate callback);
+        void sourceListLabel_IndirectRichText(ushort itemIndex, presentSelectListStringInputSigDelegate callback);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="itemIndex">Index of the Widget List (0 based).</param>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void sourceListLabel_Indirect(ushort itemIndex, string serial);
+        void sourceListLabel_IndirectRichText(ushort itemIndex, string serial);
 
         /// <summary>
         /// cardSourceSelectList.presentSelectList.Items[0].sourceListBtn.Icon URL Feedback
@@ -139,6 +158,15 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         }
 
         /// <inheritdoc/>
+        public event EventHandler<ItemEventArgs> sourceListLabel_PressEvent;
+        private void onsourceListLabel_Press(IndexedEventArgs eventArgs)
+        {
+            EventHandler<ItemEventArgs> handler = sourceListLabel_PressEvent;
+            if (handler != null)
+                handler(this, new ItemEventArgs((SmartObjectEventArgs)eventArgs.SigArgs, eventArgs.ItemIndex));
+        }
+
+        /// <inheritdoc/>
         public void presentItemSync_Selected(ushort itemIndex, presentSelectListBoolInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
@@ -167,6 +195,20 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
             sourceListBtn_Selected(itemIndex, (sig, component) => sig.BoolValue = digital);
         }
         /// <inheritdoc/>
+        public void sourceListLabel_Selected(ushort itemIndex, presentSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_0__sourceListLabel_SelectedState + (uint) itemIndex], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void sourceListLabel_Selected(ushort itemIndex, bool digital)
+        {
+            sourceListLabel_Selected(itemIndex, (sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
         public void List_Item_Visible(ushort listItemIndex, presentSelectListBoolInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
@@ -183,18 +225,18 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
 
 
         /// <inheritdoc/>
-        public void sourceListLabel_Indirect(ushort itemIndex, presentSelectListStringInputSigDelegate callback)
+        public void sourceListLabel_IndirectRichText(ushort itemIndex, presentSelectListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__sourceListLabel_IndirectState + (uint) itemIndex * 1], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__sourceListLabel_IndirectRichTextState + (uint) itemIndex * 1], this);
             }
         }
 
         /// <inheritdoc/>
-        public void sourceListLabel_Indirect(ushort itemIndex, string serial)
+        public void sourceListLabel_IndirectRichText(ushort itemIndex, string serial)
         {
-            sourceListLabel_Indirect(itemIndex, (sig, component) => sig.StringValue = serial);
+            sourceListLabel_IndirectRichText(itemIndex, (sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
         public void sourceListBtn_IconURL(ushort itemIndex, presentSelectListStringInputSigDelegate callback)
@@ -232,6 +274,11 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         event EventHandler<UIEventArgs> Items_0__sourceListBtn_PressEvent;
 
         /// <summary>
+        /// Event cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_0__sourceListLabel_PressEvent;
+
+        /// <summary>
         /// Event cardSourceSelectList.presentSelectList.Items[1].presentItemSync.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_1__presentItemSync_PressEvent;
@@ -240,6 +287,11 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         /// Event cardSourceSelectList.presentSelectList.Items[1].sourceListBtn.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_1__sourceListBtn_PressEvent;
+
+        /// <summary>
+        /// Event cardSourceSelectList.presentSelectList.Items[1].sourceListLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_1__sourceListLabel_PressEvent;
 
         /// <summary>
         /// Event cardSourceSelectList.presentSelectList.Items[2].presentItemSync.Press (from panel to Control System)
@@ -252,6 +304,11 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         event EventHandler<UIEventArgs> Items_2__sourceListBtn_PressEvent;
 
         /// <summary>
+        /// Event cardSourceSelectList.presentSelectList.Items[2].sourceListLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_2__sourceListLabel_PressEvent;
+
+        /// <summary>
         /// Event cardSourceSelectList.presentSelectList.Items[3].presentItemSync.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_3__presentItemSync_PressEvent;
@@ -260,6 +317,11 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         /// Event cardSourceSelectList.presentSelectList.Items[3].sourceListBtn.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_3__sourceListBtn_PressEvent;
+
+        /// <summary>
+        /// Event cardSourceSelectList.presentSelectList.Items[3].sourceListLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_3__sourceListLabel_PressEvent;
 
         /// <summary>
         /// Event cardSourceSelectList.presentSelectList.Items[4].presentItemSync.Press (from panel to Control System)
@@ -272,6 +334,11 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         event EventHandler<UIEventArgs> Items_4__sourceListBtn_PressEvent;
 
         /// <summary>
+        /// Event cardSourceSelectList.presentSelectList.Items[4].sourceListLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_4__sourceListLabel_PressEvent;
+
+        /// <summary>
         /// Event cardSourceSelectList.presentSelectList.Items[5].presentItemSync.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_5__presentItemSync_PressEvent;
@@ -280,6 +347,11 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         /// Event cardSourceSelectList.presentSelectList.Items[5].sourceListBtn.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_5__sourceListBtn_PressEvent;
+
+        /// <summary>
+        /// Event cardSourceSelectList.presentSelectList.Items[5].sourceListLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_5__sourceListLabel_PressEvent;
 
         /// <summary>
         /// Event cardSourceSelectList.presentSelectList.Items[6].presentItemSync.Press (from panel to Control System)
@@ -292,6 +364,11 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         event EventHandler<UIEventArgs> Items_6__sourceListBtn_PressEvent;
 
         /// <summary>
+        /// Event cardSourceSelectList.presentSelectList.Items[6].sourceListLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_6__sourceListLabel_PressEvent;
+
+        /// <summary>
         /// Event cardSourceSelectList.presentSelectList.Items[7].presentItemSync.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_7__presentItemSync_PressEvent;
@@ -302,6 +379,11 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         event EventHandler<UIEventArgs> Items_7__sourceListBtn_PressEvent;
 
         /// <summary>
+        /// Event cardSourceSelectList.presentSelectList.Items[7].sourceListLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_7__sourceListLabel_PressEvent;
+
+        /// <summary>
         /// Event cardSourceSelectList.presentSelectList.Items[8].presentItemSync.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_8__presentItemSync_PressEvent;
@@ -310,6 +392,11 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         /// Event cardSourceSelectList.presentSelectList.Items[8].sourceListBtn.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_8__sourceListBtn_PressEvent;
+
+        /// <summary>
+        /// Event cardSourceSelectList.presentSelectList.Items[8].sourceListLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_8__sourceListLabel_PressEvent;
 
         /// <summary>
         /// presentSelectList.List Visibility Feedback
@@ -456,6 +543,18 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         void Items_0__sourceListBtn_Selected(bool digital);
 
         /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_0__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_0__sourceListLabel_Selected(bool digital);
+
+        /// <summary>
         /// cardSourceSelectList.presentSelectList.Items[1].presentItemSync.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
@@ -478,6 +577,18 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
         void Items_1__sourceListBtn_Selected(bool digital);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[1].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_1__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[1].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_1__sourceListLabel_Selected(bool digital);
 
         /// <summary>
         /// cardSourceSelectList.presentSelectList.Items[2].presentItemSync.Selected Feedback
@@ -504,6 +615,18 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         void Items_2__sourceListBtn_Selected(bool digital);
 
         /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[2].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_2__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[2].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_2__sourceListLabel_Selected(bool digital);
+
+        /// <summary>
         /// cardSourceSelectList.presentSelectList.Items[3].presentItemSync.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
@@ -526,6 +649,18 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
         void Items_3__sourceListBtn_Selected(bool digital);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[3].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_3__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[3].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_3__sourceListLabel_Selected(bool digital);
 
         /// <summary>
         /// cardSourceSelectList.presentSelectList.Items[4].presentItemSync.Selected Feedback
@@ -552,6 +687,18 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         void Items_4__sourceListBtn_Selected(bool digital);
 
         /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[4].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_4__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[4].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_4__sourceListLabel_Selected(bool digital);
+
+        /// <summary>
         /// cardSourceSelectList.presentSelectList.Items[5].presentItemSync.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
@@ -574,6 +721,18 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
         void Items_5__sourceListBtn_Selected(bool digital);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[5].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_5__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[5].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_5__sourceListLabel_Selected(bool digital);
 
         /// <summary>
         /// cardSourceSelectList.presentSelectList.Items[6].presentItemSync.Selected Feedback
@@ -600,6 +759,18 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         void Items_6__sourceListBtn_Selected(bool digital);
 
         /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[6].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_6__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[6].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_6__sourceListLabel_Selected(bool digital);
+
+        /// <summary>
         /// cardSourceSelectList.presentSelectList.Items[7].presentItemSync.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
@@ -622,6 +793,18 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
         void Items_7__sourceListBtn_Selected(bool digital);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[7].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_7__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[7].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_7__sourceListLabel_Selected(bool digital);
 
         /// <summary>
         /// cardSourceSelectList.presentSelectList.Items[8].presentItemSync.Selected Feedback
@@ -648,112 +831,124 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         void Items_8__sourceListBtn_Selected(bool digital);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[8].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_8__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[8].sourceListLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_8__sourceListLabel_Selected(bool digital);
+
+        /// <summary>
+        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_0__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback);
+        void Items_0__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_0__sourceListLabel_Indirect(string serial);
+        void Items_0__sourceListLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[1].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[1].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_1__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback);
+        void Items_1__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[1].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[1].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_1__sourceListLabel_Indirect(string serial);
+        void Items_1__sourceListLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[2].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[2].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_2__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback);
+        void Items_2__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[2].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[2].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_2__sourceListLabel_Indirect(string serial);
+        void Items_2__sourceListLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[3].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[3].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_3__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback);
+        void Items_3__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[3].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[3].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_3__sourceListLabel_Indirect(string serial);
+        void Items_3__sourceListLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[4].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[4].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_4__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback);
+        void Items_4__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[4].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[4].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_4__sourceListLabel_Indirect(string serial);
+        void Items_4__sourceListLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[5].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[5].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_5__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback);
+        void Items_5__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[5].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[5].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_5__sourceListLabel_Indirect(string serial);
+        void Items_5__sourceListLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[6].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[6].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_6__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback);
+        void Items_6__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[6].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[6].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_6__sourceListLabel_Indirect(string serial);
+        void Items_6__sourceListLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[7].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[7].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_7__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback);
+        void Items_7__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[7].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[7].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_7__sourceListLabel_Indirect(string serial);
+        void Items_7__sourceListLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[8].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[8].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_8__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback);
+        void Items_8__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback);
 
         /// <summary>
-        /// cardSourceSelectList.presentSelectList.Items[8].sourceListLabel.Indirect Feedback
+        /// cardSourceSelectList.presentSelectList.Items[8].sourceListLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_8__sourceListLabel_Indirect(string serial);
+        void Items_8__sourceListLabel_IndirectRichText(string serial);
 
         /// <summary>
         /// cardSourceSelectList.presentSelectList.Items[0].sourceListBtn.Icon URL Feedback
@@ -928,100 +1123,154 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
                 public const uint Items_0__sourceListBtn_PressEvent = 602;
 
                 /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListLabel.Press
+                /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Press
+                /// </summary>
+                public const uint Items_0__sourceListLabel_PressEvent = 603;
+
+                /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.presentItemSync.Press
                 /// cardSourceSelectList.presentSelectList.Items[1].presentItemSync.Press
                 /// </summary>
-                public const uint Items_1__presentItemSync_PressEvent = 603;
+                public const uint Items_1__presentItemSync_PressEvent = 604;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListBtn.Press
                 /// cardSourceSelectList.presentSelectList.Items[1].sourceListBtn.Press
                 /// </summary>
-                public const uint Items_1__sourceListBtn_PressEvent = 604;
+                public const uint Items_1__sourceListBtn_PressEvent = 605;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListLabel.Press
+                /// cardSourceSelectList.presentSelectList.Items[1].sourceListLabel.Press
+                /// </summary>
+                public const uint Items_1__sourceListLabel_PressEvent = 606;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.presentItemSync.Press
                 /// cardSourceSelectList.presentSelectList.Items[2].presentItemSync.Press
                 /// </summary>
-                public const uint Items_2__presentItemSync_PressEvent = 605;
+                public const uint Items_2__presentItemSync_PressEvent = 607;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListBtn.Press
                 /// cardSourceSelectList.presentSelectList.Items[2].sourceListBtn.Press
                 /// </summary>
-                public const uint Items_2__sourceListBtn_PressEvent = 606;
+                public const uint Items_2__sourceListBtn_PressEvent = 608;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListLabel.Press
+                /// cardSourceSelectList.presentSelectList.Items[2].sourceListLabel.Press
+                /// </summary>
+                public const uint Items_2__sourceListLabel_PressEvent = 609;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.presentItemSync.Press
                 /// cardSourceSelectList.presentSelectList.Items[3].presentItemSync.Press
                 /// </summary>
-                public const uint Items_3__presentItemSync_PressEvent = 607;
+                public const uint Items_3__presentItemSync_PressEvent = 610;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListBtn.Press
                 /// cardSourceSelectList.presentSelectList.Items[3].sourceListBtn.Press
                 /// </summary>
-                public const uint Items_3__sourceListBtn_PressEvent = 608;
+                public const uint Items_3__sourceListBtn_PressEvent = 611;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListLabel.Press
+                /// cardSourceSelectList.presentSelectList.Items[3].sourceListLabel.Press
+                /// </summary>
+                public const uint Items_3__sourceListLabel_PressEvent = 612;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.presentItemSync.Press
                 /// cardSourceSelectList.presentSelectList.Items[4].presentItemSync.Press
                 /// </summary>
-                public const uint Items_4__presentItemSync_PressEvent = 609;
+                public const uint Items_4__presentItemSync_PressEvent = 613;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListBtn.Press
                 /// cardSourceSelectList.presentSelectList.Items[4].sourceListBtn.Press
                 /// </summary>
-                public const uint Items_4__sourceListBtn_PressEvent = 610;
+                public const uint Items_4__sourceListBtn_PressEvent = 614;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListLabel.Press
+                /// cardSourceSelectList.presentSelectList.Items[4].sourceListLabel.Press
+                /// </summary>
+                public const uint Items_4__sourceListLabel_PressEvent = 615;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.presentItemSync.Press
                 /// cardSourceSelectList.presentSelectList.Items[5].presentItemSync.Press
                 /// </summary>
-                public const uint Items_5__presentItemSync_PressEvent = 611;
+                public const uint Items_5__presentItemSync_PressEvent = 616;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListBtn.Press
                 /// cardSourceSelectList.presentSelectList.Items[5].sourceListBtn.Press
                 /// </summary>
-                public const uint Items_5__sourceListBtn_PressEvent = 612;
+                public const uint Items_5__sourceListBtn_PressEvent = 617;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListLabel.Press
+                /// cardSourceSelectList.presentSelectList.Items[5].sourceListLabel.Press
+                /// </summary>
+                public const uint Items_5__sourceListLabel_PressEvent = 618;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.presentItemSync.Press
                 /// cardSourceSelectList.presentSelectList.Items[6].presentItemSync.Press
                 /// </summary>
-                public const uint Items_6__presentItemSync_PressEvent = 613;
+                public const uint Items_6__presentItemSync_PressEvent = 619;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListBtn.Press
                 /// cardSourceSelectList.presentSelectList.Items[6].sourceListBtn.Press
                 /// </summary>
-                public const uint Items_6__sourceListBtn_PressEvent = 614;
+                public const uint Items_6__sourceListBtn_PressEvent = 620;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListLabel.Press
+                /// cardSourceSelectList.presentSelectList.Items[6].sourceListLabel.Press
+                /// </summary>
+                public const uint Items_6__sourceListLabel_PressEvent = 621;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.presentItemSync.Press
                 /// cardSourceSelectList.presentSelectList.Items[7].presentItemSync.Press
                 /// </summary>
-                public const uint Items_7__presentItemSync_PressEvent = 615;
+                public const uint Items_7__presentItemSync_PressEvent = 622;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListBtn.Press
                 /// cardSourceSelectList.presentSelectList.Items[7].sourceListBtn.Press
                 /// </summary>
-                public const uint Items_7__sourceListBtn_PressEvent = 616;
+                public const uint Items_7__sourceListBtn_PressEvent = 623;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListLabel.Press
+                /// cardSourceSelectList.presentSelectList.Items[7].sourceListLabel.Press
+                /// </summary>
+                public const uint Items_7__sourceListLabel_PressEvent = 624;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.presentItemSync.Press
                 /// cardSourceSelectList.presentSelectList.Items[8].presentItemSync.Press
                 /// </summary>
-                public const uint Items_8__presentItemSync_PressEvent = 617;
+                public const uint Items_8__presentItemSync_PressEvent = 625;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Press
                 /// cardSourceSelectList.presentSelectList.Items[8].sourceListBtn.Press
                 /// </summary>
-                public const uint Items_8__sourceListBtn_PressEvent = 618;
+                public const uint Items_8__sourceListBtn_PressEvent = 626;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListLabel.Press
+                /// cardSourceSelectList.presentSelectList.Items[8].sourceListLabel.Press
+                /// </summary>
+                public const uint Items_8__sourceListLabel_PressEvent = 627;
 
 
                 /// <summary>
@@ -1097,100 +1346,154 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
                 public const uint Items_0__sourceListBtn_SelectedState = 612;
 
                 /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListLabel.Selected
+                /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Selected
+                /// </summary>
+                public const uint Items_0__sourceListLabel_SelectedState = 613;
+
+                /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.presentItemSync.Selected
                 /// cardSourceSelectList.presentSelectList.Items[1].presentItemSync.Selected
                 /// </summary>
-                public const uint Items_1__presentItemSync_SelectedState = 613;
+                public const uint Items_1__presentItemSync_SelectedState = 614;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListBtn.Selected
                 /// cardSourceSelectList.presentSelectList.Items[1].sourceListBtn.Selected
                 /// </summary>
-                public const uint Items_1__sourceListBtn_SelectedState = 614;
+                public const uint Items_1__sourceListBtn_SelectedState = 615;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListLabel.Selected
+                /// cardSourceSelectList.presentSelectList.Items[1].sourceListLabel.Selected
+                /// </summary>
+                public const uint Items_1__sourceListLabel_SelectedState = 616;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.presentItemSync.Selected
                 /// cardSourceSelectList.presentSelectList.Items[2].presentItemSync.Selected
                 /// </summary>
-                public const uint Items_2__presentItemSync_SelectedState = 615;
+                public const uint Items_2__presentItemSync_SelectedState = 617;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListBtn.Selected
                 /// cardSourceSelectList.presentSelectList.Items[2].sourceListBtn.Selected
                 /// </summary>
-                public const uint Items_2__sourceListBtn_SelectedState = 616;
+                public const uint Items_2__sourceListBtn_SelectedState = 618;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListLabel.Selected
+                /// cardSourceSelectList.presentSelectList.Items[2].sourceListLabel.Selected
+                /// </summary>
+                public const uint Items_2__sourceListLabel_SelectedState = 619;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.presentItemSync.Selected
                 /// cardSourceSelectList.presentSelectList.Items[3].presentItemSync.Selected
                 /// </summary>
-                public const uint Items_3__presentItemSync_SelectedState = 617;
+                public const uint Items_3__presentItemSync_SelectedState = 620;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListBtn.Selected
                 /// cardSourceSelectList.presentSelectList.Items[3].sourceListBtn.Selected
                 /// </summary>
-                public const uint Items_3__sourceListBtn_SelectedState = 618;
+                public const uint Items_3__sourceListBtn_SelectedState = 621;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListLabel.Selected
+                /// cardSourceSelectList.presentSelectList.Items[3].sourceListLabel.Selected
+                /// </summary>
+                public const uint Items_3__sourceListLabel_SelectedState = 622;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.presentItemSync.Selected
                 /// cardSourceSelectList.presentSelectList.Items[4].presentItemSync.Selected
                 /// </summary>
-                public const uint Items_4__presentItemSync_SelectedState = 619;
+                public const uint Items_4__presentItemSync_SelectedState = 623;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListBtn.Selected
                 /// cardSourceSelectList.presentSelectList.Items[4].sourceListBtn.Selected
                 /// </summary>
-                public const uint Items_4__sourceListBtn_SelectedState = 620;
+                public const uint Items_4__sourceListBtn_SelectedState = 624;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListLabel.Selected
+                /// cardSourceSelectList.presentSelectList.Items[4].sourceListLabel.Selected
+                /// </summary>
+                public const uint Items_4__sourceListLabel_SelectedState = 625;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.presentItemSync.Selected
                 /// cardSourceSelectList.presentSelectList.Items[5].presentItemSync.Selected
                 /// </summary>
-                public const uint Items_5__presentItemSync_SelectedState = 621;
+                public const uint Items_5__presentItemSync_SelectedState = 626;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListBtn.Selected
                 /// cardSourceSelectList.presentSelectList.Items[5].sourceListBtn.Selected
                 /// </summary>
-                public const uint Items_5__sourceListBtn_SelectedState = 622;
+                public const uint Items_5__sourceListBtn_SelectedState = 627;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListLabel.Selected
+                /// cardSourceSelectList.presentSelectList.Items[5].sourceListLabel.Selected
+                /// </summary>
+                public const uint Items_5__sourceListLabel_SelectedState = 628;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.presentItemSync.Selected
                 /// cardSourceSelectList.presentSelectList.Items[6].presentItemSync.Selected
                 /// </summary>
-                public const uint Items_6__presentItemSync_SelectedState = 623;
+                public const uint Items_6__presentItemSync_SelectedState = 629;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListBtn.Selected
                 /// cardSourceSelectList.presentSelectList.Items[6].sourceListBtn.Selected
                 /// </summary>
-                public const uint Items_6__sourceListBtn_SelectedState = 624;
+                public const uint Items_6__sourceListBtn_SelectedState = 630;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListLabel.Selected
+                /// cardSourceSelectList.presentSelectList.Items[6].sourceListLabel.Selected
+                /// </summary>
+                public const uint Items_6__sourceListLabel_SelectedState = 631;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.presentItemSync.Selected
                 /// cardSourceSelectList.presentSelectList.Items[7].presentItemSync.Selected
                 /// </summary>
-                public const uint Items_7__presentItemSync_SelectedState = 625;
+                public const uint Items_7__presentItemSync_SelectedState = 632;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListBtn.Selected
                 /// cardSourceSelectList.presentSelectList.Items[7].sourceListBtn.Selected
                 /// </summary>
-                public const uint Items_7__sourceListBtn_SelectedState = 626;
+                public const uint Items_7__sourceListBtn_SelectedState = 633;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListLabel.Selected
+                /// cardSourceSelectList.presentSelectList.Items[7].sourceListLabel.Selected
+                /// </summary>
+                public const uint Items_7__sourceListLabel_SelectedState = 634;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.presentItemSync.Selected
                 /// cardSourceSelectList.presentSelectList.Items[8].presentItemSync.Selected
                 /// </summary>
-                public const uint Items_8__presentItemSync_SelectedState = 627;
+                public const uint Items_8__presentItemSync_SelectedState = 635;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListBtn.Selected
                 /// cardSourceSelectList.presentSelectList.Items[8].sourceListBtn.Selected
                 /// </summary>
-                public const uint Items_8__sourceListBtn_SelectedState = 628;
+                public const uint Items_8__sourceListBtn_SelectedState = 636;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListLabel.Selected
+                /// cardSourceSelectList.presentSelectList.Items[8].sourceListLabel.Selected
+                /// </summary>
+                public const uint Items_8__sourceListLabel_SelectedState = 637;
 
             }
             /// <summary>
@@ -1200,50 +1503,50 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
             {
 
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListLabel.Indirect
-                /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText
+                /// cardSourceSelectList.presentSelectList.Items[0].sourceListLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_0__sourceListLabel_IndirectState = 1;
+                public const uint Items_0__sourceListLabel_IndirectRichTextState = 1;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListLabel.Indirect
-                /// cardSourceSelectList.presentSelectList.Items[1].sourceListLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[1].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText
+                /// cardSourceSelectList.presentSelectList.Items[1].sourceListLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_1__sourceListLabel_IndirectState = 2;
+                public const uint Items_1__sourceListLabel_IndirectRichTextState = 2;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListLabel.Indirect
-                /// cardSourceSelectList.presentSelectList.Items[2].sourceListLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[2].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText
+                /// cardSourceSelectList.presentSelectList.Items[2].sourceListLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_2__sourceListLabel_IndirectState = 3;
+                public const uint Items_2__sourceListLabel_IndirectRichTextState = 3;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListLabel.Indirect
-                /// cardSourceSelectList.presentSelectList.Items[3].sourceListLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[3].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText
+                /// cardSourceSelectList.presentSelectList.Items[3].sourceListLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_3__sourceListLabel_IndirectState = 4;
+                public const uint Items_3__sourceListLabel_IndirectRichTextState = 4;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListLabel.Indirect
-                /// cardSourceSelectList.presentSelectList.Items[4].sourceListLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[4].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText
+                /// cardSourceSelectList.presentSelectList.Items[4].sourceListLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_4__sourceListLabel_IndirectState = 5;
+                public const uint Items_4__sourceListLabel_IndirectRichTextState = 5;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListLabel.Indirect
-                /// cardSourceSelectList.presentSelectList.Items[5].sourceListLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[5].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText
+                /// cardSourceSelectList.presentSelectList.Items[5].sourceListLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_5__sourceListLabel_IndirectState = 6;
+                public const uint Items_5__sourceListLabel_IndirectRichTextState = 6;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListLabel.Indirect
-                /// cardSourceSelectList.presentSelectList.Items[6].sourceListLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[6].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText
+                /// cardSourceSelectList.presentSelectList.Items[6].sourceListLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_6__sourceListLabel_IndirectState = 7;
+                public const uint Items_6__sourceListLabel_IndirectRichTextState = 7;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListLabel.Indirect
-                /// cardSourceSelectList.presentSelectList.Items[7].sourceListLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[7].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText
+                /// cardSourceSelectList.presentSelectList.Items[7].sourceListLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_7__sourceListLabel_IndirectState = 8;
+                public const uint Items_7__sourceListLabel_IndirectRichTextState = 8;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListLabel.Indirect
-                /// cardSourceSelectList.presentSelectList.Items[8].sourceListLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[8].listItem_sourceCONTRACT.sourceListLabel.IndirectRichText
+                /// cardSourceSelectList.presentSelectList.Items[8].sourceListLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_8__sourceListLabel_IndirectState = 9;
+                public const uint Items_8__sourceListLabel_IndirectRichTextState = 9;
                 /// <summary>
                 /// Input or Feedback serial joinInfo from Control System to panel: cardSourceSelectList.presentSelectList.Items[0].listItem_sourceCONTRACT.sourceListBtn.IconURL
                 /// cardSourceSelectList.presentSelectList.Items[0].sourceListBtn.Icon URL
@@ -1341,43 +1644,62 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
  
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_0__presentItemSync_PressEvent.ToString(), new Indexes(0, (ushort)Joins.Booleans.Items_0__presentItemSync_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_0__sourceListBtn_PressEvent.ToString(), new Indexes(0, (ushort)Joins.Booleans.Items_0__sourceListBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_0__sourceListLabel_PressEvent.ToString(), new Indexes(0, (ushort)Joins.Booleans.Items_0__sourceListLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_1__presentItemSync_PressEvent.ToString(), new Indexes(1, (ushort)Joins.Booleans.Items_0__presentItemSync_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_1__sourceListBtn_PressEvent.ToString(), new Indexes(1, (ushort)Joins.Booleans.Items_0__sourceListBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_1__sourceListLabel_PressEvent.ToString(), new Indexes(1, (ushort)Joins.Booleans.Items_0__sourceListLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_2__presentItemSync_PressEvent.ToString(), new Indexes(2, (ushort)Joins.Booleans.Items_0__presentItemSync_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_2__sourceListBtn_PressEvent.ToString(), new Indexes(2, (ushort)Joins.Booleans.Items_0__sourceListBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_2__sourceListLabel_PressEvent.ToString(), new Indexes(2, (ushort)Joins.Booleans.Items_0__sourceListLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_3__presentItemSync_PressEvent.ToString(), new Indexes(3, (ushort)Joins.Booleans.Items_0__presentItemSync_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_3__sourceListBtn_PressEvent.ToString(), new Indexes(3, (ushort)Joins.Booleans.Items_0__sourceListBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_3__sourceListLabel_PressEvent.ToString(), new Indexes(3, (ushort)Joins.Booleans.Items_0__sourceListLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_4__presentItemSync_PressEvent.ToString(), new Indexes(4, (ushort)Joins.Booleans.Items_0__presentItemSync_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_4__sourceListBtn_PressEvent.ToString(), new Indexes(4, (ushort)Joins.Booleans.Items_0__sourceListBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_4__sourceListLabel_PressEvent.ToString(), new Indexes(4, (ushort)Joins.Booleans.Items_0__sourceListLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_5__presentItemSync_PressEvent.ToString(), new Indexes(5, (ushort)Joins.Booleans.Items_0__presentItemSync_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_5__sourceListBtn_PressEvent.ToString(), new Indexes(5, (ushort)Joins.Booleans.Items_0__sourceListBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_5__sourceListLabel_PressEvent.ToString(), new Indexes(5, (ushort)Joins.Booleans.Items_0__sourceListLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_6__presentItemSync_PressEvent.ToString(), new Indexes(6, (ushort)Joins.Booleans.Items_0__presentItemSync_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_6__sourceListBtn_PressEvent.ToString(), new Indexes(6, (ushort)Joins.Booleans.Items_0__sourceListBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_6__sourceListLabel_PressEvent.ToString(), new Indexes(6, (ushort)Joins.Booleans.Items_0__sourceListLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_7__presentItemSync_PressEvent.ToString(), new Indexes(7, (ushort)Joins.Booleans.Items_0__presentItemSync_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_7__sourceListBtn_PressEvent.ToString(), new Indexes(7, (ushort)Joins.Booleans.Items_0__sourceListBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_7__sourceListLabel_PressEvent.ToString(), new Indexes(7, (ushort)Joins.Booleans.Items_0__sourceListLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_8__presentItemSync_PressEvent.ToString(), new Indexes(8, (ushort)Joins.Booleans.Items_0__presentItemSync_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_8__sourceListBtn_PressEvent.ToString(), new Indexes(8, (ushort)Joins.Booleans.Items_0__sourceListBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_8__sourceListLabel_PressEvent.ToString(), new Indexes(8, (ushort)Joins.Booleans.Items_0__sourceListLabel_PressEvent, false));
 
             ComponentMediator.ConfigureBooleanItemEvent(controlJoinId, Joins.Booleans.Items_0__presentItemSync_PressEvent, GetIndexes, onpresentItemSync_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_0__presentItemSync_PressEvent, onItems_0__presentItemSync_Press);
             ComponentMediator.ConfigureBooleanItemEvent(controlJoinId, Joins.Booleans.Items_0__sourceListBtn_PressEvent, GetIndexes, onsourceListBtn_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_0__sourceListBtn_PressEvent, onItems_0__sourceListBtn_Press);
+            ComponentMediator.ConfigureBooleanItemEvent(controlJoinId, Joins.Booleans.Items_0__sourceListLabel_PressEvent, GetIndexes, onsourceListLabel_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_0__sourceListLabel_PressEvent, onItems_0__sourceListLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_1__presentItemSync_PressEvent, onItems_1__presentItemSync_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_1__sourceListBtn_PressEvent, onItems_1__sourceListBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_1__sourceListLabel_PressEvent, onItems_1__sourceListLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_2__presentItemSync_PressEvent, onItems_2__presentItemSync_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_2__sourceListBtn_PressEvent, onItems_2__sourceListBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_2__sourceListLabel_PressEvent, onItems_2__sourceListLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_3__presentItemSync_PressEvent, onItems_3__presentItemSync_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_3__sourceListBtn_PressEvent, onItems_3__sourceListBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_3__sourceListLabel_PressEvent, onItems_3__sourceListLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_4__presentItemSync_PressEvent, onItems_4__presentItemSync_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_4__sourceListBtn_PressEvent, onItems_4__sourceListBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_4__sourceListLabel_PressEvent, onItems_4__sourceListLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_5__presentItemSync_PressEvent, onItems_5__presentItemSync_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_5__sourceListBtn_PressEvent, onItems_5__sourceListBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_5__sourceListLabel_PressEvent, onItems_5__sourceListLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_6__presentItemSync_PressEvent, onItems_6__presentItemSync_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_6__sourceListBtn_PressEvent, onItems_6__sourceListBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_6__sourceListLabel_PressEvent, onItems_6__sourceListLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_7__presentItemSync_PressEvent, onItems_7__presentItemSync_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_7__sourceListBtn_PressEvent, onItems_7__sourceListBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_7__sourceListLabel_PressEvent, onItems_7__sourceListLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_8__presentItemSync_PressEvent, onItems_8__presentItemSync_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_8__sourceListBtn_PressEvent, onItems_8__sourceListBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_8__sourceListLabel_PressEvent, onItems_8__sourceListLabel_Press);
         }
 
         /// <summary>
@@ -1432,6 +1754,15 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         }
 
         /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_0__sourceListLabel_PressEvent;
+        private void onItems_0__sourceListLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_0__sourceListLabel_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
         public event EventHandler<UIEventArgs> Items_1__presentItemSync_PressEvent;
         private void onItems_1__presentItemSync_Press(SmartObjectEventArgs eventArgs)
         {
@@ -1445,6 +1776,15 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         private void onItems_1__sourceListBtn_Press(SmartObjectEventArgs eventArgs)
         {
             EventHandler<UIEventArgs> handler = Items_1__sourceListBtn_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_1__sourceListLabel_PressEvent;
+        private void onItems_1__sourceListLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_1__sourceListLabel_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
@@ -1468,6 +1808,15 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         }
 
         /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_2__sourceListLabel_PressEvent;
+        private void onItems_2__sourceListLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_2__sourceListLabel_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
         public event EventHandler<UIEventArgs> Items_3__presentItemSync_PressEvent;
         private void onItems_3__presentItemSync_Press(SmartObjectEventArgs eventArgs)
         {
@@ -1481,6 +1830,15 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         private void onItems_3__sourceListBtn_Press(SmartObjectEventArgs eventArgs)
         {
             EventHandler<UIEventArgs> handler = Items_3__sourceListBtn_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_3__sourceListLabel_PressEvent;
+        private void onItems_3__sourceListLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_3__sourceListLabel_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
@@ -1504,6 +1862,15 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         }
 
         /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_4__sourceListLabel_PressEvent;
+        private void onItems_4__sourceListLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_4__sourceListLabel_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
         public event EventHandler<UIEventArgs> Items_5__presentItemSync_PressEvent;
         private void onItems_5__presentItemSync_Press(SmartObjectEventArgs eventArgs)
         {
@@ -1517,6 +1884,15 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         private void onItems_5__sourceListBtn_Press(SmartObjectEventArgs eventArgs)
         {
             EventHandler<UIEventArgs> handler = Items_5__sourceListBtn_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_5__sourceListLabel_PressEvent;
+        private void onItems_5__sourceListLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_5__sourceListLabel_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
@@ -1540,6 +1916,15 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         }
 
         /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_6__sourceListLabel_PressEvent;
+        private void onItems_6__sourceListLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_6__sourceListLabel_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
         public event EventHandler<UIEventArgs> Items_7__presentItemSync_PressEvent;
         private void onItems_7__presentItemSync_Press(SmartObjectEventArgs eventArgs)
         {
@@ -1558,6 +1943,15 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         }
 
         /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_7__sourceListLabel_PressEvent;
+        private void onItems_7__sourceListLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_7__sourceListLabel_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
         public event EventHandler<UIEventArgs> Items_8__presentItemSync_PressEvent;
         private void onItems_8__presentItemSync_Press(SmartObjectEventArgs eventArgs)
         {
@@ -1571,6 +1965,15 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         private void onItems_8__sourceListBtn_Press(SmartObjectEventArgs eventArgs)
         {
             EventHandler<UIEventArgs> handler = Items_8__sourceListBtn_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_8__sourceListLabel_PressEvent;
+        private void onItems_8__sourceListLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_8__sourceListLabel_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
@@ -1967,6 +2370,132 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
         {
             Items_8__sourceListBtn_Selected((sig, component) => sig.BoolValue = digital);
         }
+        /// <inheritdoc/>
+        public void Items_0__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_0__sourceListLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_0__sourceListLabel_Selected(bool digital)
+        {
+            Items_0__sourceListLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_1__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_1__sourceListLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_1__sourceListLabel_Selected(bool digital)
+        {
+            Items_1__sourceListLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_2__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_2__sourceListLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_2__sourceListLabel_Selected(bool digital)
+        {
+            Items_2__sourceListLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_3__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_3__sourceListLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_3__sourceListLabel_Selected(bool digital)
+        {
+            Items_3__sourceListLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_4__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_4__sourceListLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_4__sourceListLabel_Selected(bool digital)
+        {
+            Items_4__sourceListLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_5__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_5__sourceListLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_5__sourceListLabel_Selected(bool digital)
+        {
+            Items_5__sourceListLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_6__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_6__sourceListLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_6__sourceListLabel_Selected(bool digital)
+        {
+            Items_6__sourceListLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_7__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_7__sourceListLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_7__sourceListLabel_Selected(bool digital)
+        {
+            Items_7__sourceListLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_8__sourceListLabel_Selected(presentSelectListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_8__sourceListLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_8__sourceListLabel_Selected(bool digital)
+        {
+            Items_8__sourceListLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
 
 
         /// <inheritdoc/>
@@ -2096,130 +2625,130 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
             Items_8__sourceListBtn_IconURL((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_0__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback)
+        public void Items_0__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__sourceListLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__sourceListLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_0__sourceListLabel_Indirect(string serial)
+        public void Items_0__sourceListLabel_IndirectRichText(string serial)
         {
-            Items_0__sourceListLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_0__sourceListLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_1__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback)
+        public void Items_1__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_1__sourceListLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_1__sourceListLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_1__sourceListLabel_Indirect(string serial)
+        public void Items_1__sourceListLabel_IndirectRichText(string serial)
         {
-            Items_1__sourceListLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_1__sourceListLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_2__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback)
+        public void Items_2__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_2__sourceListLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_2__sourceListLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_2__sourceListLabel_Indirect(string serial)
+        public void Items_2__sourceListLabel_IndirectRichText(string serial)
         {
-            Items_2__sourceListLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_2__sourceListLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_3__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback)
+        public void Items_3__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_3__sourceListLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_3__sourceListLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_3__sourceListLabel_Indirect(string serial)
+        public void Items_3__sourceListLabel_IndirectRichText(string serial)
         {
-            Items_3__sourceListLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_3__sourceListLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_4__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback)
+        public void Items_4__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_4__sourceListLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_4__sourceListLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_4__sourceListLabel_Indirect(string serial)
+        public void Items_4__sourceListLabel_IndirectRichText(string serial)
         {
-            Items_4__sourceListLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_4__sourceListLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_5__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback)
+        public void Items_5__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_5__sourceListLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_5__sourceListLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_5__sourceListLabel_Indirect(string serial)
+        public void Items_5__sourceListLabel_IndirectRichText(string serial)
         {
-            Items_5__sourceListLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_5__sourceListLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_6__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback)
+        public void Items_6__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_6__sourceListLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_6__sourceListLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_6__sourceListLabel_Indirect(string serial)
+        public void Items_6__sourceListLabel_IndirectRichText(string serial)
         {
-            Items_6__sourceListLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_6__sourceListLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_7__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback)
+        public void Items_7__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_7__sourceListLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_7__sourceListLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_7__sourceListLabel_Indirect(string serial)
+        public void Items_7__sourceListLabel_IndirectRichText(string serial)
         {
-            Items_7__sourceListLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_7__sourceListLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_8__sourceListLabel_Indirect(presentSelectListStringInputSigDelegate callback)
+        public void Items_8__sourceListLabel_IndirectRichText(presentSelectListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_8__sourceListLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_8__sourceListLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_8__sourceListLabel_Indirect(string serial)
+        public void Items_8__sourceListLabel_IndirectRichText(string serial)
         {
-            Items_8__sourceListLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_8__sourceListLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
 
         #endregion
@@ -2253,22 +2782,32 @@ namespace MicrosoftTeamsDemo.cardSourceSelectList
             Items_0__presentItemSync_PressEvent = null;
             sourceListBtn_PressEvent = null;
             Items_0__sourceListBtn_PressEvent = null;
+            sourceListLabel_PressEvent = null;
+            Items_0__sourceListLabel_PressEvent = null;
             Items_1__presentItemSync_PressEvent = null;
             Items_1__sourceListBtn_PressEvent = null;
+            Items_1__sourceListLabel_PressEvent = null;
             Items_2__presentItemSync_PressEvent = null;
             Items_2__sourceListBtn_PressEvent = null;
+            Items_2__sourceListLabel_PressEvent = null;
             Items_3__presentItemSync_PressEvent = null;
             Items_3__sourceListBtn_PressEvent = null;
+            Items_3__sourceListLabel_PressEvent = null;
             Items_4__presentItemSync_PressEvent = null;
             Items_4__sourceListBtn_PressEvent = null;
+            Items_4__sourceListLabel_PressEvent = null;
             Items_5__presentItemSync_PressEvent = null;
             Items_5__sourceListBtn_PressEvent = null;
+            Items_5__sourceListLabel_PressEvent = null;
             Items_6__presentItemSync_PressEvent = null;
             Items_6__sourceListBtn_PressEvent = null;
+            Items_6__sourceListLabel_PressEvent = null;
             Items_7__presentItemSync_PressEvent = null;
             Items_7__sourceListBtn_PressEvent = null;
+            Items_7__sourceListLabel_PressEvent = null;
             Items_8__presentItemSync_PressEvent = null;
             Items_8__sourceListBtn_PressEvent = null;
+            Items_8__sourceListLabel_PressEvent = null;
         }
 
         #endregion

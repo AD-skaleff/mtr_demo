@@ -269,7 +269,7 @@ namespace MicrosoftTeamsDemo.cardSrcATV
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.atvBack_PressEvent, onatvBack_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.atvPlay_PressEvent, onatvPlay_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.navReturn_PressEvent, onnavReturn_Press);
-            atvDpad = new MicrosoftTeamsDemo.cardSrcATV.atvDpad(ComponentMediator, 34);
+            atvDpad = new MicrosoftTeamsDemo.cardSrcATV.atvDpad(ComponentMediator, 44);
         }
 
         public void AddDevice(BasicTriListWithSmartObject device)

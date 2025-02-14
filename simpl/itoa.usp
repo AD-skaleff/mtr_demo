@@ -1,0 +1,44 @@
+//GreenPoint TDI
+
+/*------------------------ Development Notes ---------------------------------------------->
+
+------------------------------------------------------------------------------------------*/
+//___________________ Compiler Directives _________________________________________________
+//#CATEGORY                          "46" "Weather"
+//#DEFINE_CONSTANT        
+#OUTPUT_SHIFT                      1
+#DEFAULT_VOLATILE  
+#ENABLE_STACK_CHECKING
+#Large_Stack
+//#ENABLE_TRACE
+// #HINT ""
+// #HELP_PDF_FILE ""
+
+#HELP_BEGIN
+ 
+#HELP_END
+
+//___________________ Inputs and Outputs _________________________________________________
+//Digital_Input  ;
+//Analog_Input   ;
+Analog_Input A  ;
+//Buffer_Input   ;
+
+//Digital_Output ;
+String_Output S ;
+//String_Output  ;
+//___________________ Events ___________________________________________________________
+Change  A
+{
+	//If(Len(A))
+		S = ItoA(A) ; 
+}
+
+//___________________ Startup Code _____________________________________________________
+Function Main()
+{
+//	Integer i ;
+//	WaitForInitializationComplete()                                ;
+}
+
+

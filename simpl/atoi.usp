@@ -1,0 +1,58 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Dealer Name:
+System Name:
+System Number:
+Programmer:Tony Caraffa
+Comments:
+*/
+                      
+#SYMBOL_NAME "AtoI"
+// #ENCODING_ASCII
+// #ENCODING_UTF16
+// #ENCODING_INHERIT_FROM_PARENT
+// #ENCODING_INHERIT_FROM_PROGRAM
+/*
+#HELP_BEGIN
+   (add additional lines of help lines)
+#HELP_END
+*/
+
+
+//Digital_Input  ;
+//Analog_Input   ;
+String_Input sIn$[12]  ;
+//Buffer_Input   ;
+
+//Digital_Output ;
+Analog_Output iOut ;
+//String_Output  ;
+
+/*******************************************************************************************
+  Event Handlers
+  (Uncomment and declare additional event handlers as needed)
+*******************************************************************************************/
+
+Change  sIn$
+{
+	If(Len(sIn$))
+		iOut = AtoI(sIn$) ; 
+}
+
+/*******************************************************************************************
+  Main()
+  Uncomment and place one-time startup code here
+  (This code will get called when the system starts up)
+*******************************************************************************************/
+
+Function Main()
+{
+     WaitForInitializationComplete();
+}
+
+
+
+

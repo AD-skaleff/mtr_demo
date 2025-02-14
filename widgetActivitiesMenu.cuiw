@@ -1,16 +1,16 @@
 {FileMetadata}
 Schema = "1.0.0.0"
 CreatedByAppHost = "2.101.8.0"
-Created = 2025-02-10 15:46:56.411877-08:00
+Created = 2025-02-13 15:43:12.907413-08:00
 LastModifiedByAppHost = "2.101.8.0"
-Modified = 2025-02-10 15:46:56.411872-08:00
+Modified = 2025-02-13 15:43:12.907409-08:00
 CreatedByProjectApp = "1.3701.9.0"
 LastModifiedByProjectApp = "1.3701.9.0"
 MinimumProjectApp = "1.2600.1"
 MinimumAppHost = "2.0.0"
 
 {Html}
-<div categoryname="widgets-global" id="ia12qpu8sg" devicesVisited="[&quot;TSW-1070&quot;]" defaultWidth="336px" defaultHeight="408px" globalControlContract="on" class="widget-container"><ch5-subpage-reference-list orientation="vertical" columns="3" rows="2" centeritems="true" numberofitems="6" scrolltoposition="0" scrollbar="false" endless="false" indexid="idx" useContractForCustomStyle="false" useContractForCustomClass="false" useContractForEnable="true" useContractForShow="true" useContractForNumItems="false" useContractForItemEnable="true" useContractForItemShow="true" customvstheme="custom" loaditems="visible-only" id="i2sg" componentName="actItemList" ccid_linkSendReceive="True" devicesVisited="[&quot;TSW-1070&quot;]" pd-subpagereceivestateshow="Contract Enabled" pd-receivestateshow="Contract Enabled" pd-subpagereceivestateenable="Contract Enabled" pd-receivestateenable="Contract Enabled" widgetid="w3b21aa8d-1740-456e-ad9d-e4bdcc333780">
+<div categoryname="widgets-global" id="ia12qpu8sg" devicesVisited="[&quot;TSW-1070&quot;]" defaultWidth="336px" defaultHeight="408px" globalControlContract="on" class="widget-container"><ch5-subpage-reference-list orientation="vertical" columns="3" rows="2" centeritems="false" numberofitems="6" scrolltoposition="0" scrollbar="false" endless="false" indexid="idx" useContractForCustomStyle="false" useContractForCustomClass="false" useContractForEnable="true" useContractForShow="true" useContractForNumItems="false" useContractForItemEnable="true" useContractForItemShow="true" customvstheme="custom" loaditems="visible-only" id="i2sg" componentName="actItemList" ccid_linkSendReceive="True" devicesVisited="[&quot;TSW-1070&quot;]" pd-subpagereceivestateshow="Contract Enabled" pd-receivestateshow="Contract Enabled" pd-subpagereceivestateenable="Contract Enabled" pd-receivestateenable="Contract Enabled" widgetid="w3b21aa8d-1740-456e-ad9d-e4bdcc333780">
               </ch5-subpage-reference-list><ch5-text clearLabel="false" labelmodeadvncomponent="simple" horizontalalignment="center" verticalalignment="middle" multilinesupport="false" truncatetext="false" id="is7t" componentName="Formatted-Text" ccid_linkSendReceive="True" devicesVisited="[&quot;TSW-1070&quot;]" ccid_themeCSSSet="true" labelinnerhtml="Room Controls">
               </ch5-text></div>
 
@@ -41,7 +41,7 @@ Content = "\n              "
 orientation = "vertical"
 columns = "3"
 rows = "2"
-centeritems = "true"
+centeritems = "false"
 numberofitems = "6"
 scrolltoposition = "0"
 scrollbar = "false"

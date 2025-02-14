@@ -38,6 +38,11 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         event EventHandler<ItemEventArgs> actItemBtn_PressEvent;
 
         /// <summary>
+        /// Event widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<ItemEventArgs> actItemLabel_PressEvent;
+
+        /// <summary>
         /// actItemList.List_Item1_Visible Feedback
         /// </summary>
         /// <param name="listItemIndex">The index of the listItem (1 based).</param>
@@ -80,18 +85,32 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         void actItemBtn_Selected(ushort itemIndex, bool digital);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="itemIndex">Index of the Widget List (0 based).</param>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void actItemLabel_Selected(ushort itemIndex, actItemListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="itemIndex">Index of the Widget List (0 based).</param>
+        /// <param name="digital">The bool value to send to the panel.</param>
+        void actItemLabel_Selected(ushort itemIndex, bool digital);
+
+        /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="itemIndex">Index of the Widget List (0 based).</param>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void actItemLabel_Indirect(ushort itemIndex, actItemListStringInputSigDelegate callback);
+        void actItemLabel_IndirectRichText(ushort itemIndex, actItemListStringInputSigDelegate callback);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="itemIndex">Index of the Widget List (0 based).</param>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void actItemLabel_Indirect(ushort itemIndex, string serial);
+        void actItemLabel_IndirectRichText(ushort itemIndex, string serial);
 
         /// <summary>
         /// widgetActivitiesMenu.actItemList.Items[0].actItemBtn.Icon URL Feedback
@@ -125,6 +144,15 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         }
 
         /// <inheritdoc/>
+        public event EventHandler<ItemEventArgs> actItemLabel_PressEvent;
+        private void onactItemLabel_Press(IndexedEventArgs eventArgs)
+        {
+            EventHandler<ItemEventArgs> handler = actItemLabel_PressEvent;
+            if (handler != null)
+                handler(this, new ItemEventArgs((SmartObjectEventArgs)eventArgs.SigArgs, eventArgs.ItemIndex));
+        }
+
+        /// <inheritdoc/>
         public void actItemBtn_Selected(ushort itemIndex, actItemListBoolInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
@@ -137,6 +165,20 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         public void actItemBtn_Selected(ushort itemIndex, bool digital)
         {
             actItemBtn_Selected(itemIndex, (sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void actItemLabel_Selected(ushort itemIndex, actItemListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_0__actItemLabel_SelectedState + (uint) itemIndex], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void actItemLabel_Selected(ushort itemIndex, bool digital)
+        {
+            actItemLabel_Selected(itemIndex, (sig, component) => sig.BoolValue = digital);
         }
         /// <inheritdoc/>
         public void List_Item_Visible(ushort listItemIndex, actItemListBoolInputSigDelegate callback)
@@ -169,18 +211,18 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
 
 
         /// <inheritdoc/>
-        public void actItemLabel_Indirect(ushort itemIndex, actItemListStringInputSigDelegate callback)
+        public void actItemLabel_IndirectRichText(ushort itemIndex, actItemListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__actItemLabel_IndirectState + (uint) itemIndex * 1], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__actItemLabel_IndirectRichTextState + (uint) itemIndex * 1], this);
             }
         }
 
         /// <inheritdoc/>
-        public void actItemLabel_Indirect(ushort itemIndex, string serial)
+        public void actItemLabel_IndirectRichText(ushort itemIndex, string serial)
         {
-            actItemLabel_Indirect(itemIndex, (sig, component) => sig.StringValue = serial);
+            actItemLabel_IndirectRichText(itemIndex, (sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
         public void actItemBtn_IconURL(ushort itemIndex, actItemListStringInputSigDelegate callback)
@@ -213,9 +255,19 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         event EventHandler<UIEventArgs> Items_0__actItemBtn_PressEvent;
 
         /// <summary>
+        /// Event widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_0__actItemLabel_PressEvent;
+
+        /// <summary>
         /// Event widgetActivitiesMenu.actItemList.Items[1].actItemBtn.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_1__actItemBtn_PressEvent;
+
+        /// <summary>
+        /// Event widgetActivitiesMenu.actItemList.Items[1].actItemLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_1__actItemLabel_PressEvent;
 
         /// <summary>
         /// Event widgetActivitiesMenu.actItemList.Items[2].actItemBtn.Press (from panel to Control System)
@@ -223,9 +275,19 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         event EventHandler<UIEventArgs> Items_2__actItemBtn_PressEvent;
 
         /// <summary>
+        /// Event widgetActivitiesMenu.actItemList.Items[2].actItemLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_2__actItemLabel_PressEvent;
+
+        /// <summary>
         /// Event widgetActivitiesMenu.actItemList.Items[3].actItemBtn.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_3__actItemBtn_PressEvent;
+
+        /// <summary>
+        /// Event widgetActivitiesMenu.actItemList.Items[3].actItemLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_3__actItemLabel_PressEvent;
 
         /// <summary>
         /// Event widgetActivitiesMenu.actItemList.Items[4].actItemBtn.Press (from panel to Control System)
@@ -233,9 +295,19 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         event EventHandler<UIEventArgs> Items_4__actItemBtn_PressEvent;
 
         /// <summary>
+        /// Event widgetActivitiesMenu.actItemList.Items[4].actItemLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_4__actItemLabel_PressEvent;
+
+        /// <summary>
         /// Event widgetActivitiesMenu.actItemList.Items[5].actItemBtn.Press (from panel to Control System)
         /// </summary>
         event EventHandler<UIEventArgs> Items_5__actItemBtn_PressEvent;
+
+        /// <summary>
+        /// Event widgetActivitiesMenu.actItemList.Items[5].actItemLabel.Press (from panel to Control System)
+        /// </summary>
+        event EventHandler<UIEventArgs> Items_5__actItemLabel_PressEvent;
 
         /// <summary>
         /// actItemList.List Visibility Feedback
@@ -418,6 +490,18 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         void Items_0__actItemBtn_Selected(bool digital);
 
         /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_0__actItemLabel_Selected(actItemListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_0__actItemLabel_Selected(bool digital);
+
+        /// <summary>
         /// widgetActivitiesMenu.actItemList.Items[1].actItemBtn.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
@@ -428,6 +512,18 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
         void Items_1__actItemBtn_Selected(bool digital);
+
+        /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[1].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_1__actItemLabel_Selected(actItemListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[1].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_1__actItemLabel_Selected(bool digital);
 
         /// <summary>
         /// widgetActivitiesMenu.actItemList.Items[2].actItemBtn.Selected Feedback
@@ -442,6 +538,18 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         void Items_2__actItemBtn_Selected(bool digital);
 
         /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[2].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_2__actItemLabel_Selected(actItemListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[2].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_2__actItemLabel_Selected(bool digital);
+
+        /// <summary>
         /// widgetActivitiesMenu.actItemList.Items[3].actItemBtn.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
@@ -452,6 +560,18 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
         void Items_3__actItemBtn_Selected(bool digital);
+
+        /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[3].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_3__actItemLabel_Selected(actItemListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[3].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_3__actItemLabel_Selected(bool digital);
 
         /// <summary>
         /// widgetActivitiesMenu.actItemList.Items[4].actItemBtn.Selected Feedback
@@ -466,6 +586,18 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         void Items_4__actItemBtn_Selected(bool digital);
 
         /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[4].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_4__actItemLabel_Selected(actItemListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[4].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_4__actItemLabel_Selected(bool digital);
+
+        /// <summary>
         /// widgetActivitiesMenu.actItemList.Items[5].actItemBtn.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
@@ -478,76 +610,88 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         void Items_5__actItemBtn_Selected(bool digital);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[5].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void Items_5__actItemLabel_Selected(actItemListBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[5].actItemLabel.Selected Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void Items_5__actItemLabel_Selected(bool digital);
+
+        /// <summary>
+        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_0__actItemLabel_Indirect(actItemListStringInputSigDelegate callback);
+        void Items_0__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_0__actItemLabel_Indirect(string serial);
+        void Items_0__actItemLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[1].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[1].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_1__actItemLabel_Indirect(actItemListStringInputSigDelegate callback);
+        void Items_1__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[1].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[1].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_1__actItemLabel_Indirect(string serial);
+        void Items_1__actItemLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[2].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[2].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_2__actItemLabel_Indirect(actItemListStringInputSigDelegate callback);
+        void Items_2__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[2].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[2].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_2__actItemLabel_Indirect(string serial);
+        void Items_2__actItemLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[3].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[3].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_3__actItemLabel_Indirect(actItemListStringInputSigDelegate callback);
+        void Items_3__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[3].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[3].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_3__actItemLabel_Indirect(string serial);
+        void Items_3__actItemLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[4].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[4].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_4__actItemLabel_Indirect(actItemListStringInputSigDelegate callback);
+        void Items_4__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[4].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[4].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_4__actItemLabel_Indirect(string serial);
+        void Items_4__actItemLabel_IndirectRichText(string serial);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[5].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[5].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
-        void Items_5__actItemLabel_Indirect(actItemListStringInputSigDelegate callback);
+        void Items_5__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback);
 
         /// <summary>
-        /// widgetActivitiesMenu.actItemList.Items[5].actItemLabel.Indirect Feedback
+        /// widgetActivitiesMenu.actItemList.Items[5].actItemLabel.Indirect Rich Text Feedback
         /// </summary>
         /// <param name="serial">The <see cref="string"/> to update the panel.</param>
-        void Items_5__actItemLabel_Indirect(string serial);
+        void Items_5__actItemLabel_IndirectRichText(string serial);
 
         /// <summary>
         /// widgetActivitiesMenu.actItemList.Items[0].actItemBtn.Icon URL Feedback
@@ -680,34 +824,70 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
                 public const uint Items_0__actItemBtn_PressEvent = 1;
 
                 /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemLabel.Press
+                /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Press
+                /// </summary>
+                public const uint Items_0__actItemLabel_PressEvent = 2;
+
+                /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemBtn.Press
                 /// widgetActivitiesMenu.actItemList.Items[1].actItemBtn.Press
                 /// </summary>
-                public const uint Items_1__actItemBtn_PressEvent = 2;
+                public const uint Items_1__actItemBtn_PressEvent = 3;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemLabel.Press
+                /// widgetActivitiesMenu.actItemList.Items[1].actItemLabel.Press
+                /// </summary>
+                public const uint Items_1__actItemLabel_PressEvent = 4;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemBtn.Press
                 /// widgetActivitiesMenu.actItemList.Items[2].actItemBtn.Press
                 /// </summary>
-                public const uint Items_2__actItemBtn_PressEvent = 3;
+                public const uint Items_2__actItemBtn_PressEvent = 5;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemLabel.Press
+                /// widgetActivitiesMenu.actItemList.Items[2].actItemLabel.Press
+                /// </summary>
+                public const uint Items_2__actItemLabel_PressEvent = 6;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemBtn.Press
                 /// widgetActivitiesMenu.actItemList.Items[3].actItemBtn.Press
                 /// </summary>
-                public const uint Items_3__actItemBtn_PressEvent = 4;
+                public const uint Items_3__actItemBtn_PressEvent = 7;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemLabel.Press
+                /// widgetActivitiesMenu.actItemList.Items[3].actItemLabel.Press
+                /// </summary>
+                public const uint Items_3__actItemLabel_PressEvent = 8;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemBtn.Press
                 /// widgetActivitiesMenu.actItemList.Items[4].actItemBtn.Press
                 /// </summary>
-                public const uint Items_4__actItemBtn_PressEvent = 5;
+                public const uint Items_4__actItemBtn_PressEvent = 9;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemLabel.Press
+                /// widgetActivitiesMenu.actItemList.Items[4].actItemLabel.Press
+                /// </summary>
+                public const uint Items_4__actItemLabel_PressEvent = 10;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemBtn.Press
                 /// widgetActivitiesMenu.actItemList.Items[5].actItemBtn.Press
                 /// </summary>
-                public const uint Items_5__actItemBtn_PressEvent = 6;
+                public const uint Items_5__actItemBtn_PressEvent = 11;
+
+                /// <summary>
+                /// Output or Event digital joinInfo from panel to Control System: widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemLabel.Press
+                /// widgetActivitiesMenu.actItemList.Items[5].actItemLabel.Press
+                /// </summary>
+                public const uint Items_5__actItemLabel_PressEvent = 12;
 
 
                 /// <summary>
@@ -801,34 +981,70 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
                 public const uint Items_0__actItemBtn_SelectedState = 15;
 
                 /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemLabel.Selected
+                /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Selected
+                /// </summary>
+                public const uint Items_0__actItemLabel_SelectedState = 16;
+
+                /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemBtn.Selected
                 /// widgetActivitiesMenu.actItemList.Items[1].actItemBtn.Selected
                 /// </summary>
-                public const uint Items_1__actItemBtn_SelectedState = 16;
+                public const uint Items_1__actItemBtn_SelectedState = 17;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemLabel.Selected
+                /// widgetActivitiesMenu.actItemList.Items[1].actItemLabel.Selected
+                /// </summary>
+                public const uint Items_1__actItemLabel_SelectedState = 18;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemBtn.Selected
                 /// widgetActivitiesMenu.actItemList.Items[2].actItemBtn.Selected
                 /// </summary>
-                public const uint Items_2__actItemBtn_SelectedState = 17;
+                public const uint Items_2__actItemBtn_SelectedState = 19;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemLabel.Selected
+                /// widgetActivitiesMenu.actItemList.Items[2].actItemLabel.Selected
+                /// </summary>
+                public const uint Items_2__actItemLabel_SelectedState = 20;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemBtn.Selected
                 /// widgetActivitiesMenu.actItemList.Items[3].actItemBtn.Selected
                 /// </summary>
-                public const uint Items_3__actItemBtn_SelectedState = 18;
+                public const uint Items_3__actItemBtn_SelectedState = 21;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemLabel.Selected
+                /// widgetActivitiesMenu.actItemList.Items[3].actItemLabel.Selected
+                /// </summary>
+                public const uint Items_3__actItemLabel_SelectedState = 22;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemBtn.Selected
                 /// widgetActivitiesMenu.actItemList.Items[4].actItemBtn.Selected
                 /// </summary>
-                public const uint Items_4__actItemBtn_SelectedState = 19;
+                public const uint Items_4__actItemBtn_SelectedState = 23;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemLabel.Selected
+                /// widgetActivitiesMenu.actItemList.Items[4].actItemLabel.Selected
+                /// </summary>
+                public const uint Items_4__actItemLabel_SelectedState = 24;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemBtn.Selected
                 /// widgetActivitiesMenu.actItemList.Items[5].actItemBtn.Selected
                 /// </summary>
-                public const uint Items_5__actItemBtn_SelectedState = 20;
+                public const uint Items_5__actItemBtn_SelectedState = 25;
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemLabel.Selected
+                /// widgetActivitiesMenu.actItemList.Items[5].actItemLabel.Selected
+                /// </summary>
+                public const uint Items_5__actItemLabel_SelectedState = 26;
 
             }
             /// <summary>
@@ -838,35 +1054,35 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
             {
 
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemLabel.Indirect
-                /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemLabel.IndirectRichText
+                /// widgetActivitiesMenu.actItemList.Items[0].actItemLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_0__actItemLabel_IndirectState = 1;
+                public const uint Items_0__actItemLabel_IndirectRichTextState = 1;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemLabel.Indirect
-                /// widgetActivitiesMenu.actItemList.Items[1].actItemLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[1].listItem_activityCONTRACT.actItemLabel.IndirectRichText
+                /// widgetActivitiesMenu.actItemList.Items[1].actItemLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_1__actItemLabel_IndirectState = 2;
+                public const uint Items_1__actItemLabel_IndirectRichTextState = 2;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemLabel.Indirect
-                /// widgetActivitiesMenu.actItemList.Items[2].actItemLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[2].listItem_activityCONTRACT.actItemLabel.IndirectRichText
+                /// widgetActivitiesMenu.actItemList.Items[2].actItemLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_2__actItemLabel_IndirectState = 3;
+                public const uint Items_2__actItemLabel_IndirectRichTextState = 3;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemLabel.Indirect
-                /// widgetActivitiesMenu.actItemList.Items[3].actItemLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[3].listItem_activityCONTRACT.actItemLabel.IndirectRichText
+                /// widgetActivitiesMenu.actItemList.Items[3].actItemLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_3__actItemLabel_IndirectState = 4;
+                public const uint Items_3__actItemLabel_IndirectRichTextState = 4;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemLabel.Indirect
-                /// widgetActivitiesMenu.actItemList.Items[4].actItemLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[4].listItem_activityCONTRACT.actItemLabel.IndirectRichText
+                /// widgetActivitiesMenu.actItemList.Items[4].actItemLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_4__actItemLabel_IndirectState = 5;
+                public const uint Items_4__actItemLabel_IndirectRichTextState = 5;
                 /// <summary>
-                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemLabel.Indirect
-                /// widgetActivitiesMenu.actItemList.Items[5].actItemLabel.Indirect
+                /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[5].listItem_activityCONTRACT.actItemLabel.IndirectRichText
+                /// widgetActivitiesMenu.actItemList.Items[5].actItemLabel.Indirect Rich Text
                 /// </summary>
-                public const uint Items_5__actItemLabel_IndirectState = 6;
+                public const uint Items_5__actItemLabel_IndirectRichTextState = 6;
                 /// <summary>
                 /// Input or Feedback serial joinInfo from Control System to panel: widgetActivitiesMenu.actItemList.Items[0].listItem_activityCONTRACT.actItemBtn.IconURL
                 /// widgetActivitiesMenu.actItemList.Items[0].actItemBtn.Icon URL
@@ -948,19 +1164,32 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
             _devices = new List<BasicTriListWithSmartObject>(); 
  
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_0__actItemBtn_PressEvent.ToString(), new Indexes(0, (ushort)Joins.Booleans.Items_0__actItemBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_0__actItemLabel_PressEvent.ToString(), new Indexes(0, (ushort)Joins.Booleans.Items_0__actItemLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_1__actItemBtn_PressEvent.ToString(), new Indexes(1, (ushort)Joins.Booleans.Items_0__actItemBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_1__actItemLabel_PressEvent.ToString(), new Indexes(1, (ushort)Joins.Booleans.Items_0__actItemLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_2__actItemBtn_PressEvent.ToString(), new Indexes(2, (ushort)Joins.Booleans.Items_0__actItemBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_2__actItemLabel_PressEvent.ToString(), new Indexes(2, (ushort)Joins.Booleans.Items_0__actItemLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_3__actItemBtn_PressEvent.ToString(), new Indexes(3, (ushort)Joins.Booleans.Items_0__actItemBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_3__actItemLabel_PressEvent.ToString(), new Indexes(3, (ushort)Joins.Booleans.Items_0__actItemLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_4__actItemBtn_PressEvent.ToString(), new Indexes(4, (ushort)Joins.Booleans.Items_0__actItemBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_4__actItemLabel_PressEvent.ToString(), new Indexes(4, (ushort)Joins.Booleans.Items_0__actItemLabel_PressEvent, false));
             _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_5__actItemBtn_PressEvent.ToString(), new Indexes(5, (ushort)Joins.Booleans.Items_0__actItemBtn_PressEvent, false));
+            _indexLookup.Add(eSigType.Bool.ToString() + Joins.Booleans.Items_5__actItemLabel_PressEvent.ToString(), new Indexes(5, (ushort)Joins.Booleans.Items_0__actItemLabel_PressEvent, false));
 
             ComponentMediator.ConfigureBooleanItemEvent(controlJoinId, Joins.Booleans.Items_0__actItemBtn_PressEvent, GetIndexes, onactItemBtn_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_0__actItemBtn_PressEvent, onItems_0__actItemBtn_Press);
+            ComponentMediator.ConfigureBooleanItemEvent(controlJoinId, Joins.Booleans.Items_0__actItemLabel_PressEvent, GetIndexes, onactItemLabel_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_0__actItemLabel_PressEvent, onItems_0__actItemLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_1__actItemBtn_PressEvent, onItems_1__actItemBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_1__actItemLabel_PressEvent, onItems_1__actItemLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_2__actItemBtn_PressEvent, onItems_2__actItemBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_2__actItemLabel_PressEvent, onItems_2__actItemLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_3__actItemBtn_PressEvent, onItems_3__actItemBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_3__actItemLabel_PressEvent, onItems_3__actItemLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_4__actItemBtn_PressEvent, onItems_4__actItemBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_4__actItemLabel_PressEvent, onItems_4__actItemLabel_Press);
             ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_5__actItemBtn_PressEvent, onItems_5__actItemBtn_Press);
+            ComponentMediator.ConfigureBooleanEvent(controlJoinId, Joins.Booleans.Items_5__actItemLabel_PressEvent, onItems_5__actItemLabel_Press);
         }
 
         /// <summary>
@@ -1006,10 +1235,28 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         }
 
         /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_0__actItemLabel_PressEvent;
+        private void onItems_0__actItemLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_0__actItemLabel_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
         public event EventHandler<UIEventArgs> Items_1__actItemBtn_PressEvent;
         private void onItems_1__actItemBtn_Press(SmartObjectEventArgs eventArgs)
         {
             EventHandler<UIEventArgs> handler = Items_1__actItemBtn_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_1__actItemLabel_PressEvent;
+        private void onItems_1__actItemLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_1__actItemLabel_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
@@ -1024,10 +1271,28 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         }
 
         /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_2__actItemLabel_PressEvent;
+        private void onItems_2__actItemLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_2__actItemLabel_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
         public event EventHandler<UIEventArgs> Items_3__actItemBtn_PressEvent;
         private void onItems_3__actItemBtn_Press(SmartObjectEventArgs eventArgs)
         {
             EventHandler<UIEventArgs> handler = Items_3__actItemBtn_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_3__actItemLabel_PressEvent;
+        private void onItems_3__actItemLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_3__actItemLabel_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
@@ -1042,10 +1307,28 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         }
 
         /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_4__actItemLabel_PressEvent;
+        private void onItems_4__actItemLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_4__actItemLabel_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
         public event EventHandler<UIEventArgs> Items_5__actItemBtn_PressEvent;
         private void onItems_5__actItemBtn_Press(SmartObjectEventArgs eventArgs)
         {
             EventHandler<UIEventArgs> handler = Items_5__actItemBtn_PressEvent;
+            if (handler != null)
+                handler(this, UIEventArgs.CreateEventArgs(eventArgs));
+        }
+
+        /// <inheritdoc/>
+        public event EventHandler<UIEventArgs> Items_5__actItemLabel_PressEvent;
+        private void onItems_5__actItemLabel_Press(SmartObjectEventArgs eventArgs)
+        {
+            EventHandler<UIEventArgs> handler = Items_5__actItemLabel_PressEvent;
             if (handler != null)
                 handler(this, UIEventArgs.CreateEventArgs(eventArgs));
         }
@@ -1133,6 +1416,90 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
         public void Items_5__actItemBtn_Selected(bool digital)
         {
             Items_5__actItemBtn_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_0__actItemLabel_Selected(actItemListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_0__actItemLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_0__actItemLabel_Selected(bool digital)
+        {
+            Items_0__actItemLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_1__actItemLabel_Selected(actItemListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_1__actItemLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_1__actItemLabel_Selected(bool digital)
+        {
+            Items_1__actItemLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_2__actItemLabel_Selected(actItemListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_2__actItemLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_2__actItemLabel_Selected(bool digital)
+        {
+            Items_2__actItemLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_3__actItemLabel_Selected(actItemListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_3__actItemLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_3__actItemLabel_Selected(bool digital)
+        {
+            Items_3__actItemLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_4__actItemLabel_Selected(actItemListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_4__actItemLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_4__actItemLabel_Selected(bool digital)
+        {
+            Items_4__actItemLabel_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void Items_5__actItemLabel_Selected(actItemListBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.Items_5__actItemLabel_SelectedState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void Items_5__actItemLabel_Selected(bool digital)
+        {
+            Items_5__actItemLabel_Selected((sig, component) => sig.BoolValue = digital);
         }
         /// <inheritdoc/>
         public void actItemList_List_Enable(actItemListBoolInputSigDelegate callback)
@@ -1417,88 +1784,88 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
             Items_5__actItemBtn_IconURL((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_0__actItemLabel_Indirect(actItemListStringInputSigDelegate callback)
+        public void Items_0__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__actItemLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_0__actItemLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_0__actItemLabel_Indirect(string serial)
+        public void Items_0__actItemLabel_IndirectRichText(string serial)
         {
-            Items_0__actItemLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_0__actItemLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_1__actItemLabel_Indirect(actItemListStringInputSigDelegate callback)
+        public void Items_1__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_1__actItemLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_1__actItemLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_1__actItemLabel_Indirect(string serial)
+        public void Items_1__actItemLabel_IndirectRichText(string serial)
         {
-            Items_1__actItemLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_1__actItemLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_2__actItemLabel_Indirect(actItemListStringInputSigDelegate callback)
+        public void Items_2__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_2__actItemLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_2__actItemLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_2__actItemLabel_Indirect(string serial)
+        public void Items_2__actItemLabel_IndirectRichText(string serial)
         {
-            Items_2__actItemLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_2__actItemLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_3__actItemLabel_Indirect(actItemListStringInputSigDelegate callback)
+        public void Items_3__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_3__actItemLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_3__actItemLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_3__actItemLabel_Indirect(string serial)
+        public void Items_3__actItemLabel_IndirectRichText(string serial)
         {
-            Items_3__actItemLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_3__actItemLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_4__actItemLabel_Indirect(actItemListStringInputSigDelegate callback)
+        public void Items_4__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_4__actItemLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_4__actItemLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_4__actItemLabel_Indirect(string serial)
+        public void Items_4__actItemLabel_IndirectRichText(string serial)
         {
-            Items_4__actItemLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_4__actItemLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
         /// <inheritdoc/>
-        public void Items_5__actItemLabel_Indirect(actItemListStringInputSigDelegate callback)
+        public void Items_5__actItemLabel_IndirectRichText(actItemListStringInputSigDelegate callback)
         {
             for (int index = 0; index < Devices.Count; index++)
             {
-                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_5__actItemLabel_IndirectState], this);
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.Items_5__actItemLabel_IndirectRichTextState], this);
             }
         }
 
         /// <inheritdoc/>
-        public void Items_5__actItemLabel_Indirect(string serial)
+        public void Items_5__actItemLabel_IndirectRichText(string serial)
         {
-            Items_5__actItemLabel_Indirect((sig, component) => sig.StringValue = serial);
+            Items_5__actItemLabel_IndirectRichText((sig, component) => sig.StringValue = serial);
         }
 
         #endregion
@@ -1530,11 +1897,18 @@ namespace MicrosoftTeamsDemo.widgetActivitiesMenu
 
             actItemBtn_PressEvent = null;
             Items_0__actItemBtn_PressEvent = null;
+            actItemLabel_PressEvent = null;
+            Items_0__actItemLabel_PressEvent = null;
             Items_1__actItemBtn_PressEvent = null;
+            Items_1__actItemLabel_PressEvent = null;
             Items_2__actItemBtn_PressEvent = null;
+            Items_2__actItemLabel_PressEvent = null;
             Items_3__actItemBtn_PressEvent = null;
+            Items_3__actItemLabel_PressEvent = null;
             Items_4__actItemBtn_PressEvent = null;
+            Items_4__actItemLabel_PressEvent = null;
             Items_5__actItemBtn_PressEvent = null;
+            Items_5__actItemLabel_PressEvent = null;
         }
 
         #endregion

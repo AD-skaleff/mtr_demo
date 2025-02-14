@@ -49,6 +49,18 @@ namespace MicrosoftTeamsDemo
         event EventHandler<UIEventArgs> sysPowerBtn_PressEvent;
 
         /// <summary>
+        /// sysPowerBtn.Enable Feedback
+        /// </summary>
+        /// <param name="callback">The bool delegate to update the panel.</param>
+        void sysPowerBtn_Enable(systemFooterBoolInputSigDelegate callback);
+
+        /// <summary>
+        /// sysPowerBtn.Enable Feedback
+        /// </summary>
+        /// <param name="digital">The bool to update the panel.</param>
+        void sysPowerBtn_Enable(bool digital);
+
+        /// <summary>
         /// popUpMicsBtn.Selected Feedback
         /// </summary>
         /// <param name="callback">The bool delegate to update the panel.</param>
@@ -130,20 +142,26 @@ namespace MicrosoftTeamsDemo
                 /// Output or Event digital joinInfo from panel to Control System: systemFooter.popUpMicsBtn.Press
                 /// popUpMicsBtn.Press
                 /// </summary>
-                public const uint popUpMicsBtn_PressEvent = 3;
+                public const uint popUpMicsBtn_PressEvent = 2;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: systemFooter.sysHomeBtn.Press
                 /// sysHomeBtn.Press
                 /// </summary>
-                public const uint sysHomeBtn_PressEvent = 4;
+                public const uint sysHomeBtn_PressEvent = 3;
 
                 /// <summary>
                 /// Output or Event digital joinInfo from panel to Control System: systemFooter.sysPowerBtn.Press
                 /// sysPowerBtn.Press
                 /// </summary>
-                public const uint sysPowerBtn_PressEvent = 5;
+                public const uint sysPowerBtn_PressEvent = 4;
 
+
+                /// <summary>
+                /// Input or Feedback digital joinInfo from Control System to panel: systemFooter.sysPowerBtn.Enable
+                /// sysPowerBtn.Enable
+                /// </summary>
+                public const uint sysPowerBtn_EnableState = 2;
 
                 /// <summary>
                 /// Input or Feedback digital joinInfo from Control System to panel: systemFooter.popUpMicsBtn.Selected
@@ -289,6 +307,20 @@ namespace MicrosoftTeamsDemo
         public void sysHomeBtn_Selected(bool digital)
         {
             sysHomeBtn_Selected((sig, component) => sig.BoolValue = digital);
+        }
+        /// <inheritdoc/>
+        public void sysPowerBtn_Enable(systemFooterBoolInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].BooleanInput[Joins.Booleans.sysPowerBtn_EnableState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void sysPowerBtn_Enable(bool digital)
+        {
+            sysPowerBtn_Enable((sig, component) => sig.BoolValue = digital);
         }
         /// <inheritdoc/>
         public void sysPowerBtn_Selected(systemFooterBoolInputSigDelegate callback)

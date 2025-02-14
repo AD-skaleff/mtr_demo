@@ -107,6 +107,18 @@ namespace MicrosoftTeamsDemo
         /// </summary>
         /// <param name="digital">The bool to update the panel.</param>
         void sysVol3MuteBtn_Selected(bool digital);
+
+        /// <summary>
+        /// sysVolVal$.Indirect Feedback
+        /// </summary>
+        /// <param name="callback">The <see cref="string"/> delegate to update the panel.</param>
+        void sysVolVal_Indirect(volumeStringInputSigDelegate callback);
+
+        /// <summary>
+        /// sysVolVal$.Indirect Feedback
+        /// </summary>
+        /// <param name="serial">The <see cref="string"/> to update the panel.</param>
+        void sysVolVal_Indirect(string serial);
     }
 
     /// <summary>
@@ -115,6 +127,12 @@ namespace MicrosoftTeamsDemo
     /// <param name="boolInputSig">The <see cref="BoolInputSig"/> joinInfo data.</param>
     /// <param name="volume">The <see cref="Ivolume"/> on which to apply the feedback.</param>
     public delegate void volumeBoolInputSigDelegate(BoolInputSig boolInputSig, Ivolume volume);
+    /// <summary>
+    /// Digital callback used in feedback events.
+    /// </summary>
+    /// <param name="stringInputSig">The <see cref="StringInputSig"/> joinInfo data.</param>
+    /// <param name="volume">The <see cref="Ivolume"/> on which to apply the feedback.</param>
+    public delegate void volumeStringInputSigDelegate(StringInputSig stringInputSig, Ivolume volume);
 
     /// <summary>
     /// volume
@@ -199,6 +217,18 @@ namespace MicrosoftTeamsDemo
                 /// </summary>
                 public const uint sysVol3MuteBtn_SelectedState = 6;
 
+            }
+            /// <summary>
+            /// Serial signals.
+            /// </summary>
+            internal static class Strings
+            {
+
+                /// <summary>
+                /// Input or Feedback serial joinInfo from Control System to panel: volume.sysVolVal.Indirect
+                /// sysVolVal$.Indirect
+                /// </summary>
+                public const uint sysVolVal_IndirectState = 1;
             }
         }
 
@@ -367,6 +397,22 @@ namespace MicrosoftTeamsDemo
         public void sysVolVal_Visibility_fb(bool digital)
         {
             sysVolVal_Visibility_fb((sig, component) => sig.BoolValue = digital);
+        }
+
+
+        /// <inheritdoc/>
+        public void sysVolVal_Indirect(volumeStringInputSigDelegate callback)
+        {
+            for (int index = 0; index < Devices.Count; index++)
+            {
+                callback(Devices[index].SmartObjects[ControlJoinId].StringInput[Joins.Strings.sysVolVal_IndirectState], this);
+            }
+        }
+
+        /// <inheritdoc/>
+        public void sysVolVal_Indirect(string serial)
+        {
+            sysVolVal_Indirect((sig, component) => sig.StringValue = serial);
         }
 
         #endregion
