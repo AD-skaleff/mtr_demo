@@ -1,0 +1,125 @@
+{FileMetadata}
+Schema = "1.0.0.0"
+CreatedByAppHost = "2.101.8.0"
+Created = 2025-02-10 13:34:57.84259-08:00
+LastModifiedByAppHost = "2.101.8.0"
+Modified = 2025-02-10 13:34:57.842587-08:00
+CreatedByProjectApp = "1.3701.9.0"
+LastModifiedByProjectApp = "1.3701.9.0"
+MinimumProjectApp = "1.2600.1"
+MinimumAppHost = "2.0.0"
+
+{Html}
+<div categoryname="system" id="i67c5g9gaz" defaultwidth="540px" defaultheight="242px" globalcontrolcontract="on" class="widget-container" devicesvisited="[&quot;TSW-1070&quot;]"><ch5-text clearlabel="false" labelmodeadvncomponent="simple" horizontalalignment="left" verticalalignment="middle" multilinesupport="false" truncatetext="false" labelinnerhtml="Amplified Design Conference Room" id="i0i8" componentname="sysRoomName" ccid_linksendreceive="True" ccid_themecssset="true" pd-receivestatelabel="Contract Enabled" devicesvisited="[&quot;TSW-1070&quot;]">
+              </ch5-text><ch5-text clearlabel="false" labelmodeadvncomponent="simple" horizontalalignment="left" verticalalignment="middle" multilinesupport="false" truncatetext="false" labelinnerhtml="10:12 AM" id="i4za0e1bnp" componentname="sysTime" ccid_linksendreceive="True" ccid_themecssset="true" pd-receivestatelabel="Contract Enabled" oldid="i0i8" devicesvisited="[&quot;TSW-1070&quot;]"></ch5-text><ch5-text clearlabel="false" labelmodeadvncomponent="simple" horizontalalignment="left" verticalalignment="middle" multilinesupport="false" truncatetext="false" labelinnerhtml="THURSDAY, MARCH 5" id="i7yl73tu1v" componentname="sysDate" ccid_linksendreceive="True" ccid_themecssset="true" pd-receivestatelabel="Contract Enabled" oldid="i0i8" devicesvisited="[&quot;TSW-1070&quot;]"></ch5-text><ch5-image refreshrate="0" customvstheme="custom" assetid="64f6ca18-cd1f-4d6f-a031-a2517ed973dc" id="ir1p" componentname="Image" ccid_linksendreceive="True" devicesvisited="[&quot;TSW-1070&quot;]">
+              </ch5-image><html-div componentname="Html-div" id="ia4z" devicesvisited="[&quot;TSW-1070&quot;]"></html-div></div>
+
+{Css}
+@media (max-width: 99999px) { #i67c5g9gaz { width: 614px; height: 240px; left: 0; top: 0; position: absolute } .widget-container { background-image: linear-gradient(45deg, #DAE2EA 25%, transparent 25%), linear-gradient(-45deg, #DAE2EA 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #DAE2EA 75%), linear-gradient(-45deg, transparent 75%, #DAE2EA 75%); background-size: 20px 20px; background-position: 0 0, 0 10px, 10px -10px, -10px 0px; z-index: 0 } #i0i8 .ch5-text { width: 322px; height: 48px; min-height: 10px; min-width: 10px; padding: 0px; font-size: 16px; custom-font-size: 16px; color: white } #i4za0e1bnp .ch5-text { width: 236px; height: 48px; min-height: 10px; min-width: 10px; padding: 0px; font-size: 42px; custom-font-size: 42px; color: white; font-weight: 700 } #i7yl73tu1v .ch5-text { width: 299px; height: 48px; min-height: 10px; min-width: 10px; padding: 0px; font-size: 20px; custom-font-size: 20px; color: white; font-weight: 700 } #ir1p .ch5-image { border-color: black; object-fit: contain } #i0i8 { width: 322px; height: 48px; font-family: Roboto; display: block; left: 267px; top: 114px; position: absolute } #i4za0e1bnp { width: 236px; height: 48px; font-family: Roboto; display: block; left: 259px; top: 77px; position: absolute; font-weight: 700 } #i7yl73tu1v { width: 299px; height: 48px; font-family: Roboto; display: block; left: 258px; top: 38px; position: absolute; font-weight: 700 } #ia4z { display: block; background-color: #616161cc; border-style: solid; border-width: 0; border-color: #1B4B7C; width: 2px; height: 191px; left: 239px; top: 48px; position: absolute } #ir1p { width: 169px; height: 170px; display: block; left: 45px; top: 49px; position: absolute } #wrapper { background-color: #ffffff } }
+@media (orientation: landscape) and (max-width: 1281px) and (max-height: 801px), (orientation: landscape) and (max-width: 1279px) { #i0i8 { width: 322px; height: 48px; font-family: Roboto; display: block; left: 267px; top: 114px; position: absolute } #i4za0e1bnp { left: 259px; top: 77px; position: absolute; width: 236px; height: 48px; font-weight: 700 } #i7yl73tu1v { left: 258px; top: 38px; position: absolute; width: 299px; height: 48px; font-weight: 700 } #ia4z { display: block; background-color: #616161cc; border-style: solid; border-width: 0; border-color: #1B4B7C; width: 2px; height: 191px; left: 239px; top: 48px; position: absolute } #ir1p { width: 169px; height: 170px; display: block; left: 45px; top: 49px; position: absolute } }
+
+{PageAttributes}
+
+[Attributes]
+Name = "systemHeader"
+PageMode = "absolute"
+Id = "9fde9b67-552d-4e24-8756-8df241fdca16"
+DisplayBackgroundColor = "False"
+
+[[Elements]]
+Type = "widgetContainer"
+Classes = ["widget-container"]
+
+[[Elements.Components]]
+Type = "Ch5 Text"
+Editable = true
+
+[[Elements.Components.Components]]
+Type = "textnode"
+Content = "\n              "
+
+[Elements.Components.Attributes]
+clearLabel = "false"
+labelmodeadvncomponent = "simple"
+horizontalalignment = "left"
+verticalalignment = "middle"
+multilinesupport = "false"
+truncatetext = "false"
+labelinnerhtml = "Amplified Design Conference Room"
+id = "i0i8"
+componentName = "sysRoomName"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+ccid_themeCSSSet = "true"
+pd-receivestatelabel = "Contract Enabled"
+[[Elements.Components]]
+Type = "Ch5 Text"
+Editable = true
+
+[Elements.Components.Attributes]
+clearLabel = "false"
+labelmodeadvncomponent = "simple"
+horizontalalignment = "left"
+verticalalignment = "middle"
+multilinesupport = "false"
+truncatetext = "false"
+labelinnerhtml = "10:12 AM"
+id = "i4za0e1bnp"
+componentName = "sysTime"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+ccid_themeCSSSet = "true"
+pd-receivestatelabel = "Contract Enabled"
+oldID = "i0i8"
+[[Elements.Components]]
+Type = "Ch5 Text"
+Editable = true
+
+[Elements.Components.Attributes]
+clearLabel = "false"
+labelmodeadvncomponent = "simple"
+horizontalalignment = "left"
+verticalalignment = "middle"
+multilinesupport = "false"
+truncatetext = "false"
+labelinnerhtml = "THURSDAY, MARCH 5"
+id = "i7yl73tu1v"
+componentName = "sysDate"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+ccid_themeCSSSet = "true"
+pd-receivestatelabel = "Contract Enabled"
+oldID = "i0i8"
+[[Elements.Components]]
+Type = "Ch5 Image"
+Editable = true
+
+[[Elements.Components.Components]]
+Type = "textnode"
+Content = "\n              "
+
+[Elements.Components.Attributes]
+refreshrate = "0"
+customvstheme = "custom"
+assetid = "64f6ca18-cd1f-4d6f-a031-a2517ed973dc"
+id = "ir1p"
+componentName = "Image"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+url = "StaticFiles/894c8dbf-06b5-4f2f-b99a-871d0948562d/64f6ca18-cd1f-4d6f-a031-a2517ed973dc/neh5mjpa.png"
+[[Elements.Components]]
+Type = "html-div"
+
+[Elements.Components.Attributes]
+componentName = "Html-div"
+id = "ia4z"
+devicesVisited = "[\"TSW-1070\"]"
+
+[Elements.Attributes]
+categoryname = "system"
+id = "i67c5g9gaz"
+devicesVisited = "[\"TSW-1070\"]"
+defaultWidth = "540px"
+defaultHeight = "242px"
+globalControlContract = "on"
+

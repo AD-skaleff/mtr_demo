@@ -1,0 +1,20 @@
+{
+  "_fileMetadata": {
+    "_schema": "1.0.0.0",
+    "_createdByAppHost": "2.101.8.0",
+    "_created": "2025-02-14T12:04:40.6670999-08:00",
+    "_lastModifiedByAppHost": "2.101.8.0",
+    "_minimumAppHost": "2.0.0",
+    "_modified": "2025-02-14T12:04:41.1004291-08:00"
+  },
+  "_solution": {
+    "_name": "MicrosoftTeamsDemo",
+    "_projects": [
+      {
+        "_name": "MicrosoftTeamsDemo",
+        "_filename": "MicrosoftTeamsDemo.cuip",
+        "_datetime": "2025-02-14T20:04:41.0999841Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{FileMetadata}
+Schema = "1.0.0.0"
+CreatedByAppHost = "1.3301.16.0"
+Created = 2024-05-07 15:31:02.171152-04:00
+LastModifiedByAppHost = "1.3301.16.0"
+Modified = 2024-05-07 15:31:02.171148-04:00
+CreatedByProjectApp = "1.3301.16.0"
+LastModifiedByProjectApp = "1.3301.16.0"
+MinimumProjectApp = ""
+
+{AssetAttributes}
+
+[Attributes]
+Id = "8217694c-1e1d-4ae6-b794-78b87e9397be"
+Name = "Bkd2"
+SourceUri = "Bkd2.png"
+AspectRatio = "1.6"
+AssetSourceType = "File"
+Username = ""
+Password = ""
+

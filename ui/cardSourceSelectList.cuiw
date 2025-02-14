@@ -1,0 +1,206 @@
+{FileMetadata}
+Schema = "1.0.0.0"
+CreatedByAppHost = "2.101.8.0"
+Created = 2025-02-13 12:24:49.6597-08:00
+LastModifiedByAppHost = "2.101.8.0"
+Modified = 2025-02-13 12:24:49.659697-08:00
+CreatedByProjectApp = "1.3701.9.0"
+LastModifiedByProjectApp = "1.3701.9.0"
+MinimumProjectApp = "1.2600.1"
+MinimumAppHost = "2.0.0"
+
+{Html}
+<div categoryname="widgets-global" id="ivtbe5jtyv" devicesvisited="[&quot;TSW-1070&quot;]" defaultwidth="563px" defaultheight="640px" globalcontrolcontract="on" class="widget-container"><html-div componentname="cardBg" id="imb4" devicesvisited="[&quot;TSW-1070&quot;]"></html-div><ch5-text clearlabel="false" labelmodeadvncomponent="simple" horizontalalignment="left" verticalalignment="middle" multilinesupport="false" truncatetext="false" labelinnerhtml="Select a Source" id="iq60" componentname="cardHeader" ccid_linksendreceive="True" devicesvisited="[&quot;TSW-1070&quot;]" ccid_themecssset="true">
+              </ch5-text><ch5-color-chip maxvalue="255" id="ivyz" componentname="cardAccent" ccid_linksendreceive="True" devicesvisited="[&quot;TSW-1070&quot;]" previewcolor="#5b5fc7">
+              </ch5-color-chip><ch5-subpage-reference-list orientation="vertical" columns="3" rows="2" centeritems="false" numberofitems="9" scrolltoposition="0" scrollbar="true" endless="false" indexid="idx" usecontractforcustomstyle="false" usecontractforcustomclass="false" usecontractforenable="false" usecontractforshow="true" usecontractfornumitems="false" usecontractforitemenable="false" usecontractforitemshow="true" customvstheme="custom" loaditems="visible-only" id="iedl6" componentname="presentSelectList" ccid_linksendreceive="True" devicesvisited="[&quot;TSW-1070&quot;]" pd-receivestateshow="Contract Enabled" pd-subpagereceivestateshow="Contract Enabled" widgetid="w780c1eb4-dd75-4862-b9a0-b4270db9475c">
+              </ch5-subpage-reference-list><ch5-button type="default" halignlabel="center" valignlabel="middle" checkboxshow="false" checkboxposition="left" disabled="false" orientation="horizontal" pageflipattributename="pageflip" clearlabel="false" ccid_imageicontype="iconclass" ccid_linksendreceive="True" iconurlfilltype="initial" customclass="ccid-custom" affectedbypreviewstate="True" shape="rounded-rectangle" size="custom" previewstate="normal" iconposition="first" tagname="ch5-button" ccid_syncproperties="disabled" ccid_lastsizeselected="regular" ccid_componenttype="button" ccid_ch5type="button" customvstheme="custom" id="i9ng3" componentname="presentAdvRoutingBtn" assetid="0" pageflip="0" labelinnerhtml="Advanced Routing" ccid_themecssset="true" devicesvisited="[&quot;TSW-1070&quot;]" sendeventontouch="Contract Enabled" pd-receivestateselected="Contract Enabled" pd-receivestateshow="Contract Enabled" labelmode="simple">
+              </ch5-button><ch5-text clearlabel="false" labelmodeadvncomponent="simple" horizontalalignment="left" verticalalignment="middle" multilinesupport="false" truncatetext="false" labelinnerhtml="System is Warming Up" id="i2b6z" componentname="sys.warming" ccid_linksendreceive="True" devicesvisited="[&quot;TSW-1070&quot;]" ccid_themecssset="true" pd-receivestateshow="Contract Enabled">
+              </ch5-text><ch5-animation startanimating="true" customvstheme="custom" size="small" animationstyle="ring" id="i9ksl" componentname="sys.warmingSpinner" ccid_linksendreceive="True" devicesvisited="[&quot;TSW-1070&quot;]" ccid_themecssset="true" pd-receivestateshow="Contract Enabled">
+              </ch5-animation></div>
+
+{Css}
+@media (max-width: 99999px){#ivyz .ch5-color-chip-preview{background-color:#5b5fc7;colorChipPreview_background-color:#5b5fc7;}#ivyz .ch5-color-chip{width:6px;height:232px;colorChipPreview_background-color:#5b5fc7;background-color:#5b5fc7;}#iq60 .ch5-text{width:228px;height:44px;min-height:10px;min-width:10px;padding:0px;font-weight:700;color:white;font-size:30px;custom-font-size:30px;}#ivtbe5jtyv{width:563px;height:640px;left:0;top:0;position:absolute;}.widget-container{background-image:linear-gradient(45deg, #DAE2EA 25%, transparent 25%), linear-gradient(-45deg, #DAE2EA 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #DAE2EA 75%), linear-gradient(-45deg, transparent 75%, #DAE2EA 75%);background-size:20px 20px;background-position:0 0, 0 10px, 10px -10px, -10px 0px;z-index:0;}#iedl6 .ch5-subpage-reference-list{listStyles_column-gap:15px;column-gap:15px;listStyles_row-gap:15px;row-gap:15px;}#ivyz{width:6px;height:232px;display:block;left:43px;top:46px;position:absolute;colorChipPreview_background-color:#5b5fc7;}#iq60{width:228px;height:44px;font-family:Roboto;display:block;left:62px;top:46px;position:absolute;font-weight:700;}#imb4{display:block;background-color:rgba(36,36,36,0.92);border-style:solid;border-width:0;border-color:#1B4B7C;width:506px;height:600px;left:24px;top:22px;position:absolute;border-top-left-radius:10px;border-radius:10px 10px 10px 10px;border-top-right-radius:10px;border-bottom-right-radius:10px;border-bottom-left-radius:10px;}#iedl6{width:auto;height:438px;display:block;left:62px;top:93px;position:absolute;listStyles_column-gap:15px;listStyles_row-gap:15px;}#i9ng3{width:184px;height:54px;display:block;left:185px;top:542px;position:absolute;newRuleWidth:146px;newRuleHeight:54px;buttonDefaultPressedLabel_color:#ffffff;}#i9ng3 .ch5-button--default{border-style:solid;border-color:#0091ea;background-color:#5b5fc7;border-width:0;max-height:100%;max-width:100%;display:flex;align-items:center;}#i9ng3 .ch5-button--default .ch5-button--label{font-family:Roboto;font-size:18px;font-weight:400;letter-spacing:0;text-decoration:none;margin-left:0;margin-top:0;custom-font-size:18px;color:#ffffff;buttonDefaultLabel_font-size:18px;buttonDefaultLabel_color:#ffffff;buttonDefaultLabel_font-weight:400;buttonDefaultLabel_letter-spacing:0;buttonDefaultLabel_text-decoration:none;buttonDefaultLabel_margin-left:0;buttonDefaultLabel_margin-top:0;}#i9ng3 .ch5-button--default .ch5-button--icon{color:#ffffff;font-size:14px;custom-font-size:14px;margin-left:0;margin-top:0;buttonDefaultIcon_font-size:14px;buttonDefaultIcon_color:#ffffff;buttonDefaultIcon_margin-left:0;buttonDefaultIcon_margin-top:0;}#i9ng3 .ch5-button--default .cb-checkbox-icon{color:#ffffff;buttonDefaultCheckbox_color:#ffffff;}#i9ng3 .ccid-custom.ch5-button--default .ch5-button--img{width:21px;height:21px;buttonDefaultImage_width:21px;buttonDefaultImage_height:21px;}#i9ng3 .ch5-button--default.ch5-button--pressed{border-style:solid;border-color:#0091ea;background-color:#4f52b2;border-width:0;}#i9ng3 .ch5-button--default.ch5-button--pressed .ch5-button--label{font-family:Roboto;font-size:14px;font-weight:400;letter-spacing:0;text-decoration:none;margin-left:2px;margin-top:2px;custom-font-size:14px;color:#ffffff;buttonDefaultPressedLabel_font-size:14px;buttonDefaultPressedLabel_color:#ffffff;buttonDefaultPressedLabel_font-weight:400;buttonDefaultPressedLabel_letter-spacing:0;buttonDefaultPressedLabel_text-decoration:none;buttonDefaultPressedLabel_margin-left:1px;buttonDefaultPressedLabel_margin-top:1px;margin-right:0;margin-bottom:0;}#i9ng3 .ch5-button--default.ch5-button--pressed .ch5-button--icon{color:#f0fff0;font-size:14px;custom-font-size:14px;margin-left:0;margin-top:0;buttonDefaultPressedIcon_font-size:14px;buttonDefaultPressedIcon_color:#f0fff0;buttonDefaultPressedIcon_margin-left:0;buttonDefaultPressedIcon_margin-top:0;}#i9ng3 .ch5-button--default.ch5-button--pressed .cb-checkbox-icon{color:#f0fff0;buttonDefaultPressedCheckbox_color:#f0fff0;}#i9ng3 .ccid-custom.ch5-button--default.ch5-button--pressed .ch5-button--img{width:21px;height:21px;buttonDefaultPressedImage_width:21px;buttonDefaultPressedImage_height:21px;}#i9ng3 .ch5-button--default.ch5-button--selected{border-style:solid;border-color:#0091ea;background-color:#0073bf;border-width:1px;}#i9ng3 .ch5-button--default.ch5-button--selected .ch5-button--label{font-family:Roboto;font-size:20px;font-weight:400;letter-spacing:0;text-decoration:none;margin-left:0;margin-top:0;custom-font-size:20px;color:#f0fff0;buttonDefaultSelectedLabel_font-size:20px;buttonDefaultSelectedLabel_color:#f0fff0;buttonDefaultSelectedLabel_font-weight:400;buttonDefaultSelectedLabel_letter-spacing:0;buttonDefaultSelectedLabel_text-decoration:none;buttonDefaultSelectedLabel_margin-left:0;buttonDefaultSelectedLabel_margin-top:0;}#i9ng3 .ch5-button--default.ch5-button--selected .ch5-button--icon{color:#f0fff0;font-size:14px;custom-font-size:14px;margin-left:0;margin-top:0;buttonDefaultSelectedIcon_font-size:14px;buttonDefaultSelectedIcon_color:#f0fff0;buttonDefaultSelectedIcon_margin-left:0;buttonDefaultSelectedIcon_margin-top:0;}#i9ng3 .ch5-button--default.ch5-button--selected .cb-checkbox-icon{color:#f0fff0;buttonDefaultSelectedCheckbox_color:#f0fff0;}#i9ng3 .ccid-custom.ch5-button--default.ch5-button--selected .ch5-button--img{width:21px;height:21px;buttonDefaultSelectedImage_width:21px;buttonDefaultSelectedImage_height:21px;}#i9ng3 .ch5-button--size-regular .cb-btn{width:184px;height:54px;}#i2b6z .ch5-text{width:231px;height:48px;min-height:10px;min-width:10px;padding:0px;font-size:16px;custom-font-size:16px;color:#f2e384;}#i2b6z{width:231px;height:48px;font-family:Roboto;display:block;left:291px;top:44px;position:absolute;}#i9ksl .ch5-animation{animationColor_color:#ffffff;color:#ffffff;}#i9ksl{display:block;left:471px;top:48px;position:absolute;animationColor_color:#ffffff;width:auto;height:auto;}#wrapper{background-color:#ffffff;}}@media (orientation: landscape) and (max-width: 1281px) and (max-height: 801px), (orientation: landscape) and (max-width: 1279px){#ivtbe5jtyv{width:563px;height:640px;left:0;top:0;position:absolute;}#iedl6{height:438px;top:93px;display:block;}#i9ng3{width:184px;height:54px;display:block;left:185px;top:542px;position:absolute;newRuleWidth:146px;newRuleHeight:54px;buttonDefaultPressedLabel_color:#ffffff;}#i9ng3 .ch5-button--vertical .cx-button-checkbox-pos-left{padding-left:0px;}#i9ng3 .ch5-button--vertical .cx-button-checkbox-pos-right{padding-right:0px;}#iq60{width:228px;}#i2b6z{width:231px;height:48px;font-family:Roboto;display:block;left:291px;top:44px;position:absolute;}#i9ksl{display:block;left:471px;top:48px;position:absolute;animationColor_color:#ffffff;width:auto;height:auto;}#ivyz{display:block;}}
+
+{PageAttributes}
+
+[Attributes]
+Name = "cardSourceSelectList"
+PageMode = "absolute"
+Id = "9881e099-b226-452e-9df2-4d3ac21730d5"
+DisplayBackgroundColor = "False"
+
+[[Elements]]
+Type = "widgetContainer"
+Classes = ["widget-container"]
+
+[[Elements.Components]]
+Type = "html-div"
+
+[Elements.Components.Attributes]
+componentName = "cardBg"
+id = "imb4"
+devicesVisited = "[\"TSW-1070\"]"
+[[Elements.Components]]
+Type = "Ch5 Text"
+Editable = true
+
+[[Elements.Components.Components]]
+Type = "textnode"
+Content = "\n              "
+
+[Elements.Components.Attributes]
+clearLabel = "false"
+labelmodeadvncomponent = "simple"
+horizontalalignment = "left"
+verticalalignment = "middle"
+multilinesupport = "false"
+truncatetext = "false"
+labelinnerhtml = "Select a Source"
+id = "iq60"
+componentName = "cardHeader"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+ccid_themeCSSSet = "true"
+[[Elements.Components]]
+Type = "Ch5 Color Chip"
+Editable = true
+
+[[Elements.Components.Components]]
+Type = "textnode"
+Content = "\n              "
+
+[Elements.Components.Attributes]
+maxvalue = "255"
+id = "ivyz"
+componentName = "cardAccent"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+previewcolor = "#5b5fc7"
+[[Elements.Components]]
+Type = "Ch5 Subpage Reference List"
+Editable = true
+
+[[Elements.Components.Components]]
+Type = "textnode"
+Content = "\n              "
+
+[Elements.Components.Attributes]
+orientation = "vertical"
+columns = "3"
+rows = "2"
+centeritems = "false"
+numberofitems = "9"
+scrolltoposition = "0"
+scrollbar = "true"
+endless = "false"
+indexid = "idx"
+useContractForCustomStyle = "false"
+useContractForCustomClass = "false"
+useContractForEnable = "false"
+useContractForShow = "true"
+useContractForNumItems = "false"
+useContractForItemEnable = "false"
+useContractForItemShow = "true"
+customvstheme = "custom"
+loaditems = "visible-only"
+id = "iedl6"
+componentName = "presentSelectList"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+pd-receivestateshow = "Contract Enabled"
+pd-subpagereceivestateshow = "Contract Enabled"
+widgetid = "w780c1eb4-dd75-4862-b9a0-b4270db9475c"
+[[Elements.Components]]
+Type = "Ch5 Button"
+Editable = true
+
+[[Elements.Components.Components]]
+Type = "textnode"
+Content = "\n              "
+
+[Elements.Components.Attributes]
+type = "default"
+halignlabel = "center"
+valignlabel = "middle"
+checkboxshow = "false"
+checkboxposition = "left"
+disabled = "false"
+orientation = "horizontal"
+pageFlipAttributeName = "pageflip"
+clearLabel = "false"
+ccid_imageIconType = "iconclass"
+ccid_linkSendReceive = "True"
+iconurlfilltype = "initial"
+customclass = "ccid-custom"
+affectedByPreviewState = "True"
+shape = "rounded-rectangle"
+size = "custom"
+previewstate = "normal"
+iconposition = "first"
+tagName = "ch5-button"
+ccid_syncproperties = "disabled"
+ccid_lastSizeSelected = "regular"
+ccid_componenttype = "button"
+ccid_ch5Type = "button"
+customvstheme = "custom"
+id = "i9ng3"
+componentName = "presentAdvRoutingBtn"
+assetid = "0"
+pageflip = "0"
+labelinnerhtml = "Advanced Routing"
+ccid_themeCSSSet = "true"
+devicesVisited = "[\"TSW-1070\"]"
+sendeventontouch = "Contract Enabled"
+pd-receivestateselected = "Contract Enabled"
+pd-receivestateshow = "Contract Enabled"
+labelmode = "simple"
+[[Elements.Components]]
+Type = "Ch5 Text"
+Editable = true
+
+[[Elements.Components.Components]]
+Type = "textnode"
+Content = "\n              "
+
+[Elements.Components.Attributes]
+clearLabel = "false"
+labelmodeadvncomponent = "simple"
+horizontalalignment = "left"
+verticalalignment = "middle"
+multilinesupport = "false"
+truncatetext = "false"
+labelinnerhtml = "System is Warming Up"
+id = "i2b6z"
+componentName = "sys.warming"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+ccid_themeCSSSet = "true"
+pd-receivestateshow = "Contract Enabled"
+[[Elements.Components]]
+Type = "Ch5 Animation"
+Editable = true
+
+[[Elements.Components.Components]]
+Type = "textnode"
+Content = "\n              "
+
+[Elements.Components.Attributes]
+startanimating = "true"
+customvstheme = "custom"
+size = "small"
+animationstyle = "ring"
+id = "i9ksl"
+componentName = "sys.warmingSpinner"
+ccid_linkSendReceive = "True"
+devicesVisited = "[\"TSW-1070\"]"
+ccid_themeCSSSet = "true"
+pd-receivestateshow = "Contract Enabled"
+
+[Elements.Attributes]
+categoryname = "widgets-global"
+id = "ivtbe5jtyv"
+devicesVisited = "[\"TSW-1070\"]"
+defaultWidth = "563px"
+defaultHeight = "640px"
+globalControlContract = "on"
+
