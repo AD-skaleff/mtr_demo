@@ -1,0 +1,274 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Programmer: AMPLIFIED DESIGN, LLC
+Comments: 
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+  (Uncomment and declare compiler directives as needed)
+*******************************************************************************************/
+
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+
+#DEFINE_CONSTANT		MAX_ANALOG			100
+#DEFINE_CONSTANT		MAX_SERIAL			200
+#DEFINE_CONSTANT		STRING_SIZE			100
+
+
+
+#HELP_BEGIN
+
+Stores analog and serial values into an array file.	
+
+	v1_6 - Small bug fixes for index excpetions.   
+	v1_8 - Added single index write option
+	v1_9 - Corrected spacing
+	v2_0 - Added File Folder option
+	v3_0 - Converted to use User folder for VC4 compatability
+	v3_1 - Increased analog size
+
+#HELP_END
+
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+  (Uncomment and declare inputs and outputs as needed)
+*******************************************************************************************/
+
+DIGITAL_INPUT	ReadOptions,WriteOptions,WriteLastModifiedIndex;
+DIGITAL_INPUT	_skip_,_skip_,_skip_,_skip_;
+STRING_INPUT	FileName$[50], FileFolder$[50];
+ANALOG_INPUT	aiAnalog[MAX_ANALOG];
+STRING_INPUT	siSerial[MAX_SERIAL][STRING_SIZE];
+
+DIGITAL_OUTPUT	Read_Complete, Write_Complete, No_File;     
+DIGITAL_OUTPUT	_skip_,_skip_,_skip_,_skip_;                               
+STRING_OUTPUT	Error$;
+STRING_OUTPUT	_skip_;
+ANALOG_OUTPUT	aoAnalog[MAX_ANALOG];
+STRING_OUTPUT	soSerial[MAX_SERIAL];
+
+
+/*******************************************************************************************
+  Global Variables
+  (Uncomment and declare global variables as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: myString = "";
+*******************************************************************************************/
+
+INTEGER WritingToDisk, iLastAnalogIndex, iLastSerialIndex;
+STRING  _directory[255];
+INTEGER iUpdateBusy, iaSerialNum;
+INTEGER iOptions[MAX_ANALOG];
+STRING sOptions[MAX_SERIAL][STRING_SIZE];
+SIGNED_INTEGER iErrorCode1,iErrorCode2;
+
+//for User Settings
+
+
+/*******************************************************************************************
+  Event Handlers
+  (Uncomment and declare additional event handlers as needed)
+*******************************************************************************************/
+Function fSetDirectory()
+{
+	string generateFolder[50];
+
+	if(len(FileName$) && len(FileFolder$))
+	{
+       	makestring(_directory,"/user/%s/%s",FileFolder$,FileName$);
+	}
+	else if(len(FileName$))
+	{
+		generateFolder = MakeProgramFilename("");
+		makestring  (_directory,"/user/%s%s",
+		generateFolder,
+		FileName$
+					);
+	}
+}
+
+
+
+
+Function UpdateOutputs()
+{
+	integer i;	
+
+	iUpdateBusy = 1;
+	for(i=1 to MAX_ANALOG)
+	{
+     	aoAnalog[i] = iOptions[i];
+	}
+	for(i=1 to iaSerialNum)
+	{
+    	soSerial[i] = sOptions[i];
+	}
+	Delay(80);
+	iUpdateBusy = 0;
+	PULSE (200, Read_Complete);
+}
+
+Function UpdateLastIndex()
+{
+   	aoAnalog[iLastAnalogIndex] = iOptions[iLastAnalogIndex];
+   	soSerial[iLastSerialIndex] = sOptions[iLastSerialIndex];
+}
+
+
+
+Integer_Function WriteUserFile(integer iWriteParams)
+{
+	SIGNED_INTEGER File;
+	INTEGER WritePass;
+	STRING	Write$[24];
+	STRING	temp$[128];
+
+	if (WritingToDisk = 0)
+	{
+		WritingToDisk = 1;
+		if (startfileoperations() = 0)
+		{
+			File = FileOpenShared(_directory,_O_WRONLY | _O_CREAT | _O_BINARY);
+			if (File >= 0)										//open success
+			{
+				iErrorCode1 = WriteIntegerArray(File, iOptions); 
+					
+				iErrorCode2 = WriteStringArray(File, sOptions); 
+
+				FileClose(File);
+				PULSE (200, Write_Complete);
+			}
+			endfileoperations();
+			if(iWriteParams)
+				UpdateLastIndex();
+			else
+				UpdateOutputs();
+		}
+		WritingToDisk = 0;
+	}
+	Else	WritePass = 0;
+
+	Return(WritePass);
+}
+
+INTEGER_Function ReadUserFile()
+{
+	SIGNED_INTEGER File;
+
+	if (startfileoperations() = 0)
+	{
+		File = FileOpenShared(_directory,_O_RDONLY | _O_BINARY);
+		if(File >= 0)								//open success
+		{
+            iErrorCode1 = ReadIntegerArray(File, iOptions); 
+				
+			iErrorCode2 = ReadStringArray(File, sOptions); 
+
+			FileClose(File);
+         	if (iErrorCode1 >= 0 && iErrorCode2 >= 0)
+			{
+	            GenerateUserNotice("File read success %s", _directory);
+			}
+			else
+			{
+				GenerateUserError("File read error %s", _directory);			
+			}
+			UpdateOutputs();
+		}
+		else
+		{
+			GenerateUserError("File does not exist! %s", _directory);
+            	PULSE (200, No_File);
+		}
+	}
+	EndFileOperations();
+}
+
+
+
+Push WriteOptions
+{
+ 	WriteUserFile(0);
+	
+}
+
+Push WriteLastModifiedIndex
+{
+ 	WriteUserFile(1);
+	
+}
+
+
+Push ReadOptions
+{
+ 	ReadUserFile();
+}
+
+Change aiAnalog
+{
+	If (!iUpdateBusy)
+	{
+ 		iOptions[GetLastModifiedArrayIndex()] = aiAnalog[GetLastModifiedArrayIndex()];
+		iLastAnalogIndex = GetLastModifiedArrayIndex();
+
+	}
+}
+
+Change siSerial
+{
+ 	If (!iUpdateBusy)
+	{
+ 		sOptions[GetLastModifiedArrayIndex()] = siSerial[GetLastModifiedArrayIndex()];
+		iLastSerialIndex = GetLastModifiedArrayIndex();
+	}
+}
+
+Change Filename$
+Change Filefolder$
+{
+	fSetDirectory();
+}
+
+
+
+/*******************************************************************************************
+  Main()
+  Uncomment and place one-time startup code here
+  (This code will get called when the system starts up)
+*******************************************************************************************/
+
+Function Main()
+{
+	Integer i;
+
+
+	waitforinitializationcomplete ();
+		WritingToDisk = 0;
+   
+
+	For (i=MAX_SERIAL to 1 Step -1)
+	{
+     	If(IsSignalDefined(siSerial[i]))
+			Break;
+	}iaSerialNum = i;
+
+
+	
+    // TODO:  Add code here
+    // Initialize declared global and local variables/arrays as needed.
+
+    // WaitForInitializationComplete();
+    // If you are reading any Input or Output variables, uncomment
+    //   the WaitForInitializationComplete statement above and read
+    //   them afterwards.  Input/Output variables will not have
+    //   their correct values set until after the logic processor
+    //   runs and propagates the values to them.
+}
+
+
